@@ -1,0 +1,7 @@
+packages:
+  - "."
+# Supply chain security hardening
+# https://pnpm.io/settings
+minimumReleaseAge: 10080  # 7 days - prevents installation of freshly published packages
+blockExoticSubdeps: true  # Prevents transitive deps from git:/file:/tarball URLs
+trustPolicy: no-downgrade  # Refuses packages whose provenance trust weakens

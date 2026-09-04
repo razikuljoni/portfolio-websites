@@ -1,0 +1,89 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# Cloudflare / OpenNext
+.wrangler
+.open-next
+
+# AI Tooling & Agent state
+.agent/
+.agents/
+.claude/
+.cline/
+.clinerules/
+.codex/
+.continue/
+.cursor/
+.gemini/
+.omo/
+.pi/
+.qwen/
+.sisyphus/
+.trae/
+.windsurf/
+
+# Knowledge Graph
+graphify-out/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Python virtual environment (not needed for Next.js)
+venv/
+__pycache__/
+*.pyc
+
+# Session artifacts (change every session)
+.omo/run-continuation/
+.sisyphus/run-continuation/   # if kept
+# Build artifacts
+.next/
+*.tsbuildinfo
+# OS
+.DS_Store
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+
+!.env.example

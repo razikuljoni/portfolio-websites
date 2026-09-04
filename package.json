@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-websites-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:minimal": "pnpm --filter razikuljoni-minimal-portfolio dev",
+    "dev:dev-portfolio": "pnpm --filter dev-portfolio dev",
+    "dev:kronen": "pnpm --filter kronen dev",
+    "dev:portfolio-003": "pnpm --filter portfolio-003 dev",
+    "dev:portfolio-004": "pnpm --filter portfolio-004 dev",
+    "build:all": "pnpm --recursive run build",
+    "lint:all": "pnpm --recursive run lint"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

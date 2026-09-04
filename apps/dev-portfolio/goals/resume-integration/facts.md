@@ -1,0 +1,22 @@
+# Resume Integration — Fact Sheet
+
+- Resume lives at route `/about/resume` (new `app/about/resume/page.tsx`)
+- Hero section "Show Resume" button navigates to `/about/resume` (replaces Google Drive link)
+- Footer file icon links to `/about/resume` (replaces `/narsi_resume.pdf`)
+- No "Resume" link added to header navigation
+- Resume page is a "use client" component for interactivity
+- Resume layout preserves the original HTML resume's visual structure (header, summary, skills, experience, projects, education, languages)
+- Role title in resume header changed from "Frontend Developer" to "Full Stack (MERN) Developer"
+- Resume page fully respects website's dark/light theme (uses Tailwind CSS variables like `text-foreground`, `text-muted-foreground`, `bg-background`, `border-border`, `bg-muted`, `bg-card`)
+- Accent colors (section titles, job company, links) use a blue that works in both themes (`text-primary` or a dedicated blue)
+- Skill tags adapt to dark mode (translucent background instead of hard `#eff6ff`)
+- Print/Download button is placed in the resume header area, opposite side from name and role title
+- Print/Download button uses `window.print()` with enhanced `@media print` CSS
+- `@media print` styles hide the button, use minimal margins, ensure page-break avoidance
+- Download/print button uses the existing `Button` component from `@/src/components/ui/button`
+- Print uses `beforeprint`/`afterprint` JS events to hide the site header (`<header>`) and reset `.resume-page-wrapper` padding during PDF generation
+- Global `@media print` CSS in `globals.css` hides `<header>` and resets `.resume-page-wrapper` padding as a fallback
+- The `page.tsx` wrapper div uses `resume-page-wrapper` class to enable CSS/JS targeting for print
+- The professional summary text stays unchanged from the original HTML
+- All existing resume sections (Summary, Technical Skills, Professional Experience, Key Projects, Education & Courses, Languages) are preserved
+- Contact row (email, phone, location, portfolio, LinkedIn, GitHub) is preserved

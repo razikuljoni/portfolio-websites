@@ -1,0 +1,99 @@
+{
+    "projects": [
+        {
+            "id": "melody-institute",
+            "name": "Melody Institute",
+            "description": [
+                "There are a total of four pages. On the Homepage, you can see a hero section, popular courses section, popular instructors section, and reviews section. Users can select and enroll in any course.",
+                "Admin can make someone an instructor and approve and reject instructor courses with feedback.",
+                "Instructors add classes, see classes, see approved classes, and see rejected classes with feedback."
+            ],
+            "status": "Live",
+            "thumb": "/images/projects/melodyinstitute.webp",
+            "link": "/projects/melody-institute",
+            "liveSite": "https://melodyinstitute.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/melody-institute",
+            "tag": "Featured",
+            "techStack": [
+                "React Js",
+                "Node Js",
+                "Express Js",
+                "TanStack Query",
+                "Stripe",
+                "Firebase",
+                "Mongo DB",
+                "TailwindCss"
+            ]
+        },
+        {
+            "id": "books-finder",
+            "name": "Books Finder",
+            "description": [
+                "MERN stack project. Different role users can do many different things. Such as add to cart, enroll and payment, add class, update class, delete class, admin can approve and reject class with feedback.",
+                "Users can see classes, instructors, seat availability, and ratings while admins moderate submitted classes with review feedback.",
+                "Designed reusable dashboards for student, instructor, and admin workflows with RTK Query-based data fetching."
+            ],
+            "status": "Building",
+            "thumb": "/images/projects/bookfinders.webp",
+            "link": "/projects/books-finder",
+            "liveSite": "https://books-finder.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/books-finder",
+            "tag": "Featured",
+            "techStack": [
+                "React Js",
+                "Redux-Toolkit",
+                "Rtk-Query",
+                "Node Js",
+                "Express Js",
+                "Mongo DB",
+                "TailwindCss"
+            ]
+        },
+        {
+            "id": "cosketch",
+            "name": "CoSketch",
+            "description": [
+                "Real-time collaborative whiteboard with low-latency synchronization for multi-user drawing sessions.",
+                "Built shape tools, selection, and eraser mechanics with deterministic conflict handling.",
+                "Containerized frontend, API, and websocket services with Docker Compose for predictable local/prod parity."
+            ],
+            "status": "Live",
+            "thumb": "/images/projects/cosketch.webp",
+            "link": "/projects/cosketch",
+            "liveSite": "https://cosketch.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/cosketch",
+            "tag": "Featured",
+            "techStack": ["Next.js", "TypeScript", "Node.js", "WebSocket", "Docker", "PostgreSQL"]
+        },
+        {
+            "id": "audora",
+            "name": "Audora",
+            "description": [
+                "WebRTC recording platform with custom signaling and robust session orchestration.",
+                "Designed role-based studio flows for hosts, guests, and post-session asset export.",
+                "Implemented operational monitoring and fallback handling for unstable network paths."
+            ],
+            "status": "Live",
+            "thumb": "/images/projects/audora.webp",
+            "link": "/projects/audora",
+            "liveSite": "https://audora.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/audora",
+            "tag": "Featured",
+            "techStack": ["React", "TypeScript", "WebRTC", "Node.js", "Redis", "TailwindCSS"]
+        },
+        {
+            "id": "coming-soon",
+            "name": "Coming Soon",
+            "description": [
+                "A placeholder slot reserved for the next production project currently in progress."
+            ],
+            "status": "Building",
+            "thumb": "/images/projects/coming-soon.webp",
+            "link": "/projects/coming-soon",
+            "liveSite": "https://coming-soon.razikuljoni.dev",
+            "github": "https://github.com/razikuljoni/coming-soon",
+            "tag": "In Progress",
+            "techStack": ["React Js", "Node Js", "Express Js", "Mongo DB", "TailwindCss"]
+        }
+    ]
+}

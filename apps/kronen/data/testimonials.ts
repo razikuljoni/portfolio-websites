@@ -1,0 +1,48 @@
+import { Testimonial } from '@/types';
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'test-1',
+    clientName: 'Dr. Lukas von Roten',
+    clientTitle: 'Biotech Founder & Art Patron',
+    location: 'Zurich, Switzerland',
+    quote: 'KRONEN’s architectural curation is unmatched. Elena did not just show us houses; she decoded the spatial engineering, light orientation, and provenance of the Lake Zurich glass pavilion. The transaction was handled with absolute Swiss discretion.',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    propertyTransacted: 'Lake Zurich Glass Pavilion (CHF 18.5M)',
+    year: 2025,
+  },
+  {
+    id: 'test-2',
+    clientName: 'Amélie & François de Saint-Germain',
+    clientTitle: 'Private Equity Principals',
+    location: 'Geneva & Paris',
+    quote: 'Finding an off-market penthouse in Cologny with uninterrupted views of the Jet d’Eau seemed impossible. Marc Weber presented an unlisted opportunity that exceeded every expectation. Their financial modeling and contract execution was flawless.',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    propertyTransacted: 'Cologny Belvedere Penthouse (CHF 14.2M)',
+    year: 2025,
+  },
+  {
+    id: 'test-3',
+    clientName: 'Hiroshi Takahashi',
+    clientTitle: 'Industrial Design Director',
+    location: 'Tokyo & London',
+    quote: 'As an architect, I am notoriously demanding regarding materials, shadow lines, and structural authenticity. Kenji Sato understood exactly what I sought in Minami-Aoyama. KRONEN stands apart because they truly revere architectural integrity.',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+    propertyTransacted: 'Aoyama Concrete Sanctuary ($16.8M)',
+    year: 2024,
+  },
+  {
+    id: 'test-4',
+    clientName: 'Victoria Sterling-Hills',
+    clientTitle: 'Family Office Trustee',
+    location: 'London & St. Moritz',
+    quote: 'From private jet transfers to private ski-in/ski-out chalet viewings in Suvretta, KRONEN delivers a bespoke concierge standard that sets the benchmark in global luxury real estate. Their valuation models were accurate to within 1%.',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+    propertyTransacted: 'Suvretta Alpine Monolith (CHF 24.5M)',
+    year: 2025,
+  },
+];

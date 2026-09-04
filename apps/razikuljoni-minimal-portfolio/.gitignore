@@ -1,0 +1,76 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/.lighthouseci/
+lighthouse*.html
+lighthouse*.json
+react-doctor*.json
+
+# next.js
+/.next/
+/out/
+
+# misc
+.DS_Store
+Thumbs.db
+*.pem
+*.key
+*.crt
+*.swp
+*.swo
+*~
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# environment and local secrets
+.env*
+!.env.example
+!.env.*.example
+
+# vercel
+/.vercel/
+
+# typescript
+next-env.d.ts
+*.tsbuildinfo
+
+# generated build and deployment output
+/dist/
+/build/
+/.wrangler/
+/.sites-runtime/
+/outputs/
+/work/
+
+# local editor and AI-tool state
+/.vscode/
+/.idea/
+/.cursor/
+/.codex/
+/.claude/settings.local.json
+/.claude/*.local.json
+
+# temporary files
+/.cache/
+/.turbo/
+/tmp/
+/temp/
