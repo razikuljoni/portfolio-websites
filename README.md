@@ -4,68 +4,76 @@ Monorepo containing MD Razikul Islam Joni's portfolio applications. Built with `
 
 ---
 
-## 📁 Repository Structure
+## 📁 Serial Workspace Structure
 
 ```
 portfolio-websites/
 ├── apps/
-│   ├── razikuljoni-minimal-portfolio/ # Current / Primary Minimal Portfolio (Next.js 16)
-│   ├── dev-portfolio/                 # Full Dev Portfolio (Next.js 16)
-│   ├── kronen/                        # Kronen AI Studio Portfolio (Next.js 15)
-│   ├── portfolio-003/                 # Interactive Portfolio 003 (Next.js 15)
-│   └── portfolio-004/                 # Vite + React 19 + Express Portfolio 004
-├── package.json                       # Root workspace package configuration
-├── pnpm-workspace.yaml                # pnpm monorepo configuration
-├── .gitignore                         # Global git ignore configuration
-└── README.md                          # Global documentation & deployment guide
+│   ├── portfolio-01-minimal/       # 01. Minimal Portfolio (Primary - Next.js 16)
+│   ├── portfolio-02-dev/           # 02. Full Dev Portfolio (Next.js 16)
+│   ├── portfolio-03-interactive/   # 03. Interactive Canvas & Terminal Portfolio (Next.js 15)
+│   ├── portfolio-04-vite-express/  # 04. Vite + React 19 + Express Architecture Portfolio
+│   └── portfolio-05-kronen/        # 05. Kronen AI Studio Portfolio (Next.js 15)
+├── package.json                    # Monorepo configuration & unified CLI commands
+├── pnpm-workspace.yaml             # pnpm monorepo workspace definition
+├── .gitignore                      # Global git ignore configuration
+└── README.md                       # Comprehensive monorepo & Vercel deployment guide
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Commands Reference
 
-### 1. Prerequisites
-- Node.js 22+
-- pnpm (`npm install -g pnpm`)
-
-### 2. Installation
+### 1. Installation
 ```bash
 pnpm install
 ```
 
-### 3. Running Applications Locally
+### 2. Development Commands
 
-Run any application directly from root:
+- **Run ALL portfolios simultaneously**:
+  ```bash
+  pnpm dev
+  ```
 
-| Application | Command | Framework |
-| :--- | :--- | :--- |
-| **Minimal Portfolio** *(Primary)* | `pnpm dev:minimal` | Next.js 16 |
-| **Dev Portfolio** | `pnpm dev:dev-portfolio` | Next.js 16 |
-| **Kronen** | `pnpm dev:kronen` | Next.js 15 |
-| **Portfolio 003** | `pnpm dev:portfolio-003` | Next.js 15 |
-| **Portfolio 004** | `pnpm dev:portfolio-004` | Vite + React 19 |
+- **Run individual portfolios**:
 
-### 4. Monorepo Global Commands
+  | # | Portfolio Name | Folder / Package | Command (Alias) |
+  | :--- | :--- | :--- | :--- |
+  | **01** | **Minimal Portfolio** *(Primary)* | `apps/portfolio-01-minimal` | `pnpm dev:01` (`pnpm dev:minimal`) |
+  | **02** | **Dev Portfolio** | `apps/portfolio-02-dev` | `pnpm dev:02` (`pnpm dev:dev`) |
+  | **03** | **Interactive Portfolio** | `apps/portfolio-03-interactive` | `pnpm dev:03` (`pnpm dev:interactive`) |
+  | **04** | **Vite & Express Portfolio** | `apps/portfolio-04-vite-express` | `pnpm dev:04` (`pnpm dev:vite`) |
+  | **05** | **Kronen Portfolio** | `apps/portfolio-05-kronen` | `pnpm dev:05` (`pnpm dev:kronen`) |
+
+### 3. Build, Lint, Format & Check Commands
+
 ```bash
-# Build all applications in parallel
-pnpm build:all
+# Build all applications in workspace
+pnpm build
 
-# Lint all applications
-pnpm lint:all
+# Lint all applications in workspace
+pnpm lint
+
+# Format codebase across all applications
+pnpm format
+
+# Run TypeScript & Lint checks across all applications
+pnpm check
 ```
 
 ---
 
 ## 🌐 Deploying to Vercel
 
-You can deploy any of the applications in this monorepo to Vercel individually.
+You can deploy any portfolio in this monorepo to Vercel individually.
 
 ### Deployment Steps:
 
 1. **Push Monorepo to GitHub**:
    ```bash
    git add .
-   git commit -m "feat: setup portfolio monorepo"
+   git commit -m "feat: organize portfolio apps serially and configure commands"
    git push origin main
    ```
 
@@ -73,21 +81,19 @@ You can deploy any of the applications in this monorepo to Vercel individually.
    - Go to your Vercel Dashboard -> **Add New Project**.
    - Import your `portfolio-websites` GitHub repository.
 
-3. **Configure Project Settings in Vercel**:
+3. **Configure Settings for Selected Portfolio**:
    - **Framework Preset**:
-     - For Next.js apps (`razikuljoni-minimal-portfolio`, `dev-portfolio`, `kronen`, `portfolio-003`): Select **Next.js**.
-     - For Vite app (`portfolio-004`): Select **Vite**.
+     - Next.js apps (`portfolio-01-minimal`, `portfolio-02-dev`, `portfolio-03-interactive`, `portfolio-05-kronen`): Select **Next.js**.
+     - Vite app (`portfolio-04-vite-express`): Select **Vite**.
    - **Root Directory**:
-     - Click **Edit** next to Root Directory and set it to the app you want to deploy:
-       - `apps/razikuljoni-minimal-portfolio` (to deploy minimal portfolio)
-       - `apps/dev-portfolio` (to deploy dev portfolio)
-       - `apps/kronen` (to deploy kronen)
-       - `apps/portfolio-003` (to deploy portfolio-003)
-       - `apps/portfolio-004` (to deploy portfolio-004)
+     - Set Root Directory to the app folder you wish to publish, e.g.:
+       - `apps/portfolio-01-minimal`
+       - `apps/portfolio-02-dev`
+       - `apps/portfolio-03-interactive`
+       - `apps/portfolio-04-vite-express`
+       - `apps/portfolio-05-kronen`
    - **Build Command**: `pnpm build`
-   - **Output Directory**:
-     - Next.js: `.next` (default)
-     - Vite (`portfolio-004`): `dist`
+   - **Output Directory**: `.next` (for Next.js) or `dist` (for Vite).
 
 4. **Deploy**:
-   - Click **Deploy**. Vercel will build and deploy only the selected application from the monorepo.
+   - Click **Deploy**. Vercel will build and host the selected portfolio from your monorepo.

@@ -1,4 +1,4 @@
-# Kronen Portfolio (`kronen`)
+# Portfolio 05 (`portfolio-05-kronen`)
 
 AI Studio / Next.js 15 portfolio app powered by React 19, Tailwind CSS v4, and Motion.
 
@@ -11,10 +11,10 @@ AI Studio / Next.js 15 portfolio app powered by React 19, Tailwind CSS v4, and M
 
 Run locally from repository root:
 ```bash
-pnpm dev:kronen
+pnpm dev:05
 ```
 
-Or from `apps/kronen`:
+Or from `apps/portfolio-05-kronen`:
 ```bash
 pnpm dev
 ```

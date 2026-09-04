@@ -3,13 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev:minimal": "pnpm --filter razikuljoni-minimal-portfolio dev",
-    "dev:dev-portfolio": "pnpm --filter dev-portfolio dev",
-    "dev:kronen": "pnpm --filter kronen dev",
-    "dev:portfolio-003": "pnpm --filter portfolio-003 dev",
-    "dev:portfolio-004": "pnpm --filter portfolio-004 dev",
+    "dev": "pnpm --recursive --parallel run dev",
+    "dev:01": "pnpm --filter portfolio-01-minimal dev",
+    "dev:02": "pnpm --filter portfolio-02-dev dev",
+    "dev:03": "pnpm --filter portfolio-03-interactive dev",
+    "dev:04": "pnpm --filter portfolio-04-vite-express dev",
+    "dev:05": "pnpm --filter portfolio-05-kronen dev",
+    "dev:minimal": "pnpm --filter portfolio-01-minimal dev",
+    "dev:dev": "pnpm --filter portfolio-02-dev dev",
+    "dev:interactive": "pnpm --filter portfolio-03-interactive dev",
+    "dev:vite": "pnpm --filter portfolio-04-vite-express dev",
+    "dev:kronen": "pnpm --filter portfolio-05-kronen dev",
+    "build": "pnpm --recursive run build",
     "build:all": "pnpm --recursive run build",
-    "lint:all": "pnpm --recursive run lint"
+    "lint": "pnpm --recursive run lint",
+    "lint:all": "pnpm --recursive run lint",
+    "format": "prettier --write \"apps/**/*.{ts,tsx,js,jsx,css,json,md}\"",
+    "check": "pnpm --recursive run check"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.2"
   },
   "packageManager": "pnpm@9.15.4"
 }

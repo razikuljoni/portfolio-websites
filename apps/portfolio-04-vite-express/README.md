@@ -1,4 +1,4 @@
-# Portfolio 004 (`portfolio-004`)
+# Portfolio 04 (`portfolio-04-vite-express`)
 
 Vite + React 19 portfolio website with Express backend and Motion animations.
 
@@ -12,10 +12,10 @@ Vite + React 19 portfolio website with Express backend and Motion animations.
 
 Run locally from repository root:
 ```bash
-pnpm dev:portfolio-004
+pnpm dev:04
 ```
 
-Or from `apps/portfolio-004`:
+Or from `apps/portfolio-04-vite-express`:
 ```bash
 pnpm dev
 ```

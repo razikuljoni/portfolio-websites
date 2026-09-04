@@ -1,4 +1,4 @@
-# Portfolio 003 (`portfolio-003`)
+# Portfolio 03 (`portfolio-03-interactive`)
 
 Interactive Next.js 15 portfolio website with Motion, Tailwind CSS v4, and Canvas Confetti.
 
@@ -11,10 +11,10 @@ Interactive Next.js 15 portfolio website with Motion, Tailwind CSS v4, and Canva
 
 Run locally from repository root:
 ```bash
-pnpm dev:portfolio-003
+pnpm dev:03
 ```
 
-Or from `apps/portfolio-003`:
+Or from `apps/portfolio-03-interactive`:
 ```bash
 pnpm dev
 ```
