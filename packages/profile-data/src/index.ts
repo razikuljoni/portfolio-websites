@@ -1,0 +1,195 @@
+export interface PersonalInfo {
+  name: string;
+  fullName: string;
+  shortName: string;
+  title: string;
+  role: string;
+  tagline: string;
+  summary: string;
+  email: string;
+  phone: string;
+  location: string;
+  officeLocation: string;
+  github: string;
+  githubUsername: string;
+  linkedin: string;
+  linkedinUsername: string;
+  portfolioUrl: string;
+  links: {
+    github: string;
+    linkedin: string;
+    livePortfolio: string;
+  };
+  skillGroups: {
+    languages: string[];
+    frontend: string[];
+    backend: string[];
+    databasesAndDevops: string[];
+    toolsAndAI: string[];
+  };
+  stats: {
+    yearsOfExp: string;
+    publicRepos: string;
+    editorThemesShipped: string;
+    iconsCreated: string;
+    status: string;
+  };
+}
+
+export interface ExperienceItem {
+  id: string;
+  period: string;
+  role: string;
+  company: string;
+  companyUrl?: string;
+  location: string;
+  badge?: string;
+  summary?: string;
+  highlights: string[];
+  architecturesLed?: string[];
+  technologies?: string[];
+}
+
+export interface EducationItem {
+  id: string;
+  degree: string;
+  institution: string;
+  period: string;
+  location: string;
+  notes?: string;
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  issuer: string;
+  status: string;
+}
+
+export interface LanguageItem {
+  language: string;
+  proficiency: string;
+}
+
+export const PERSONAL_INFO: PersonalInfo = {
+  name: 'MD Razikul Islam Joni',
+  fullName: 'MD Razikul Islam Joni',
+  shortName: 'Razikul Joni',
+  title: 'Full Stack (MERN / Next.js) Developer',
+  role: 'Full Stack (MERN / Next.js) Developer',
+  tagline: 'Product-minded Full Stack Developer with 2+ years of professional experience translating complex operations into fast, accessible web products. Strongest in React and Next.js interface systems, API integration, state architecture, and data-heavy dashboards; expanding backend depth with Node.js, Express, and NestJS.',
+  summary: 'Product-minded Full Stack Developer with 2+ years of hands-on experience building fast, accessible web applications and real-time dashboard systems using React, Next.js, and Node.js. Experienced in designing modular frontend architecture, managing complex server/client state with Redux Toolkit and TanStack Query, and building RESTful APIs with MongoDB/Mongoose. Active open-source contributor with 120+ public repositories, 11 published developer editor themes, and 390+ handcrafted icons.',
+  email: 'razikuljoni@gmail.com',
+  phone: '+880 1623-208660',
+  location: 'Mirpur, Dhaka, Bangladesh',
+  officeLocation: 'Uttara, Dhaka (HawkEyes)',
+  github: 'https://github.com/razikuljoni',
+  githubUsername: 'razikuljoni',
+  linkedin: 'https://linkedin.com/in/razikuljoni',
+  linkedinUsername: 'razikuljoni',
+  portfolioUrl: 'https://razikuljoni-portfolio.vercel.app',
+  links: {
+    github: 'https://github.com/razikuljoni',
+    linkedin: 'https://linkedin.com/in/razikuljoni',
+    livePortfolio: 'https://razikuljoni-portfolio.vercel.app'
+  },
+  skillGroups: {
+    languages: ['JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3/Sass'],
+    frontend: ['React 19', 'Next.js (App Router)', 'Redux Toolkit', 'TanStack Query', 'Tailwind CSS', 'Material UI', 'Ant Design', 'ECharts'],
+    backend: ['Node.js', 'Express 5', 'NestJS', 'RESTful APIs', 'JWT Auth & RBAC', 'WebSockets', 'Zod'],
+    databasesAndDevops: ['MongoDB', 'Mongoose', 'PostgreSQL', 'MySQL', 'Firebase', 'Docker', 'Git & GitHub', 'Vercel', 'Postman'],
+    toolsAndAI: ['In-App AI Copilot (Gemini API)', 'VS Code Themes & Extension Tooling (OpenPalette)']
+  },
+  stats: {
+    yearsOfExp: '2+',
+    publicRepos: '123',
+    editorThemesShipped: '11',
+    iconsCreated: '390+',
+    status: 'Open to Product-Focused Frontend & Full-Stack Roles'
+  }
+};
+
+export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: 'exp-1',
+    period: 'May 2024 — April 2026',
+    role: 'Frontend Developer (Junior Frontend Developer)',
+    company: 'HawkEyes Digital Monitoring Ltd.',
+    location: 'Uttara, Dhaka, Bangladesh (On-site)',
+    badge: 'Full-Time Professional Role',
+    summary: 'Designed and delivered responsive enterprise dashboards, operational workflow systems, inventory management, product tracking, reporting, and field-work assignment interfaces.',
+    highlights: [
+      'Designed and delivered responsive enterprise dashboards, operational workflow systems, inventory management, product tracking, reporting, and field-work assignment interfaces.',
+      'Integrated REST APIs and real-time data flows with JWT authentication, role-based access control (RBAC), Redux Toolkit, and RTK Query across data-intensive applications.',
+      'Built reusable UI and state patterns that reduced duplicate implementation and made complex loading, error, empty, and permission states predictable.',
+      'Partnered closely with backend engineers on API contracts, frontend data models, validation rules, edge cases, Git workflows, and Vercel delivery.',
+      'Improved performance, accessibility (a11y), maintainability, and responsive behavior across desktop, tablet, and mobile experiences.'
+    ],
+    architecturesLed: [
+      'Enterprise Operational Workflow Management System',
+      'RTK Query Normalized Caching & Polling Pipeline',
+      'Standardized Loading / Error / Empty State UI Architecture',
+      'Field-Work Assignment & Real-Time Product Tracking Interfaces'
+    ]
+  },
+  {
+    id: 'exp-2',
+    period: '2023 — Present',
+    role: 'Full Stack & Open Source Software Engineer',
+    company: 'Independent Engineering & Open Source Monorepos',
+    location: 'Dhaka, Bangladesh / Global Open Source',
+    badge: 'Selected Projects & Tooling',
+    summary: 'Building full-stack web applications, performance-first platforms, modular data visualization dashboards, and developer tooling packages.',
+    highlights: [
+      'Built Shoppershala: full-stack commerce monorepo featuring React 19, Express 5, MongoDB, JWT RBAC, TanStack Query, Zustand, and an in-app AI copilot.',
+      'Created Forge: performance-first gym platform with Next.js App Router, SSR, Motion, and 98+ Core Web Vitals.',
+      'Engineered Dashboard Wizard: modular data visualization workspace with ECharts, Google Maps API, and Redux state.',
+      'Published OpenPalette: 11 VS Code dark themes, 390+ custom file/folder icons, and automated GitHub Actions CI/CD workflows.'
+    ],
+    architecturesLed: [
+      'Shoppershala Full-Stack Commerce Monorepo & AI Assistant',
+      'Forge Performance-First Next.js App Router Architecture',
+      'Dashboard Wizard Modular ECharts & Geospatial Maps Workspace',
+      'OpenPalette VS Code Theme & Extension Ecosystem'
+    ]
+  }
+];
+
+export const EDUCATION: EducationItem[] = [
+  {
+    id: 'edu-1',
+    degree: 'BSc in Computer Science & Engineering (CSE Coursework)',
+    institution: 'Green University of Bangladesh',
+    period: '2020 — 2023',
+    location: 'Dhaka, Bangladesh',
+    notes: 'Undergraduate coursework focusing on Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, and Software Engineering principles.'
+  },
+  {
+    id: 'edu-2',
+    degree: 'Higher Secondary Certificate (HSC) — Science',
+    institution: 'Vashantek Government College',
+    period: '2018 — 2019',
+    location: 'Dhaka, Bangladesh',
+    notes: 'Science background with coursework in Mathematics, Physics, Chemistry, and Information Technology.'
+  }
+];
+
+export const CERTIFICATIONS: CertificationItem[] = [
+  {
+    id: 'cert-1',
+    title: 'Complete Web Development',
+    issuer: 'Programming Hero',
+    status: 'Certificate of Completion'
+  },
+  {
+    id: 'cert-2',
+    title: 'Next Level Web Development',
+    issuer: 'Programming Hero',
+    status: 'Certificate of Completion'
+  }
+];
+
+export const LANGUAGES: LanguageItem[] = [
+  { language: 'Bangla', proficiency: 'Native' },
+  { language: 'English', proficiency: 'Professional Working Proficiency' }
+];
