@@ -12,8 +12,7 @@ portfolio-websites/
 │   ├── portfolio-01-minimal/       # 01. Minimal Portfolio (Primary - Next.js 16)
 │   ├── portfolio-02-dev/           # 02. Full Dev Portfolio (Next.js 16)
 │   ├── portfolio-03-interactive/   # 03. Interactive Canvas & Terminal Portfolio (Next.js 15)
-│   ├── portfolio-04-vite-express/  # 04. Vite + React 19 + Express Architecture Portfolio
-│   └── portfolio-05-kronen/        # 05. Kronen AI Studio Portfolio (Next.js 15)
+│   └── portfolio-04-vite-express/  # 04. Vite + React 19 + Express Architecture Portfolio
 ├── package.json                    # Monorepo configuration & unified CLI commands
 ├── pnpm-workspace.yaml             # pnpm monorepo workspace definition
 ├── .gitignore                      # Global git ignore configuration
@@ -44,7 +43,6 @@ pnpm install
   | **02** | **Dev Portfolio** | `apps/portfolio-02-dev` | `pnpm dev:02` (`pnpm dev:dev`) |
   | **03** | **Interactive Portfolio** | `apps/portfolio-03-interactive` | `pnpm dev:03` (`pnpm dev:interactive`) |
   | **04** | **Vite & Express Portfolio** | `apps/portfolio-04-vite-express` | `pnpm dev:04` (`pnpm dev:vite`) |
-  | **05** | **Kronen Portfolio** | `apps/portfolio-05-kronen` | `pnpm dev:05` (`pnpm dev:kronen`) |
 
 ### 3. Build, Lint, Format & Check Commands
 
@@ -83,7 +81,7 @@ You can deploy any portfolio in this monorepo to Vercel individually.
 
 3. **Configure Settings for Selected Portfolio**:
    - **Framework Preset**:
-     - Next.js apps (`portfolio-01-minimal`, `portfolio-02-dev`, `portfolio-03-interactive`, `portfolio-05-kronen`): Select **Next.js**.
+     - Next.js apps (`portfolio-01-minimal`, `portfolio-02-dev`, `portfolio-03-interactive`): Select **Next.js**.
      - Vite app (`portfolio-04-vite-express`): Select **Vite**.
    - **Root Directory**:
      - Set Root Directory to the app folder you wish to publish, e.g.:
@@ -91,7 +89,6 @@ You can deploy any portfolio in this monorepo to Vercel individually.
        - `apps/portfolio-02-dev`
        - `apps/portfolio-03-interactive`
        - `apps/portfolio-04-vite-express`
-       - `apps/portfolio-05-kronen`
    - **Build Command**: `pnpm build`
    - **Output Directory**: `.next` (for Next.js) or `dist` (for Vite).
 

@@ -1,6 +1,0 @@
-{
-  "name": "KRONEN Real Estate & Architectural Properties",
-  "description": "Swiss-inspired luxury real estate platform featuring curated modern architectural residences, interactive property portfolios, mortgage calculators, and neighborhood guides.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
