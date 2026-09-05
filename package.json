@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --recursive --parallel run dev",
+    "dev": "concurrently -c \"cyan.bold,magenta.bold,yellow.bold,blue.bold\" -n \"01-minimal,02-dev,03-interactive,04-vite-express\" \"pnpm dev:01\" \"pnpm dev:02\" \"pnpm dev:03\" \"pnpm dev:04\"",
+    "dev:ui": "node scripts/dev-dashboard.mjs",
+    "dev:dash": "node scripts/dev-dashboard.mjs",
     "dev:01": "pnpm --filter portfolio-01-minimal dev",
     "dev:02": "pnpm --filter portfolio-02-dev dev",
     "dev:03": "pnpm --filter portfolio-03-interactive dev",
@@ -20,6 +22,7 @@
     "check": "pnpm --recursive run check"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "prettier": "^3.5.2"
   },
   "packageManager": "pnpm@9.15.4"

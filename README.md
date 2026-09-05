@@ -30,10 +30,16 @@ pnpm install
 
 ### 2. Development Commands
 
-- **Run ALL portfolios simultaneously**:
+- **Run ALL portfolios simultaneously (Standard Concurrently output)**:
   ```bash
   pnpm dev
   ```
+
+- **Run Interactive Terminal Dashboard with Sidebar App Switcher**:
+  ```bash
+  pnpm dev:ui   # or pnpm dev:dash
+  ```
+  *Features: Sidebar navigation (`1-4`, `A`), isolated app logs vs combined log view, browser launch (`O`), restart app (`R`), clear logs (`C`).*
 
 - **Run individual portfolios**:
 
