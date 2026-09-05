@@ -10,16 +10,17 @@ const skillCategories = [
             "React.js",
             "Next.js",
             "TypeScript",
-            "JavaScript (ES6+)",
-            "TanStack Query (Intermediate)",
+            "JavaScript",
             "Redux Toolkit",
             "RTK Query",
-            "HTML5",
-            "CSS3 / SCSS",
+            "TanStack Query",
+            "Zustand",
             "Tailwind CSS",
-            "Material UI",
+            "shadcn/ui",
             "Ant Design",
-            "Bootstrap",
+            "Material UI",
+            "Recharts",
+            "Maps Integration",
         ],
     },
     {
@@ -27,89 +28,115 @@ const skillCategories = [
         tags: [
             "Node.js",
             "Express.js",
-            "NestJS(Intermediate)",
-            "REST API",
-            "JWT Auth",
-            "GraphQL (Basic)",
+            "NestJS",
+            "REST APIs",
+            "WebSockets",
+            "Socket.io",
+            "JWT / RBAC",
+            "Prisma",
+            "Zod",
             "MongoDB",
+            "MySQL",
+            "PostgreSQL",
         ],
     },
     {
-        label: "Tools & Platforms",
+        label: "Tools & DevOps",
         tags: [
-            "Git & GitHub",
+            "Git & GitHub Actions",
+            "Docker",
             "Vercel",
-            "Firebase",
-            "Supabase",
-            "Postman",
-            "Docker (Basic)",
-            "Netlify",
+            "Cloudflare",
+            "Pnpm",
         ],
     },
 ];
 
 const experience = [
     {
-        title: "Frontend Developer",
+        title: "Junior Frontend Developer",
         company: "HawkEyes Digital Monitoring Ltd.",
         companyWebsite: "https://hawkeyesdigital.com",
-        period: "May 2024 - April 2026",
-        type: "On-site",
-        location: "Uttara, Dhaka.",
+        period: "Feb 2024 — Apr 2026",
+        type: "Full-time · On-site",
+        location: "Uttara, Dhaka",
         bullets: [
-            "Designed and built <strong>responsive enterprise dashboards</strong> and operational workflow management systems for real-time business monitoring across multiple client environments.",
-            "Developed scalable frontend interfaces for <strong>inventory management, product tracking, and reporting platforms</strong>, reducing manual workflow overhead for operations teams.",
-            "Integrated <strong>RESTful APIs</strong> for real-time data sync, implementing secure authentication flows using JWT and role-based access control.",
-            "Maintained complex application state using <strong>Redux Toolkit and RTK Query</strong>, improving data fetching efficiency and reducing redundant API calls.",
-            "Collaborated with backend engineers to define <strong>API contracts and frontend data architecture</strong> for data-intensive enterprise applications.",
-            "Improved <strong>UI performance, accessibility (a11y), and cross-device responsiveness</strong> with consistent behavior across all viewports.",
-            "Managed <strong>Git-based version control workflows</strong> and contributed to CI/CD deployment pipelines via Vercel.",
+            "Architected <strong>responsive enterprise dashboards</strong>, workflow systems, inventory management, and reporting interfaces for real-time business monitoring across multiple client environments.",
+            "Integrated <strong>REST APIs</strong> with JWT authentication, role-based access control, Redux Toolkit, and RTK Query, enabling secure live data synchronization across data-intensive applications.",
+            "Developed <strong>reusable component patterns</strong> and centralized state management that reduced duplicate code and standardized complex loading, error, and permission states.",
+            "Collaborated with backend engineers on <strong>API contracts and data models</strong>, improving cross-team delivery velocity and reducing integration defects.",
+            "Enhanced <strong>performance, accessibility (a11y), and cross-device responsiveness</strong> across desktop, tablet, and mobile viewports.",
         ],
     },
 ];
 
 const projects = [
     {
-        name: "Forge — Fitness & Gym Web Application",
-        links: { live: "#", github: "#" },
-        desc: "Production-ready gym platform built for performance, SEO, and scalability using Next.js App Router.",
+        name: "Z Shop — E-Commerce Platform & AI Shopping Advisor",
+        links: {
+            live: "https://z-shop-online.vercel.app",
+            github: "https://razikuljoni/z-shop",
+        },
         bullets: [
-            "Built with <strong>Next.js App Router</strong> using modular component-based architecture; applied lazy loading and efficient asset handling for improved Core Web Vitals.",
-            "Configured <strong>SEO-friendly server-side rendering</strong> with dynamic sections for services, training programs, and user interaction; deployed via Vercel.",
+            "Architected a <strong>full-stack e-commerce platform</strong> with real-time inventory management, multi-currency checkout, live order tracking, and role-based dashboards for Customer, Seller, and Admin roles.",
+            "Integrated <strong>Google Gemini AI</strong> as a serverless shopping advisor, providing personalized product recommendations and natural language search across the product catalog.",
+            "Implemented <strong>2FA authentication</strong>, multi-step checkout with payment selection, Recharts-powered analytics dashboards, and server-side validation with Zod for data integrity.",
         ],
-        stack: "Next.js · React.js · TypeScript · Tailwind CSS · Vercel",
+        stack: "Next.js 15 · React 19 · TypeScript · Tailwind CSS v4 · Gemini AI · Recharts · Zod",
     },
     {
-        name: "Dashboard Wizard — Differend Type of Charts and Graphs",
-        links: { live: "#", github: "#" },
-        desc: "Frontend dashboard showing differend type of charts and graphs in many differend layouts.",
+        name: "SensorGrid — IoT Device Intelligence Platform",
+        links: {
+            live: "https://github.com/razikuljoni/SensorGrid",
+            github: "https://github.com/razikuljoni/SensorGrid",
+        },
         bullets: [
-            "Built a <strong>dashboard</strong> with React.js featuring dynamic routing, chart visualizations, and interactive widget controls.",
-            "Developed a <strong>differend type of charts and graphs</strong> with different types of layouts; architected reusable modular panel components for scalable monitoring.",
+            "Engineered a <strong>production-grade IoT platform</strong> with real-time WebSocket telemetry streaming, remote device control, and configurable automation workflows for industrial sensor networks.",
+            "Designed <strong>unified dashboard</strong> for monitoring 50+ device metrics simultaneously with alert configuration, historical data visualization, and automated anomaly detection.",
+            "Implemented <strong>secure authentication</strong> with NextAuth, Prisma ORM with PostgreSQL for persistent data, TanStack Query for efficient data fetching, and Zustand for global state orchestration.",
         ],
-        stack: "React.js · Tailwind CSS · Redux · Google Maps API · ECharts · Charts",
+        stack: "Next.js · React · TypeScript · Prisma · PostgreSQL · socket.io · NextAuth · Zod",
+    },
+    {
+        name: "TaskFlow — Collaborative Project Management Suite",
+        links: {
+            live: "https://github.com/razikuljoni/TaskFlow",
+            github: "https://github.com/razikuljoni/TaskFlow",
+        },
+        bullets: [
+            "Built a <strong>real-time collaborative project management tool</strong> with WebSocket-powered Kanban boards, Gantt chart visualization, and multi-user task assignment with live cursor tracking.",
+            "Developed <strong>RESTful API layer</strong> with NestJS, PostgreSQL, and Prisma ORM supporting complex queries for task filtering, sprint planning, and team performance analytics.",
+            "Implemented <strong>role-based access control</strong> with granular permissions, audit logging for compliance, and automated email notifications for task updates and deadline reminders.",
+        ],
+        stack: "Next.js · React · TypeScript · NestJS · PostgreSQL · Prisma · WebSocket · Tailwind CSS",
     },
 ];
 
 const education = [
     {
-        degree: "Higher Secondary Certificate (HSC)",
-        school: "Vashantek Govt. College - Dhaka, Bangladesh.",
-        year: "2018 - 2019",
-        tag: "Science",
-    },
-    {
-        degree: "BSc in Computer Science & Engineering (CSE)",
+        degree: "BSc in Computer Science & Engineering",
         school: "Green University of Bangladesh",
-        year: "2020 - 2023",
-        tag: "DropOut",
+        year: "2020 — 2023",
+        note: "Undergraduate Coursework",
     },
     {
-        degree: "Complete Web Development & Next Level Web Development",
-        school: "Programming Hero · Certificate of Completion (Both tracks)",
-        tag: "Completed",
-        certificateLink:
-            "https://drive.google.com/file/d/1oCowXYxD7oSqcXDWX1AyHtJ2OlRNHauT/view?usp=drive_link",
+        degree: "Higher Secondary Certificate (HSC) — Science",
+        school: "Vashantek Govt. College, Dhaka",
+        year: "2018 — 2019",
+    },
+];
+
+const training = [
+    {
+        program: "Complete Web Development",
+        issuer: "Programming Hero",
+        year: "2022",
+        certificate: "https://drive.google.com/file/d/1oCowXYxD7oSqcXDWX1AyHtJ2OlRNHauT/view?usp=drive_link"
+    },
+    {
+        program: "Next Level Web Development",
+        issuer: "Programming Hero",
+        year: "2023",
     },
 ];
 
@@ -141,14 +168,15 @@ function HtmlText({ html }: { html: string }) {
 export default function ResumeContent() {
     return (
         <div className="bg-background">
-            <div className="mx-auto min-h-[297mm] w-full max-w-[210mm] px-6 py-5 sm:px-7 md:px-8">
+            <div className="mx-auto min-h-[297mm] w-full max-w-[210mm] px-6 py-5 sm:px-8 md:px-8">
+                {/* Header */}
                 <div className="flex items-start justify-between gap-4 border-b-2 border-blue-600 pb-2">
                     <div>
-                        <h1 className="text-2xl font-semibold text-foreground">
+                        <h1 className="text-2xl font-bold text-foreground">
                             MD Razikul Islam Joni
                         </h1>
-                        <p className="mt-0.5 text-sm font-semibold tracking-wide text-blue-600 dark:text-blue-400 uppercase">
-                            Full Stack (MERN) Developer
+                        <p className="mt-0.5 text-[12px] font-semibold tracking-wide text-blue-600 dark:text-blue-400 uppercase">
+                            Full Stack Developer — React · Next.js · Node.js
                         </p>
                     </div>
                     <div className="no-print shrink-0 pt-1">
@@ -164,13 +192,14 @@ export default function ResumeContent() {
                     </div>
                 </div>
 
-                <div className="mt-2 flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-muted-foreground">
+                {/* Contact */}
+                <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[12px] text-muted-foreground">
                     <span>razikuljoni@gmail.com</span>
                     <span className="before:text-muted-foreground/50 before:content-['•_']">
-                        (+880) 1623-208660
+                        +880 1623-208660
                     </span>
                     <span className="before:text-muted-foreground/50 before:content-['•_']">
-                        Mirpur, Dhaka, Bangladesh
+                        Dhaka, Bangladesh
                     </span>
                     <span className="before:text-muted-foreground/50 before:content-['•_']">
                         <a
@@ -198,60 +227,62 @@ export default function ResumeContent() {
                     </span>
                 </div>
 
+                {/* Professional Summary */}
                 <section className="mt-3">
                     <SectionTitle>Professional Summary</SectionTitle>
-                    <p className="text-xs leading-relaxed text-muted-foreground">
-                        Results-driven Full Stack (MERN) Developer with around 2 years of
-                        professional experience delivering scalable, high-performance web
-                        applications using <strong className="text-foreground">React.js</strong>,{" "}
-                        <strong className="text-foreground">Next.js</strong>, and modern JavaScript
-                        ecosystems. Proven track record building enterprise-grade admin dashboards,
-                        business management systems, and inventory tracking platforms with seamless
-                        REST API integration. Adept at state management with Redux Toolkit, UI
-                        architecture design, and cross-team collaboration. Actively expanding
-                        expertise in NestJS, GraphQL and advanced application architecture.
+                    <p className="text-[12px] leading-[1.5] text-muted-foreground">
+                        Results-driven Full Stack Developer with{" "}
+                        <strong className="text-foreground">2+ years</strong> of experience
+                        building scalable, high-performance web applications with{" "}
+                        <strong className="text-foreground">React, Next.js, and Node.js</strong>.
+                        Proven expertise in enterprise dashboards, inventory management systems,
+                        real-time data visualization, REST API integration, and state architecture.
+                        Skilled in Redux Toolkit, TanStack Query, TypeScript, and cross-functional
+                        collaboration with backend teams.
                     </p>
                 </section>
 
+                {/* Technical Skills */}
                 <section className="mt-3">
                     <SectionTitle>Technical Skills</SectionTitle>
-                    <div className="grid grid-cols-[108px_1fr] gap-x-2 gap-y-0.5 text-xs">
+                    <div className="grid grid-cols-[100px_1fr] gap-x-2 gap-y-1 text-[12px]">
                         {skillCategories.map((cat) => (
                             <SkillRow key={cat.label} label={cat.label} tags={cat.tags} />
                         ))}
                     </div>
                 </section>
 
+                {/* Professional Experience */}
                 <section className="mt-3">
                     <SectionTitle>Professional Experience</SectionTitle>
                     {experience.map((job) => (
                         <div key={job.title} className="mb-3">
                             <div className="flex items-start justify-between gap-2">
                                 <div>
-                                    <p className="text-xs font-bold text-foreground">
-                                        {job.title} at
+                                    <p className="text-[12px] font-bold text-foreground">
+                                        {job.title}
                                     </p>
                                     <a
                                         href={job.companyWebsite}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-xs font-semibold text-blue-600 dark:text-blue-400"
+                                        className="text-[12px] font-semibold text-blue-600 dark:text-blue-400"
                                     >
                                         {job.company}
                                     </a>
                                 </div>
                                 <div className="flex flex-col items-end">
-                                    <p className="whitespace-nowrap text-xs text-muted-foreground">
+                                    <p className="whitespace-nowrap text-[12px] text-muted-foreground">
                                         {job.period}
                                     </p>
-                                    <p className="whitespace-nowrap text-xs text-muted-foreground">
+                                    <p className="whitespace-nowrap text-[12px] text-muted-foreground">
                                         {job.type} · {job.location}
                                     </p>
                                 </div>
                             </div>
-                            <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs text-muted-foreground">
+                            <ul className="mt-1 list-disc space-y-1 pl-5 text-[12px] text-muted-foreground">
                                 {job.bullets.map((bullet) => (
-                                    <li key={bullet} className="leading-relaxed">
+                                    <li key={bullet} className="leading-[1.5]">
                                         <HtmlText html={bullet} />
                                     </li>
                                 ))}
@@ -260,18 +291,21 @@ export default function ResumeContent() {
                     ))}
                 </section>
 
+                {/* Key Projects */}
                 <section className="mt-3">
                     <SectionTitle>Key Projects</SectionTitle>
                     {projects.map((proj) => (
                         <div key={proj.name} className="mb-3">
                             <div className="flex items-start justify-between gap-2">
-                                <p className="text-xs font-bold text-foreground">{proj.name}</p>
-                                <div className="flex gap-2 text-xs">
+                                <p className="text-[12px] font-bold text-foreground">
+                                    {proj.name}
+                                </p>
+                                <div className="flex gap-2 text-[11px]">
                                     <a
                                         href={proj.links.live}
                                         className="text-blue-600 dark:text-blue-400 no-underline hover:underline"
                                     >
-                                        Live Site
+                                        Live
                                     </a>
                                     <a
                                         href={proj.links.github}
@@ -281,68 +315,92 @@ export default function ResumeContent() {
                                     </a>
                                 </div>
                             </div>
-                            <p className="text-xs italic text-muted-foreground">{proj.desc}</p>
-                            <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs text-muted-foreground">
+                            <ul className="mt-1 list-disc space-y-1 pl-5 text-[12px] text-muted-foreground">
                                 {proj.bullets.map((bullet) => (
-                                    <li key={bullet} className="leading-relaxed">
+                                    <li key={bullet} className="leading-[1.5]">
                                         <HtmlText html={bullet} />
                                     </li>
                                 ))}
                             </ul>
-                            <p className="mt-1 text-xs text-muted-foreground">
+                            <p className="mt-1 text-[11px] text-muted-foreground">
                                 <strong className="text-foreground">Stack:</strong> {proj.stack}
                             </p>
                         </div>
                     ))}
                 </section>
 
+                {/* Educational Qualification */}
                 <section className="mt-3">
-                    <SectionTitle>Education &amp; Courses</SectionTitle>
+                    <SectionTitle>Educational Qualification</SectionTitle>
                     {education.map((edu) => (
                         <div
                             key={edu.degree}
                             className="mb-2 flex items-start justify-between gap-2"
                         >
                             <div>
-                                <p className="text-xs font-bold text-foreground">{edu.degree}</p>
-                                <p className="text-xs text-muted-foreground">{edu.school}</p>
+                                <p className="text-[12px] font-bold text-foreground">
+                                    {edu.degree}
+                                </p>
+                                <p className="text-[12px] text-muted-foreground">
+                                    {edu.school}
+                                </p>
                             </div>
-                            <div>
-                                <p className="whitespace-nowrap text-xs text-muted-foreground">
+                            <div className="text-right">
+                                <p className="whitespace-nowrap text-[12px] text-muted-foreground">
                                     {edu.year}
                                 </p>
-                                <p className="whitespace-nowrap text-xs text-muted-foreground font-bold text-right">
-                                    {edu.certificateLink ? (
-                                        <a
-                                            href={edu.certificateLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-600 dark:text-blue-400 no-underline hover:underline"
-                                        >
-                                            Certificate
-                                        </a>
-                                    ) : (
-                                        <>{edu.tag}</>
-                                    )}
+                                {edu.note && (
+                                    <p className="whitespace-nowrap text-[11px] font-semibold text-muted-foreground">
+                                        {edu.note}
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </section>
+
+                {/* Education & Training - combined */}
+                <section className="mt-3">
+                    <SectionTitle>Courses</SectionTitle>
+                    {training.map((tr) => (
+                         <div
+                            key={tr.program}
+                            className="mb-2 flex items-start justify-between gap-2"
+                        >
+                            <div>
+                                <p className="text-[12px] font-bold text-foreground">
+                                    {tr.program}
+                                </p>
+                                <p className="text-[12px] text-muted-foreground">
+                                    {tr.issuer}
+                                    {
+                                        tr.certificate && <span> -  <a href={tr.certificate} className="text-blue-600 dark:text-blue-400 no-underline hover:underline">Certificate</a></span>
+                                    }
+                                </p>
+                            </div>
+                            <div className="text-right">
+                                <p className="whitespace-nowrap text-[12px] text-muted-foreground">
+                                    {tr.year}
                                 </p>
                             </div>
                         </div>
                     ))}
                 </section>
 
+                {/* Languages */}
                 <section className="mt-3">
-                    <SectionTitle>Languages</SectionTitle>
-                    <div className="flex gap-5 text-xs">
-                        <div>
+                    <SectionTitle>Languages &amp; Proficiency</SectionTitle>
+                    <div className="flex gap-6 text-[12px]">
+                        <span>
                             <strong className="text-foreground">Bangla</strong>{" "}
-                            <span className="text-muted-foreground">: Native</span>
-                        </div>
-                        <div>
+                            <span className="text-muted-foreground">— Native</span>
+                        </span>
+                        <span>
                             <strong className="text-foreground">English</strong>{" "}
                             <span className="text-muted-foreground">
-                                : Professional Working Proficiency
+                                — Professional Working Proficiency
                             </span>
-                        </div>
+                        </span>
                     </div>
                 </section>
             </div>
@@ -352,7 +410,7 @@ export default function ResumeContent() {
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
     return (
-        <h2 className="mb-1 border-b border-border pb-0.5 text-[12px] font-semibold tracking-wide text-blue-600 dark:text-blue-400 uppercase">
+        <h2 className="mb-1 border-b border-border pb-px text-[12px] font-bold tracking-wide text-blue-600 dark:text-blue-400 uppercase">
             {children}
         </h2>
     );
@@ -361,12 +419,12 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 function SkillRow({ label, tags }: { label: string; tags: string[] }) {
     return (
         <>
-            <p className="pt-0.5 text-xs font-semibold text-muted-foreground">{label}</p>
+            <p className="pt-0.5 text-[12px] font-semibold text-muted-foreground">{label}</p>
             <div>
                 {tags.map((tag) => (
                     <span
                         key={tag}
-                        className="mr-1 mb-0.5 inline-block rounded-sm border border-border bg-primary/10 px-1.5 py-0.5 text-[10.5px] font-medium text-primary"
+                        className="mr-1 mb-1 inline-block rounded-sm border border-border bg-primary/10 px-1.5 py-0.5 text-[11px] font-medium text-primary"
                     >
                         {tag}
                     </span>
