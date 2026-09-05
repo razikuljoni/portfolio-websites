@@ -17,6 +17,9 @@ importers:
       '@portfolio/profile-data':
         specifier: workspace:*
         version: link:../../packages/profile-data
+      '@portfolio/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       next:
         specifier: 16.2.6
         version: 16.2.6(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -60,6 +63,9 @@ importers:
       '@portfolio/profile-data':
         specifier: workspace:*
         version: link:../../packages/profile-data
+      '@portfolio/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@radix-ui/react-accordion':
         specifier: ^1.2.13
         version: 1.2.20(@types/react-dom@19.2.3(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -167,6 +173,9 @@ importers:
       '@portfolio/profile-data':
         specifier: workspace:*
         version: link:../../packages/profile-data
+      '@portfolio/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@types/canvas-confetti':
         specifier: ^1.9.0
         version: 1.9.0
@@ -246,6 +255,9 @@ importers:
       '@portfolio/profile-data':
         specifier: workspace:*
         version: link:../../packages/profile-data
+      '@portfolio/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@tailwindcss/vite':
         specifier: ^4.1.14
         version: 4.3.3(vite@6.4.3(@types/node@22.19.19)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.16.9)(tsx@4.23.13)(yaml@2.9.0))
@@ -296,7 +308,32 @@ importers:
         specifier: ~5.8.2
         version: 5.8.3
 
+  packages/eslint-config: {}
+
   packages/profile-data: {}
+
+  packages/typescript-config: {}
+
+  packages/ui:
+    dependencies:
+      '@portfolio/profile-data':
+        specifier: workspace:*
+        version: link:../profile-data
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lucide-react:
+        specifier: ^0.475.0
+        version: 0.475.0(react@19.2.6)
+      react:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 19.2.6(react@19.2.6)
+      tailwind-merge:
+        specifier: ^3.0.2
+        version: 3.6.0
 
 packages:
 
@@ -5680,6 +5717,11 @@ packages:
   lsofi@2.0.0:
     resolution: {integrity: sha512-XTFlOBHeuXnUGuUQI0kBb4O4oQW7qCV7MRGQja1xNpxgrI/jptlly+/5126RiRold1zgyxY520qOZUZ31V0I2A==}
     engines: {node: '>=20.0.0'}
+
+  lucide-react@0.475.0:
+    resolution: {integrity: sha512-NJzvVu1HwFVeZ+Gwq2q00KygM1aBhy/ZrhY9FsAgJtpB+E4R7uxRk9M2iKvHa6/vNxZydIB59htha4c2vvwvVg==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   lucide-react@0.546.0:
     resolution: {integrity: sha512-Z94u6fKT43lKeYHiVyvyR8fT7pwCzDu7RyMPpTvh054+xahSgj4HFQ+NmflvzdXsoAjYGdCguGaFKYuvq0ThCQ==}
@@ -13653,6 +13695,10 @@ snapshots:
   lru-cache@7.18.3: {}
 
   lsofi@2.0.0: {}
+
+  lucide-react@0.475.0(react@19.2.6):
+    dependencies:
+      react: 19.2.6
 
   lucide-react@0.546.0(react@19.2.6):
     dependencies:
