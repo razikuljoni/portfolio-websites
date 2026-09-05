@@ -5,6 +5,46 @@ import portraitImage from "@/public/joni-portrait-new.webp";
 const featuredProjects = [
   {
     index: "P/01",
+    name: "z-shop",
+    type: "E-Commerce & AI Shopping Advisor",
+    year: "2026",
+    statement:
+      "A big-scale e-commerce platform & AI shopping advisor featuring smart recommendations, 2FA security, live inventory, multi-currency checkout, and seller analytics.",
+    challenge:
+      "Scaling e-commerce workflows requires real-time stock sync, multi-tier permissions (Customer/Seller/Admin), secure multi-currency checkout, and personalized catalog discovery.",
+    system:
+      "A full-stack Next.js 15 App Router platform with React 19, TypeScript, Prisma ORM, PostgreSQL, Redis caching, Socket.io webhooks, and Google Gemini AI API.",
+    decisions: [
+      "Integrated Google Gemini AI for serverless natural-language shopping assistance and catalog search",
+      "Implemented 2FA security authentication, multi-currency checkout, and Recharts analytics dashboards",
+      "Architected real-time inventory synchronization and role-based access for Customer, Seller, and Admin",
+    ],
+    stack: ["Next.js 15", "React 19", "TypeScript", "Prisma", "PostgreSQL", "Gemini AI", "Tailwind CSS v4"],
+    href: "https://z-shop-online.vercel.app",
+    accent: "blue",
+  },
+  {
+    index: "P/02",
+    name: "SensorGrid",
+    type: "IoT Telemetry & Device Intelligence",
+    year: "2026",
+    statement:
+      "A production-grade IoT device intelligence platform for real-time sensor telemetry, historical analytics, remote device control, and automation workflows.",
+    challenge:
+      "Handling concurrent streaming telemetry from 50+ IoT sensors requires low-latency WebSockets, time-series historical data storage, and instant visual telemetry alerts.",
+    system:
+      "A production-grade Next.js & React dashboard backed by Node.js, WebSockets (Socket.io), Prisma ORM, PostgreSQL, TanStack Query, NextAuth, and Zustand.",
+    decisions: [
+      "Engineered real-time WebSocket telemetry streaming and command dispatch for remote device networks",
+      "Built unified calm monitoring dashboard for visualizing 50+ device metrics simultaneously with anomaly detection",
+      "Structured NextAuth and Prisma PostgreSQL data layer for secure role-based telemetry management",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Socket.io", "NextAuth", "Zustand"],
+    href: "https://github.com/razikuljoni/SensorGrid",
+    accent: "mint",
+  },
+  {
+    index: "P/03",
     name: "Shoppershala",
     type: "Full-stack commerce platform",
     year: "2026",
@@ -21,10 +61,10 @@ const featuredProjects = [
     ],
     stack: ["React 19", "Express 5", "MongoDB", "TanStack Query", "Zustand", "Zod", "Docker"],
     href: "https://github.com/razikuljoni/shoppershala",
-    accent: "blue",
+    accent: "yellow",
   },
   {
-    index: "P/02",
+    index: "P/04",
     name: "CoSketch",
     type: "Realtime collaboration",
     year: "2025",
@@ -41,47 +81,7 @@ const featuredProjects = [
     ],
     stack: ["Next.js", "TypeScript", "Node.js", "WebSocket", "PostgreSQL", "Docker"],
     href: "https://razikuljoni-portfolio.vercel.app/projects/cosketch",
-    accent: "yellow",
-  },
-  {
-    index: "P/03",
-    name: "OpenPalette",
-    type: "Developer tooling",
-    year: "2026",
-    statement:
-      "A complete VS Code customization suite built for developers who want a coherent workspace, not a random bag of extensions.",
-    challenge:
-      "Themes, file icons, folder semantics, and code snippets usually come from separate tools with inconsistent visual language and release processes.",
-    system:
-      "One install delivers 11 dark themes, 300+ file icons, 90+ folder icons, and JavaScript, TypeScript, and React snippets—with automated semantic releases.",
-    decisions: [
-      "Curated one consistent developer experience across theme, icon, and snippet layers",
-      "Added conventional-commit release automation, changelogs, tags, and packaging",
-      "Kept compatibility with VS Code, Cursor, and other VS Code forks",
-    ],
-    stack: ["TypeScript", "VS Code API", "JSON", "Standard Version", "GitHub Actions"],
-    href: "https://github.com/razikuljoni/OpenPalette",
     accent: "coral",
-  },
-  {
-    index: "P/04",
-    name: "Cow Hut API",
-    type: "Backend systems",
-    year: "2026",
-    statement:
-      "A typed marketplace API with separate user and admin authentication flows and an end-to-end commerce domain.",
-    challenge:
-      "The backend needed secure identity, refresh tokens, profile management, livestock inventory, and order operations without muddying the domain boundaries.",
-    system:
-      "A TypeScript service exposing user, admin, cow, order, and profile modules through REST endpoints with JWT authentication and MongoDB persistence.",
-    decisions: [
-      "Separated admin and user authentication, including refresh-token flows",
-      "Modeled complete CRUD lifecycles for inventory and accounts",
-      "Documented the live API surface so the contract is easy to test and consume",
-    ],
-    stack: ["TypeScript", "Node.js", "Express", "MongoDB", "JWT", "REST API"],
-    href: "https://github.com/razikuljoni/Cow-Hut-Backend",
-    accent: "mint",
   },
 ];
 

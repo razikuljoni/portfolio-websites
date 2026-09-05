@@ -435,6 +435,174 @@ export const createProductHandler = async (req: Request, res: Response, next: Ne
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
+    id: 'z-shop',
+    title: 'z-shop — E-Commerce Platform & AI Shopping Advisor',
+    tagline: 'Big-scale e-commerce platform with smart recommendations, real-time inventory, multi-currency checkout, 2FA security, and seller analytics.',
+    category: 'Full-Stack Commerce',
+    clientOrDomain: 'E-Commerce & AI Retail Tech',
+    year: '2026',
+    scale: 'Multi-Role • Next.js 15 • React 19 • Gemini AI',
+    summary: 'Architected and built a big-scale full-stack e-commerce platform featuring Google Gemini AI shopping advice, real-time inventory synchronization, 2FA security, multi-currency localization, and seller analytics dashboards.',
+    liveUrl: 'https://z-shop-online.vercel.app',
+    githubUrl: 'https://github.com/razikuljoni/z-shop',
+    challenge: {
+      context: 'Scaling modern digital storefronts requires real-time stock sync across multiple merchant inventories, instant multi-currency checkout, strict 2FA security, and personalized catalog discovery without performance degradation.',
+      painPoints: [
+        'High latency when serving dynamic catalog recommendations and multi-currency product pricing',
+        'Complex state synchronization across multi-step checkout, wishlist, and seller analytics dashboards',
+        'Security risks in high-traffic checkout flows requiring 2FA authentication and server-side validation',
+        'Need for real-time inventory tracking to prevent stock overselling across concurrent buyers'
+      ],
+      constraints: [
+        'Strict end-to-end schema validation using Zod',
+        'Serverless API route performance with Next.js 15 App Router and Prisma PostgreSQL persistence',
+        'Google Gemini AI integration for natural language catalog search and recommendation'
+      ]
+    },
+    architecturalSolution: {
+      coreApproach: 'Engineered a Next.js 15 + React 19 platform backed by PostgreSQL and Prisma ORM. Integrated Google Gemini AI for serverless shopping guidance, Recharts for seller analytics, Socket.io for live order webhooks, and Redis for caching.',
+      keyDecisions: [
+        {
+          decision: 'Google Gemini AI Integration with Catalog Grounding',
+          rationale: 'Integrated serverless AI shopping advisor routes that evaluate buyer preferences and return contextual product recommendations.',
+          alternativeConsidered: 'Static keyword search was upgraded with AI natural language understanding.'
+        },
+        {
+          decision: 'Multi-Currency & 2FA Security Architecture',
+          rationale: 'Implemented 2FA authentication and multi-currency calculation routines backed by server-side Zod validation envelopes.',
+          alternativeConsidered: 'Client-side currency conversion was rejected to ensure price integrity and tax compliance.'
+        },
+        {
+          decision: 'Prisma + Redis Caching for Real-Time Inventory',
+          rationale: 'Cached hot catalog items in Redis while maintaining strict transactional integrity in PostgreSQL via Prisma ORM.',
+          alternativeConsidered: 'Direct un-cached database queries on every page render were replaced.'
+        }
+      ],
+      diagramSteps: [
+        {
+          step: 1,
+          name: 'Client Ingress & 2FA Security Guard',
+          desc: 'User request with 2FA session token verified; role claims (Customer/Seller/Admin) validated.',
+          component: 'NextAuth / 2FA Engine'
+        },
+        {
+          step: 2,
+          name: 'AI Advisor & Catalog Grounding',
+          desc: 'Gemini AI API processes natural language query against catalog embedding index.',
+          component: 'Gemini AI Engine'
+        },
+        {
+          step: 3,
+          name: 'Prisma & Redis Inventory Transaction',
+          desc: 'Prisma ORM updates stock atomically in PostgreSQL while invalidating Redis cache tags.',
+          component: 'Prisma + PostgreSQL'
+        },
+        {
+          step: 4,
+          name: 'Real-Time Order & Telemetry Webhooks',
+          desc: 'Socket.io broadcasts order updates to seller analytics and live buyer tracking.',
+          component: 'Socket.io Webhooks'
+        }
+      ]
+    },
+    tradeoffs: [
+      {
+        accepted: 'AI response latency for complex queries',
+        mitigation: 'Implemented streaming UI responses with optimistic client loading skeletons.'
+      }
+    ],
+    metrics: [
+      { label: 'AI Advisor', value: 'Gemini API', change: 'Personalized recommendations', isPositive: true },
+      { label: 'Database Sync', value: 'Sub-10ms', change: 'Prisma ORM + PostgreSQL', isPositive: true },
+      { label: 'Security', value: '2FA + Zod', change: '100% type-safe validation', isPositive: true }
+    ],
+    techStackIds: ['typescript', 'react', 'nodejs', 'mongodb', 'tailwind'],
+    deliverables: [
+      'Big-scale Next.js 15 e-commerce platform with React 19 and Tailwind CSS v4',
+      'Google Gemini AI shopping advisor integration for personalized recommendations',
+      '2FA security authentication and multi-step multi-currency checkout',
+      'Seller analytics dashboard powered by Recharts and Socket.io webhooks'
+    ]
+  },
+  {
+    id: 'sensor-grid',
+    title: 'SensorGrid — IoT Telemetry & Device Intelligence Platform',
+    tagline: 'Production-grade IoT platform for streaming real-time sensor telemetry, device control, and automation workflows.',
+    category: 'IoT & Telemetry Systems',
+    clientOrDomain: 'Industrial IoT & Sensor Networks',
+    year: '2026',
+    scale: '50+ Concurrent Sensor Nodes • WebSocket Telemetry • Production-Grade',
+    summary: 'Developed a production-grade IoT platform with real-time WebSocket telemetry streaming, remote device command dispatch, historical analytics, and automated alert monitoring.',
+    liveUrl: 'https://github.com/razikuljoni/SensorGrid',
+    githubUrl: 'https://github.com/razikuljoni/SensorGrid',
+    challenge: {
+      context: 'Industrial sensor networks generate continuous high-frequency telemetry data requiring low-latency WebSockets, zero data loss, time-series storage, and calm alert monitoring.',
+      painPoints: [
+        'Network telemetry spikes overloading standard HTTP polling connections',
+        'Data loss during remote device disconnection and reconnection cycles',
+        'Difficulty visualizing high-density time-series telemetry across multiple device channels'
+      ],
+      constraints: [
+        'Real-time sub-100ms WebSocket telemetry throughput',
+        'Strict NextAuth authentication and Prisma PostgreSQL persistence',
+        'Calm data-first UI responsive across desktop and tablet displays'
+      ]
+    },
+    architecturalSolution: {
+      coreApproach: 'Engineered a Next.js + React dashboard with Socket.io WebSockets, Prisma ORM, PostgreSQL, TanStack Query, NextAuth, and Zustand state orchestration.',
+      keyDecisions: [
+        {
+          decision: 'WebSocket Telemetry Streaming Protocol',
+          rationale: 'Established persistent Socket.io channels for streaming live sensor telemetry directly to dashboard state.',
+          alternativeConsidered: 'HTTP short polling was replaced to minimize server load and bandwidth.'
+        },
+        {
+          decision: 'TanStack Query + Zustand Dual State Architecture',
+          rationale: 'Managed server telemetry queries with TanStack Query and local dashboard UI layout controls with Zustand.',
+          alternativeConsidered: 'Monolithic store was avoided to isolate high-frequency telemetry state.'
+        }
+      ],
+      diagramSteps: [
+        {
+          step: 1,
+          name: 'Device Telemetry Ingress',
+          desc: 'IoT physical sensors stream data payloads over Socket.io WebSocket channels.',
+          component: 'Socket.io Gateway'
+        },
+        {
+          step: 2,
+          name: 'Prisma Time-Series Storage',
+          desc: 'Prisma ORM persists telemetry records into PostgreSQL database tables.',
+          component: 'Prisma + PostgreSQL'
+        },
+        {
+          step: 3,
+          name: 'Client Dashboard Render',
+          desc: 'TanStack Query updates telemetry charts and triggers alert webhooks on anomaly thresholds.',
+          component: 'React + ECharts UI'
+        }
+      ]
+    },
+    tradeoffs: [
+      {
+        accepted: 'WebSocket connection overhead on mobile networks',
+        mitigation: 'Implemented automatic fallback to smart long-polling with reconnection backoff.'
+      }
+    ],
+    metrics: [
+      { label: 'Telemetry Rate', value: 'Real-Time', change: 'Sub-100ms WebSockets', isPositive: true },
+      { label: 'Device Metrics', value: '50+ Nodes', change: 'Simultaneous monitoring', isPositive: true },
+      { label: 'State Sync', value: '100%', change: 'Zustand + TanStack Query', isPositive: true }
+    ],
+    techStackIds: ['typescript', 'react', 'nodejs', 'mongodb', 'tailwind'],
+    deliverables: [
+      'Production-grade IoT telemetry platform with Next.js and React',
+      'Real-time WebSocket telemetry streaming and remote device command dispatch',
+      'Unified calm monitoring dashboard for 50+ device metrics simultaneously',
+      'NextAuth authentication and Prisma PostgreSQL data layer'
+    ]
+  },
+  {
     id: 'shoppershala',
     title: 'Shoppershala — Full-Stack Commerce Monorepo & AI Copilot',
     tagline: 'Multi-role e-commerce platform with JWT RBAC, catalog search, wallet checkout, seller analytics, and an in-app AI assistant.',

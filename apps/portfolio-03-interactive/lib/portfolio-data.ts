@@ -188,6 +188,56 @@ export const PORTFOLIO_DATA: PortfolioData = {
 
   projects: [
     {
+      id: "z-shop-ecommerce",
+      title: "z-shop",
+      subtitle: "E-Commerce Platform & AI Shopping Advisor",
+      category: "Full-Stack Apps",
+      description: "A full-stack e-commerce platform with real-time inventory management, multi-currency checkout, live order tracking, seller analytics, and an integrated Google Gemini AI shopping advisor.",
+      challenge: "Handling real-time stock synchronization, multi-tier permissions (Customer/Seller/Admin), secure multi-currency checkout, and personalized catalog discovery.",
+      solution: "Built with Next.js 15 App Router, React 19, TypeScript, Prisma ORM, PostgreSQL, Redis caching, Socket.io webhooks, and Google Gemini AI API.",
+      impact: [
+        "Integrated Google Gemini AI for serverless natural-language shopping assistance and catalog search",
+        "Implemented 2FA security authentication, multi-currency checkout, and Recharts analytics dashboards",
+        "Architected real-time inventory synchronization and role-based access control for multi-merchant management"
+      ],
+      technologies: ["Next.js 15", "React 19", "TypeScript", "Prisma", "PostgreSQL", "Gemini AI", "Redis", "Socket.io", "Tailwind CSS v4"],
+      image: "https://picsum.photos/seed/zshop_app/1000/620",
+      diagramUrl: "https://picsum.photos/seed/zshop_arch/1200/800",
+      githubUrl: "https://github.com/razikuljoni/z-shop",
+      demoUrl: "https://z-shop-online.vercel.app",
+      featured: true,
+      metrics: [
+        { label: "AI Advisor", value: "Gemini API" },
+        { label: "Data Layer", value: "Prisma + Postgres" },
+        { label: "Security", value: "2FA + RBAC" }
+      ]
+    },
+    {
+      id: "sensorgrid-iot",
+      title: "SensorGrid",
+      subtitle: "Production-Grade IoT Telemetry & Device Intelligence Platform",
+      category: "Full-Stack Apps",
+      description: "A production-grade IoT platform for streaming real-time sensor telemetry, historical data visualization, remote device control, and automated alert monitoring.",
+      challenge: "Handling concurrent streaming data from 50+ IoT sensors requires low-latency WebSockets, time-series historical data storage, and instant visual telemetry alerts.",
+      solution: "Engineered with Next.js, React, TypeScript, WebSocket telemetry streaming, Prisma ORM, PostgreSQL, TanStack Query, NextAuth, and Zustand.",
+      impact: [
+        "Real-time WebSocket telemetry streaming and remote command dispatch for industrial sensor networks",
+        "Unified calm monitoring dashboard for tracking 50+ device metrics simultaneously with anomaly detection",
+        "Secure NextAuth authentication and Prisma PostgreSQL data layer for granular telemetry management"
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Socket.io", "NextAuth", "TanStack Query", "Zustand"],
+      image: "https://picsum.photos/seed/sensorgrid_app/1000/620",
+      diagramUrl: "https://picsum.photos/seed/sensorgrid_arch/1200/800",
+      githubUrl: "https://github.com/razikuljoni/SensorGrid",
+      demoUrl: "https://github.com/razikuljoni/SensorGrid",
+      featured: true,
+      metrics: [
+        { label: "Live Telemetry", value: "WebSockets" },
+        { label: "Device Metrics", value: "50+ Concurrent" },
+        { label: "State Sync", value: "Zustand + TanStack" }
+      ]
+    },
+    {
       id: "shoppershala-commerce",
       title: "Shoppershala",
       subtitle: "Full-Stack E-Commerce Monorepo with Multi-Role RBAC & AI Copilot",
