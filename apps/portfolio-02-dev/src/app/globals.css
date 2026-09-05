@@ -353,24 +353,52 @@
 
 /* Print Page specific styles */
 @media print {
+    :root,
+    .dark {
+        --background: #ffffff !important;
+        --foreground: #000000 !important;
+        --card: #ffffff !important;
+        --card-foreground: #000000 !important;
+        --muted: #f3f4f6 !important;
+        --muted-foreground: #374151 !important;
+        --border: #d1d5db !important;
+        --primary: #000000 !important;
+        --primary-foreground: #ffffff !important;
+    }
     header {
         display: none !important;
     }
     .resume-page-wrapper {
-        @apply py-0;
+        @apply py-0 bg-white text-black;
     }
     .no-print {
         display: none !important;
     }
     body {
+        background: #fff !important;
+        color: #000 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
     @page {
+        size: A4;
         margin: 14mm 16mm;
     }
     section {
         page-break-inside: avoid;
+    }
+    :is(.dark) .bg-primary\/10,
+    .bg-primary\/10 {
+        background: #e5e5e5 !important;
+        color: #000 !important;
+        border-color: #d4d4d4 !important;
+    }
+    .bg-blue-600 {
+        background: #000 !important;
+        border-color: #000 !important;
+    }
+    .text-primary {
+        color: #000 !important;
     }
 }
 

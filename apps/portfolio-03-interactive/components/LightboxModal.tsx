@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { Project } from '@/lib/portfolio-data';
-import { 
-  X, 
-  ChevronLeft, 
-  ChevronRight, 
-  ZoomIn, 
-  ZoomOut, 
-  ExternalLink, 
-  Github, 
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { Project } from "@/lib/portfolio-data";
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+  ZoomIn,
+  ZoomOut,
+  ExternalLink,
+  Github,
   Layers,
   Cpu,
-  CheckCircle2
-} from 'lucide-react';
+  CheckCircle2,
+} from "lucide-react";
 
 interface LightboxModalProps {
   project: Project | null;
@@ -33,23 +33,23 @@ export default function LightboxModal({
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
       if (!project) return;
 
       const currentIndex = allProjects.findIndex((p) => p.id === project.id);
-      if (e.key === 'ArrowRight') {
+      if (e.key === "ArrowRight") {
         const next = allProjects[(currentIndex + 1) % allProjects.length];
         setZoomLevel(1);
         onSelectProject(next);
-      } else if (e.key === 'ArrowLeft') {
+      } else if (e.key === "ArrowLeft") {
         const prev = allProjects[(currentIndex - 1 + allProjects.length) % allProjects.length];
         setZoomLevel(1);
         onSelectProject(prev);
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [project, allProjects, onClose, onSelectProject]);
 
   if (!project) return null;
@@ -140,7 +140,7 @@ export default function LightboxModal({
                 sizes="(max-width: 1200px) 100vw, 1000px"
               />
             </div>
-            
+
             {/* Quick Prev / Next overlay buttons */}
             <button
               type="button"
@@ -164,16 +164,13 @@ export default function LightboxModal({
 
           {/* Project Technical Breakdown */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
             {/* Column 1 & 2: Overview & Engineering Solution */}
             <div className="md:col-span-2 space-y-4">
               <div>
                 <h3 className="text-2xl font-bold text-[#f5f0e8] font-['Space_Grotesk']">
                   {project.title}
                 </h3>
-                <p className="text-sm text-[#b87333] font-mono mt-0.5">
-                  {project.subtitle}
-                </p>
+                <p className="text-sm text-[#b87333] font-mono mt-0.5">{project.subtitle}</p>
               </div>
 
               <p className="text-sm text-[#c8c3bb] leading-relaxed font-light">
@@ -184,15 +181,11 @@ export default function LightboxModal({
                 <div className="text-xs font-mono text-[#e49b58] font-bold uppercase">
                   Technical Challenge:
                 </div>
-                <p className="text-xs text-[#c8c3bb] font-light">
-                  {project.challenge}
-                </p>
+                <p className="text-xs text-[#c8c3bb] font-light">{project.challenge}</p>
                 <div className="text-xs font-mono text-[#34d399] font-bold uppercase pt-2">
                   Architectural Solution:
                 </div>
-                <p className="text-xs text-[#c8c3bb] font-light">
-                  {project.solution}
-                </p>
+                <p className="text-xs text-[#c8c3bb] font-light">{project.solution}</p>
               </div>
 
               {/* Verified Production Impact */}
@@ -218,7 +211,10 @@ export default function LightboxModal({
                   Telemetry Benchmarks
                 </div>
                 {project.metrics.map((m) => (
-                  <div key={m.label} className="flex justify-between items-center py-1.5 border-b border-[#f5f0e8]/5">
+                  <div
+                    key={m.label}
+                    className="flex justify-between items-center py-1.5 border-b border-[#f5f0e8]/5"
+                  >
                     <span className="text-xs text-[#8e8a82]">{m.label}</span>
                     <span className="text-xs font-mono font-bold text-[#e49b58]">{m.value}</span>
                   </div>
@@ -267,16 +263,16 @@ export default function LightboxModal({
                   </a>
                 )}
               </div>
-
             </div>
-
           </div>
         </div>
 
         {/* Modal Bottom Status */}
         <div className="px-6 py-3 bg-[#242426] border-t border-[#f5f0e8]/10 flex items-center justify-between text-[11px] font-mono text-[#8e8a82]">
           <span>Use ← and → keys to navigate architectures</span>
-          <span>Project {currentIndex + 1} of {allProjects.length}</span>
+          <span>
+            Project {currentIndex + 1} of {allProjects.length}
+          </span>
         </div>
       </div>
     </div>

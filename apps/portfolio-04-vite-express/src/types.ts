@@ -1,8 +1,8 @@
 export interface TechSkill {
   id: string;
   name: string;
-  category: 'languages' | 'frontend' | 'backend' | 'cloud' | 'ai_data';
-  level: 'Expert' | 'Advanced' | 'Proficient';
+  category: "languages" | "frontend" | "backend" | "cloud" | "ai_data";
+  level: "Expert" | "Advanced" | "Proficient";
   yearsOfExp: number;
   iconName: string;
   description: string;
@@ -95,4 +95,3 @@ export interface CertificationItem {
   issuer: string;
   status: string;
 }
-

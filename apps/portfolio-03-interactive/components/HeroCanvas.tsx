@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 interface Particle {
   x: number;
@@ -22,7 +22,7 @@ export default function HeroCanvas() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -42,7 +42,7 @@ export default function HeroCanvas() {
       initParticles();
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -55,18 +55,18 @@ export default function HeroCanvas() {
       mouse.y = -1000;
     };
 
-    canvas.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('mouseleave', handleMouseLeave);
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("mouseleave", handleMouseLeave);
 
     let particles: Particle[] = [];
 
     // Particle color palettes based on Graphite & Copper theme
     const colors = [
-      'rgba(184, 115, 51, ', // Copper primary
-      'rgba(217, 119, 54, ', // Amber copper
-      'rgba(245, 240, 232, ', // Cream accent
-      'rgba(140, 88, 40, ', // Deep bronze
-      'rgba(228, 155, 88, ', // Light copper
+      "rgba(184, 115, 51, ", // Copper primary
+      "rgba(217, 119, 54, ", // Amber copper
+      "rgba(245, 240, 232, ", // Cream accent
+      "rgba(140, 88, 40, ", // Deep bronze
+      "rgba(228, 155, 88, ", // Light copper
     ];
 
     const initParticles = () => {
@@ -101,7 +101,7 @@ export default function HeroCanvas() {
 
       // Draw subtle background grid lines
       const gridSize = 60;
-      ctx.strokeStyle = 'rgba(184, 115, 51, 0.03)';
+      ctx.strokeStyle = "rgba(184, 115, 51, 0.03)";
       ctx.lineWidth = 1;
 
       // Draw particles and update positions
@@ -186,10 +186,10 @@ export default function HeroCanvas() {
     render();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       if (canvas) {
-        canvas.removeEventListener('mousemove', handleMouseMove);
-        canvas.removeEventListener('mouseleave', handleMouseLeave);
+        canvas.removeEventListener("mousemove", handleMouseMove);
+        canvas.removeEventListener("mouseleave", handleMouseLeave);
       }
       cancelAnimationFrame(animationFrameId);
     };
@@ -200,7 +200,7 @@ export default function HeroCanvas() {
       ref={canvasRef}
       id="hero-interactive-canvas"
       className="absolute inset-0 w-full h-full pointer-events-auto opacity-70 transition-opacity duration-1000"
-      style={{ filter: 'blur(0px)' }}
+      style={{ filter: "blur(0px)" }}
     />
   );
 }

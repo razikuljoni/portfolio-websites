@@ -15,13 +15,7 @@ import {
 } from "react-icons/si";
 
 export type TechCategory =
-    | "Language"
-    | "Framework"
-    | "Runtime"
-    | "Library"
-    | "Database"
-    | "Styling"
-    | "Tooling";
+    "Language" | "Framework" | "Runtime" | "Library" | "Database" | "Styling" | "Tooling";
 
 export type TechLevel = "Primary" | "Advanced" | "Working";
 

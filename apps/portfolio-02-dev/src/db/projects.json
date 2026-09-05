@@ -1,6 +1,58 @@
 {
     "projects": [
         {
+            "id": "z-shop",
+            "name": "Z Shop — E-Commerce Platform & AI Shopping Advisor",
+            "description": [
+                "Full-stack e-commerce platform with real-time inventory management, multi-currency checkout, live order tracking, and role-based access for Customer, Seller, and Admin.",
+                "Integrated Google Gemini AI as a serverless shopping advisor for personalized recommendations and natural language product search.",
+                "Implemented 2FA authentication, multi-step checkout with payment selection, Recharts-powered analytics dashboards, and server-side validation with Zod."
+            ],
+            "status": "Live",
+            "thumb": "/images/projects/shoppershala.webp",
+            "link": "/projects/z-shop",
+            "liveSite": "https://z-shop-online.vercel.app",
+            "github": "https://github.com/razikuljoni/z-shop",
+            "tag": "Featured",
+            "techStack": [
+                "Next.js 15",
+                "React 19",
+                "TypeScript",
+                "Tailwind CSS v4",
+                "Gemini AI",
+                "Prisma",
+                "PostgreSQL",
+                "Recharts",
+                "Zod"
+            ]
+        },
+        {
+            "id": "sensor-grid",
+            "name": "SensorGrid — IoT Device Intelligence Platform",
+            "description": [
+                "Production-grade IoT platform with real-time WebSocket telemetry streaming, remote device control, and configurable automation workflows for industrial sensor networks.",
+                "Designed unified monitoring dashboard for tracking 50+ device metrics simultaneously with alert webhooks, historical telemetry charts, and anomaly detection.",
+                "Implemented NextAuth authentication, Prisma ORM with PostgreSQL, TanStack Query for data fetching, and Zustand for state orchestration."
+            ],
+            "status": "Live",
+            "thumb": "/images/projects/cosketch.webp",
+            "link": "/projects/sensor-grid",
+            "liveSite": "https://github.com/razikuljoni/SensorGrid",
+            "github": "https://github.com/razikuljoni/SensorGrid",
+            "tag": "Featured",
+            "techStack": [
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Prisma",
+                "PostgreSQL",
+                "Socket.io",
+                "NextAuth",
+                "TanStack Query",
+                "Zustand"
+            ]
+        },
+        {
             "id": "melody-institute",
             "name": "Melody Institute",
             "description": [

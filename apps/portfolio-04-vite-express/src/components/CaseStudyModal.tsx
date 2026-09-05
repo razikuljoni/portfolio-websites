@@ -1,8 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { X, Layers, Activity, ShieldAlert, CheckCircle2, ChevronRight, Scale, Cpu, FileCode2, ExternalLink, ArrowRight } from 'lucide-react';
-import { CaseStudy, TechSkill } from '../types';
-import { ArchitectureDiagram } from './ArchitectureDiagram';
-import { TECH_SKILLS } from '../data/portfolioData';
+import React, { useState, useEffect } from "react";
+import {
+  X,
+  Layers,
+  Activity,
+  ShieldAlert,
+  CheckCircle2,
+  ChevronRight,
+  Scale,
+  Cpu,
+  FileCode2,
+  ExternalLink,
+  ArrowRight,
+} from "lucide-react";
+import { CaseStudy, TechSkill } from "../types";
+import { ArchitectureDiagram } from "./ArchitectureDiagram";
+import { TECH_SKILLS } from "../data/portfolioData";
 
 interface CaseStudyModalProps {
   caseStudy: CaseStudy | null;
@@ -10,16 +22,22 @@ interface CaseStudyModalProps {
   onSelectSkill: (skill: TechSkill) => void;
 }
 
-export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClose, onSelectSkill }) => {
-  const [activeTab, setActiveTab] = useState<'blueprint' | 'challenge' | 'adrs' | 'tradeoffs' | 'metrics'>('blueprint');
+export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
+  caseStudy,
+  onClose,
+  onSelectSkill,
+}) => {
+  const [activeTab, setActiveTab] = useState<
+    "blueprint" | "challenge" | "adrs" | "tradeoffs" | "metrics"
+  >("blueprint");
 
   // Handle ESC key to close
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
   if (!caseStudy) return null;
@@ -53,12 +71,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
                 [{caseStudy.scale}]
               </span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-neutral-100">
-              {caseStudy.title}
-            </h2>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-1">
-              {caseStudy.tagline}
-            </p>
+            <h2 className="text-xl sm:text-2xl font-bold text-neutral-100">{caseStudy.title}</h2>
+            <p className="text-xs sm:text-sm text-neutral-400 mt-1">{caseStudy.tagline}</p>
           </div>
 
           <button
@@ -74,11 +88,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
         {/* Tab Navigation */}
         <div className="px-4 sm:px-6 bg-[#0E1117] border-b border-neutral-800 flex overflow-x-auto no-scrollbar gap-2 py-2">
           {[
-            { id: 'blueprint', label: 'Architecture Blueprint' },
-            { id: 'challenge', label: 'Problem & Constraints' },
-            { id: 'adrs', label: 'Architectural Decisions (ADRs)' },
-            { id: 'tradeoffs', label: 'Trade-offs & Mitigations' },
-            { id: 'metrics', label: 'Production Impact' },
+            { id: "blueprint", label: "Architecture Blueprint" },
+            { id: "challenge", label: "Problem & Constraints" },
+            { id: "adrs", label: "Architectural Decisions (ADRs)" },
+            { id: "tradeoffs", label: "Trade-offs & Mitigations" },
+            { id: "metrics", label: "Production Impact" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -86,8 +100,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
               id={`modal-tab-${tab.id}`}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap transition-all cursor-pointer ${
                 activeTab === tab.id
-                  ? 'bg-neutral-800 text-amber-300 font-semibold border border-neutral-700'
-                  : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900'
+                  ? "bg-neutral-800 text-amber-300 font-semibold border border-neutral-700"
+                  : "text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900"
               }`}
             >
               {tab.label}
@@ -97,9 +111,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
 
         {/* Modal Scrollable Body */}
         <div className="p-5 sm:p-6 overflow-y-auto space-y-6 flex-1 text-neutral-300">
-          
           {/* TAB 1: BLUEPRINT */}
-          {activeTab === 'blueprint' && (
+          {activeTab === "blueprint" && (
             <div className="space-y-6">
               {/* Architecture Diagram */}
               <ArchitectureDiagram caseStudy={caseStudy} interactive={true} />
@@ -136,7 +149,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           )}
 
           {/* TAB 2: CHALLENGE */}
-          {activeTab === 'challenge' && (
+          {activeTab === "challenge" && (
             <div className="space-y-6">
               <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800 space-y-2">
                 <div className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-semibold">
@@ -182,7 +195,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           )}
 
           {/* TAB 3: ADRs */}
-          {activeTab === 'adrs' && (
+          {activeTab === "adrs" && (
             <div className="space-y-4">
               <div className="text-xs text-neutral-400 font-mono">
                 Architectural Decision Records (ADRs) and Trade-off evaluations:
@@ -218,7 +231,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           )}
 
           {/* TAB 4: TRADEOFFS */}
-          {activeTab === 'tradeoffs' && (
+          {activeTab === "tradeoffs" && (
             <div className="space-y-4">
               <div className="text-xs text-neutral-400 font-mono">
                 System design is the science of deliberate trade-offs:
@@ -233,9 +246,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                       <span>Accepted System Cost #{idx + 1}</span>
                     </div>
-                    <p className="text-xs text-neutral-300">
-                      {item.accepted}
-                    </p>
+                    <p className="text-xs text-neutral-300">{item.accepted}</p>
                     <div className="pt-1 text-xs text-emerald-400 font-mono">
                       <strong className="text-neutral-200">Mitigation Strategy: </strong>
                       {item.mitigation}
@@ -247,7 +258,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
           )}
 
           {/* TAB 5: METRICS & DELIVERABLES */}
-          {activeTab === 'metrics' && (
+          {activeTab === "metrics" && (
             <div className="space-y-6">
               <div>
                 <div className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-3">
@@ -255,7 +266,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {caseStudy.metrics.map((m, idx) => (
-                    <div key={idx} className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800">
+                    <div
+                      key={idx}
+                      className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800"
+                    >
                       <div className="text-[11px] text-neutral-400">{m.label}</div>
                       <div className="text-xl font-bold font-mono text-neutral-100 mt-1">
                         {m.value}
@@ -286,15 +300,12 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
               </div>
             </div>
           )}
-
         </div>
 
         {/* Modal Footer */}
         <div className="p-4 bg-[#161B22] border-t border-neutral-800 flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono text-neutral-400">
-              Project ID: {caseStudy.id}
-            </span>
+            <span className="text-xs font-mono text-neutral-400">Project ID: {caseStudy.id}</span>
             {caseStudy.githubUrl && (
               <a
                 href={caseStudy.githubUrl}
@@ -325,7 +336,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClo
             Close Blueprint
           </button>
         </div>
-
       </div>
     </div>
   );

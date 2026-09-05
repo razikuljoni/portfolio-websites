@@ -12,14 +12,15 @@
 
 <rule id="function_structure" enforcement="strict">
   ALWAYS organize by function (what info does), not just by topic.
-  
-  Required folders:
-  - concepts/  - Core ideas, definitions, "what is it?"
-  - examples/  - Minimal working code
-  - guides/    - Step-by-step workflows
-  - lookup/    - Quick reference tables, commands, paths
-  - errors/    - Common issues, gotchas, fixes
-</rule>
+
+Required folders:
+
+- concepts/ - Core ideas, definitions, "what is it?"
+- examples/ - Minimal working code
+- guides/ - Step-by-step workflows
+- lookup/ - Quick reference tables, commands, paths
+- errors/ - Common issues, gotchas, fixes
+  </rule>
 
 ```
 .opencode/context/{category}/
@@ -41,15 +42,18 @@
 ## Folder Purposes
 
 ### concepts/
+
 **Purpose**: Core ideas, definitions, "what is it?"
 
 **Contains**:
+
 - Fundamental concepts
 - Design patterns
 - Architecture decisions
 - System principles
 
 **Examples**:
+
 - `concepts/authentication.md`
 - `concepts/state-management.md`
 - `concepts/mvi-principle.md`
@@ -57,14 +61,17 @@
 ---
 
 ### examples/
+
 **Purpose**: Minimal working code examples
 
 **Contains**:
+
 - Code snippets that work as-is
 - Minimal reproductions
 - Common patterns in action
 
 **Examples**:
+
 - `examples/jwt-auth-example.md`
 - `examples/react-hooks-example.md`
 - `examples/api-call-example.md`
@@ -74,15 +81,18 @@
 ---
 
 ### guides/
+
 **Purpose**: Step-by-step workflows, "how to do X"
 
 **Contains**:
+
 - Numbered procedures
 - Setup instructions
 - Implementation workflows
 - Migration guides
 
 **Examples**:
+
 - `guides/setting-up-auth.md`
 - `guides/deploying-api.md`
 - `guides/migrating-to-v2.md`
@@ -92,9 +102,11 @@
 ---
 
 ### lookup/
+
 **Purpose**: Quick reference tables, commands, paths
 
 **Contains**:
+
 - Command lists
 - File locations
 - API endpoints
@@ -102,6 +114,7 @@
 - Keyboard shortcuts
 
 **Examples**:
+
 - `lookup/cli-commands.md`
 - `lookup/file-locations.md`
 - `lookup/api-endpoints.md`
@@ -111,15 +124,18 @@
 ---
 
 ### errors/
+
 **Purpose**: Common errors, gotchas, edge cases
 
 **Contains**:
+
 - Error messages + fixes
 - Common pitfalls
 - Edge cases
 - Troubleshooting
 
 **Examples**:
+
 - `errors/react-errors.md`
 - `errors/nextjs-build-errors.md`
 - `errors/auth-errors.md`
@@ -139,6 +155,7 @@
 </rule>
 
 **Example**:
+
 ```markdown
 # Development Context
 
@@ -149,25 +166,29 @@
 ## Quick Navigation
 
 ### Concepts
-| File | Description | Priority |
-|------|-------------|----------|
+
+| File             | Description             | Priority |
+| ---------------- | ----------------------- | -------- |
 | concepts/auth.md | Authentication patterns | critical |
 
 ### Examples
-| File | Description | Priority |
-|------|-------------|----------|
-| examples/jwt.md | JWT auth example | high |
+
+| File            | Description      | Priority |
+| --------------- | ---------------- | -------- |
+| examples/jwt.md | JWT auth example | high     |
 
 ### Errors
-| File | Description | Priority |
-|------|-------------|----------|
-| errors/react.md | Common React errors | high |
+
+| File            | Description         | Priority |
+| --------------- | ------------------- | -------- |
+| errors/react.md | Common React errors | high     |
 
 ---
 
 ## Loading Strategy
 
-**For auth work**: 
+**For auth work**:
+
 1. Load concepts/auth.md
 2. Load examples/jwt.md
 3. Reference guides/setup-auth.md if needed
@@ -179,19 +200,20 @@
 
 When organizing a file, ask:
 
-| Question | Folder |
-|----------|--------|
-| Does it explain **what** something is? | `concepts/` |
-| Does it show **working code**? | `examples/` |
-| Does it explain **how to do** something? | `guides/` |
-| Is it **quick reference** data? | `lookup/` |
-| Does it document an **error/issue**? | `errors/` |
+| Question                                 | Folder      |
+| ---------------------------------------- | ----------- |
+| Does it explain **what** something is?   | `concepts/` |
+| Does it show **working code**?           | `examples/` |
+| Does it explain **how to do** something? | `guides/`   |
+| Is it **quick reference** data?          | `lookup/`   |
+| Does it document an **error/issue**?     | `errors/`   |
 
 ---
 
 ## Anti-Patterns ❌
 
 ### ❌ Flat Structure
+
 ```
 development/
 ├── authentication.md
@@ -200,9 +222,11 @@ development/
 ├── auth-errors.md
 └── api-endpoints.md
 ```
+
 **Problem**: Hard to discover. Is authentication.md a concept or guide?
 
 ### ✅ Function-Based
+
 ```
 development/
 ├── navigation.md
@@ -217,6 +241,7 @@ development/
 └── errors/
     └── auth-errors.md
 ```
+
 **Benefit**: Instantly know file purpose by location
 
 ---

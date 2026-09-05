@@ -18,10 +18,44 @@
     "portfolioUrl": "https://razikuljoni-portfolio.vercel.app",
     "skillGroups": {
       "languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3/Sass", "Kotlin"],
-      "frontend": ["React 19", "Next.js (App Router)", "Redux Toolkit", "TanStack Query", "Tailwind CSS", "Material UI", "Ant Design", "Three.js", "ECharts", "Vite"],
-      "backend": ["Node.js", "Express 5", "NestJS", "RESTful APIs", "JWT Auth & RBAC", "WebSockets", "Zod", "Prisma"],
-      "databasesAndDevops": ["MongoDB", "Mongoose", "PostgreSQL", "MySQL", "Redis", "Docker", "Git & GitHub", "Vercel", "Postman"],
-      "toolsAndAI": ["In-App AI Copilot (Gemini API)", "VS Code Themes & Extension Tooling (OpenPalette)", "Module Federation"]
+      "frontend": [
+        "React 19",
+        "Next.js (App Router)",
+        "Redux Toolkit",
+        "TanStack Query",
+        "Tailwind CSS",
+        "Material UI",
+        "Ant Design",
+        "Three.js",
+        "ECharts",
+        "Vite"
+      ],
+      "backend": [
+        "Node.js",
+        "Express 5",
+        "NestJS",
+        "RESTful APIs",
+        "JWT Auth & RBAC",
+        "WebSockets",
+        "Zod",
+        "Prisma"
+      ],
+      "databasesAndDevops": [
+        "MongoDB",
+        "Mongoose",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "Git & GitHub",
+        "Vercel",
+        "Postman"
+      ],
+      "toolsAndAI": [
+        "In-App AI Copilot (Gemini API)",
+        "VS Code Themes & Extension Tooling (OpenPalette)",
+        "Module Federation"
+      ]
     },
     "stats": {
       "yearsOfExp": "2+",
@@ -124,7 +158,17 @@
       "isRecent": true,
       "stars": 0,
       "githubUrl": "https://github.com/razikuljoni/z-shop",
-      "technologies": ["TypeScript", "Next.js 16", "Node.js", "Express", "Prisma", "PostgreSQL", "Redis", "Socket.io", "Tailwind CSS"],
+      "technologies": [
+        "TypeScript",
+        "Next.js 16",
+        "Node.js",
+        "Express",
+        "Prisma",
+        "PostgreSQL",
+        "Redis",
+        "Socket.io",
+        "Tailwind CSS"
+      ],
       "features": [
         "Smart AI product recommendation engine",
         "Real-time inventory stock synchronization",
@@ -145,7 +189,16 @@
       "isRecent": true,
       "stars": 0,
       "githubUrl": "https://github.com/razikuljoni/SensorGrid",
-      "technologies": ["TypeScript", "React", "Node.js", "WebSockets", "MQTT", "Timeseries DB", "ECharts", "Tailwind CSS"],
+      "technologies": [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "WebSockets",
+        "MQTT",
+        "Timeseries DB",
+        "ECharts",
+        "Tailwind CSS"
+      ],
       "features": [
         "Realtime sensor telemetry data streaming",
         "Interactive historical data charts & timeline",
@@ -166,7 +219,15 @@
       "isRecent": true,
       "stars": 0,
       "githubUrl": "https://github.com/razikuljoni/aether",
-      "technologies": ["TypeScript", "React 19", "Vite", "Module Federation", "Three.js", "Tailwind CSS", "Turborepo"],
+      "technologies": [
+        "TypeScript",
+        "React 19",
+        "Vite",
+        "Module Federation",
+        "Three.js",
+        "Tailwind CSS",
+        "Turborepo"
+      ],
       "features": [
         "Micro-frontend architecture using Vite Module Federation",
         "Interactive 3D graphics canvas powered by Three.js",
@@ -187,7 +248,14 @@
       "isRecent": true,
       "stars": 0,
       "githubUrl": "https://github.com/razikuljoni/aura",
-      "technologies": ["TypeScript", "Next.js 15", "Tailwind CSS", "Framer Motion", "Gemini AI API", "Node.js"],
+      "technologies": [
+        "TypeScript",
+        "Next.js 15",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Gemini AI API",
+        "Node.js"
+      ],
       "features": [
         "Real-time room availability & reservation engine",
         "Dynamic pricing based on seasonal demand",
@@ -444,7 +512,15 @@
       "isRecent": false,
       "stars": 0,
       "githubUrl": "https://github.com/razikuljoni/Book-Finder-Client",
-      "technologies": ["TypeScript", "React", "Redux Toolkit", "RTK Query", "Node.js", "Express", "MongoDB"],
+      "technologies": [
+        "TypeScript",
+        "React",
+        "Redux Toolkit",
+        "RTK Query",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
       "features": [
         "Redux Toolkit & RTK Query caching & optimistic updates",
         "User reading list & wishlist management",

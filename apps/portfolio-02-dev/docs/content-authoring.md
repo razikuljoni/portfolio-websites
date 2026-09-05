@@ -10,6 +10,7 @@ This hybrid model keeps cards/search/filtering simple while preserving rich writ
 ## Projects (`db/projects.json`)
 
 Required fields per project:
+
 - `id` (kebab-case slug)
 - `name`
 - `description` (array of bullet paragraphs)
@@ -33,7 +34,7 @@ date: "YYYY-MM-DD"
 summary: "..."
 readTime: "X min read"
 tags:
-  - ...
+    - ...
 ---
 ```
 

@@ -6,24 +6,27 @@
 **Last Updated**: 2026-05-19
 
 ## Quick Reference
+
 **Update Triggers**: Library upgrades | New components | Architecture changes
 **Audience**: Developers, AI agents
 
 ## Primary Stack
-| Layer | Technology | Version | Rationale |
-|-------|-----------|---------|-----------|
-| Framework | Next.js (App Router) | 16.1.6 | SSG + file-based routing, optimal for portfolio |
-| Language | TypeScript | 5 | Strict mode, type safety |
-| Styling | Tailwind CSS | 4 | Utility-first, responsive design system |
-| UI Components | shadcn/ui + Radix UI | — | Accessible, composable primitives |
-| Animation | Framer Motion | 12.31 | Declarative animations, AnimatePresence |
-| Icons | lucide-react, react-icons | — | Consistent icon library |
-| Package Manager | pnpm | 10.30 | Fast, disk-efficient |
-| Infrastructure | Vercel (inferred) | — | Optimized for Next.js deployment |
+
+| Layer           | Technology                | Version | Rationale                                       |
+| --------------- | ------------------------- | ------- | ----------------------------------------------- |
+| Framework       | Next.js (App Router)      | 16.1.6  | SSG + file-based routing, optimal for portfolio |
+| Language        | TypeScript                | 5       | Strict mode, type safety                        |
+| Styling         | Tailwind CSS              | 4       | Utility-first, responsive design system         |
+| UI Components   | shadcn/ui + Radix UI      | —       | Accessible, composable primitives               |
+| Animation       | Framer Motion             | 12.31   | Declarative animations, AnimatePresence         |
+| Icons           | lucide-react, react-icons | —       | Consistent icon library                         |
+| Package Manager | pnpm                      | 10.30   | Fast, disk-efficient                            |
+| Infrastructure  | Vercel (inferred)         | —       | Optimized for Next.js deployment                |
 
 ## Code Patterns
 
 ### Route Handler (only server endpoint)
+
 ```typescript
 // app/feed.xml/route.ts
 import { siteConfig } from "@/lib/site";
@@ -37,6 +40,7 @@ export async function GET() {
 ```
 
 ### Feature Component
+
 ```typescript
 // components/hero-section.tsx
 "use client";
@@ -51,6 +55,7 @@ export default function HeroSection() {
 ```
 
 ### UI Primitive (shadcn pattern)
+
 ```typescript
 // components/ui/button.tsx
 import { cn } from "@/lib/utils";
@@ -63,6 +68,7 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {}
 ```
 
 ### Button + Link (avoids nested interactive elements)
+
 ```typescript
 // GOOD — renders as single <a> styled as button
 <Button render={<Link href="/about/resume" />} nativeButton={false}
@@ -76,6 +82,7 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {}
 ```
 
 ### Theme Init Script (next/script)
+
 ```typescript
 // app/layout.tsx — replaces dangerouslySetInnerHTML
 <Script id="theme-init" strategy="beforeInteractive">
@@ -84,6 +91,7 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {}
 ```
 
 ### React 19 `use()` Hook
+
 ```typescript
 // theme-provider.tsx — replaces useContext
 import { use } from "react";
@@ -97,6 +105,7 @@ export function useTheme() {
 ```
 
 ### Print-Friendly Resume
+
 ```typescript
 // resume-content.tsx — beforeprint/afterprint JS events
 useEffect(() => {
@@ -114,20 +123,24 @@ useEffect(() => {
     };
     window.addEventListener("beforeprint", handleBeforePrint);
     window.addEventListener("afterprint", handleAfterPrint);
-    return () => { window.removeEventListener("beforeprint", handleBeforePrint);
-                   window.removeEventListener("afterprint", handleAfterPrint); };
+    return () => {
+        window.removeEventListener("beforeprint", handleBeforePrint);
+        window.removeEventListener("afterprint", handleAfterPrint);
+    };
 }, []);
 ```
 
 ## Naming Conventions
-| Type | Convention | Example |
-|------|-----------|---------|
-| Files | `kebab-case` | `hero-section.tsx` |
-| Components | `PascalCase` | `HeroSection`, `ProjectCard` |
-| Functions | `camelCase` | `validateEmail`, `validateForm` |
-| Types/Interfaces | `PascalCase` | `FormData`, `FormErrors` |
+
+| Type             | Convention   | Example                         |
+| ---------------- | ------------ | ------------------------------- |
+| Files            | `kebab-case` | `hero-section.tsx`              |
+| Components       | `PascalCase` | `HeroSection`, `ProjectCard`    |
+| Functions        | `camelCase`  | `validateEmail`, `validateForm` |
+| Types/Interfaces | `PascalCase` | `FormData`, `FormErrors`        |
 
 ## Code Standards
+
 - TypeScript strict mode (no `any` type)
 - Next.js App Router only (no Pages Router)
 - `@/` path aliases for imports (e.g. `@/components/ui/button`)
@@ -140,12 +153,14 @@ useEffect(() => {
 - React 19 `use()` hook replaces `useContext` for context consumption
 
 ## Security Requirements
+
 - Client-side form validation (email regex, required fields, min length)
 - Web3Forms handles server-side spam protection for contact form
 - Static portfolio — no database, reduced attack surface
 - Proper HTTP headers via Next.js config
 
 ## 📂 Codebase References
+
 **Feature components**: `app/page.tsx`, `components/*.tsx` — section compositions (23 files)
 **UI primitives**: `components/ui/*.tsx` — shadcn-style components (9 files: accordion, button, card, empty, input, not-found-2, not-found-content, textarea, toggle-button)
 **Resume route**: `app/about/resume/page.tsx` + `resume-content.tsx` — server page + client component (print via beforeprint/afterprint)

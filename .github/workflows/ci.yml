@@ -1,0 +1,51 @@
+name: CI - Monorepo Quality & Build Verification
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint, Typecheck & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install workspace dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Run code formatting check
+        run: npx prettier --check "apps/**/*.{ts,tsx,js,jsx,css,json,md}" "packages/**/*.{ts,tsx,js,jsx,css,json,md}"
+
+      - name: Run ESLint across workspace
+        run: pnpm lint
+
+      - name: Run TypeScript typecheck across workspace
+        run: pnpm check
+
+      - name: Build all apps and workspace packages
+        run: pnpm build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          NODE_ENV: production

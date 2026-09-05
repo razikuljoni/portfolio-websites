@@ -1,7 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { X, Cpu, Code2, Binary, Terminal, Database, Layout, Globe, Palette, Radio, Workflow, Network, Zap, Server, Boxes, FolderGit2, ShieldCheck, Activity, Sparkles, Search, BarChart3, CheckCircle2, ChevronRight, Copy, Check, ArrowRight } from 'lucide-react';
-import { TechSkill, CaseStudy } from '../types';
-import { CASE_STUDIES } from '../data/portfolioData';
+import React, { useState, useEffect } from "react";
+import {
+  X,
+  Cpu,
+  Code2,
+  Binary,
+  Terminal,
+  Database,
+  Layout,
+  Globe,
+  Palette,
+  Radio,
+  Workflow,
+  Network,
+  Zap,
+  Server,
+  Boxes,
+  FolderGit2,
+  ShieldCheck,
+  Activity,
+  Sparkles,
+  Search,
+  BarChart3,
+  CheckCircle2,
+  ChevronRight,
+  Copy,
+  Check,
+  ArrowRight,
+} from "lucide-react";
+import { TechSkill, CaseStudy } from "../types";
+import { CASE_STUDIES } from "../data/portfolioData";
 
 interface TechSkillModalProps {
   skill: TechSkill | null;
@@ -9,15 +36,19 @@ interface TechSkillModalProps {
   onSelectCaseStudy: (caseStudy: CaseStudy) => void;
 }
 
-export const TechSkillModal: React.FC<TechSkillModalProps> = ({ skill, onClose, onSelectCaseStudy }) => {
+export const TechSkillModal: React.FC<TechSkillModalProps> = ({
+  skill,
+  onClose,
+  onSelectCaseStudy,
+}) => {
   const [copiedCode, setCopiedCode] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
   if (!skill) return null;
@@ -25,27 +56,48 @@ export const TechSkillModal: React.FC<TechSkillModalProps> = ({ skill, onClose, 
   const renderIcon = (name: string) => {
     const iconProps = { className: "w-6 h-6 text-amber-400" };
     switch (name) {
-      case 'Code2': return <Code2 {...iconProps} />;
-      case 'Cpu': return <Cpu {...iconProps} />;
-      case 'Binary': return <Binary {...iconProps} />;
-      case 'Terminal': return <Terminal {...iconProps} />;
-      case 'Database': return <Database {...iconProps} />;
-      case 'Layout': return <Layout {...iconProps} />;
-      case 'Globe': return <Globe {...iconProps} />;
-      case 'Palette': return <Palette {...iconProps} />;
-      case 'Radio': return <Radio {...iconProps} />;
-      case 'Workflow': return <Workflow {...iconProps} />;
-      case 'Network': return <Network {...iconProps} />;
-      case 'Zap': return <Zap {...iconProps} />;
-      case 'Server': return <Server {...iconProps} />;
-      case 'Boxes': return <Boxes {...iconProps} />;
-      case 'FolderGit2': return <FolderGit2 {...iconProps} />;
-      case 'ShieldCheck': return <ShieldCheck {...iconProps} />;
-      case 'Activity': return <Activity {...iconProps} />;
-      case 'Sparkles': return <Sparkles {...iconProps} />;
-      case 'Search': return <Search {...iconProps} />;
-      case 'BarChart3': return <BarChart3 {...iconProps} />;
-      default: return <Cpu {...iconProps} />;
+      case "Code2":
+        return <Code2 {...iconProps} />;
+      case "Cpu":
+        return <Cpu {...iconProps} />;
+      case "Binary":
+        return <Binary {...iconProps} />;
+      case "Terminal":
+        return <Terminal {...iconProps} />;
+      case "Database":
+        return <Database {...iconProps} />;
+      case "Layout":
+        return <Layout {...iconProps} />;
+      case "Globe":
+        return <Globe {...iconProps} />;
+      case "Palette":
+        return <Palette {...iconProps} />;
+      case "Radio":
+        return <Radio {...iconProps} />;
+      case "Workflow":
+        return <Workflow {...iconProps} />;
+      case "Network":
+        return <Network {...iconProps} />;
+      case "Zap":
+        return <Zap {...iconProps} />;
+      case "Server":
+        return <Server {...iconProps} />;
+      case "Boxes":
+        return <Boxes {...iconProps} />;
+      case "FolderGit2":
+        return <FolderGit2 {...iconProps} />;
+      case "ShieldCheck":
+        return <ShieldCheck {...iconProps} />;
+      case "Activity":
+        return <Activity {...iconProps} />;
+      case "Sparkles":
+        return <Sparkles {...iconProps} />;
+      case "Search":
+        return <Search {...iconProps} />;
+      case "BarChart3":
+        return <BarChart3 {...iconProps} />;
+      default:
+        return <Cpu {...iconProps} />;
     }
   };
 
@@ -57,9 +109,7 @@ export const TechSkillModal: React.FC<TechSkillModalProps> = ({ skill, onClose, 
     }
   };
 
-  const relatedCaseStudies = CASE_STUDIES.filter((c) =>
-    c.techStackIds.includes(skill.id)
-  );
+  const relatedCaseStudies = CASE_STUDIES.filter((c) => c.techStackIds.includes(skill.id));
 
   return (
     <div
@@ -80,15 +130,14 @@ export const TechSkillModal: React.FC<TechSkillModalProps> = ({ skill, onClose, 
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-xl font-bold text-neutral-100">
-                  {skill.name}
-                </h3>
+                <h3 className="text-xl font-bold text-neutral-100">{skill.name}</h3>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400/10 text-amber-400 border border-amber-400/30">
                   {skill.level}
                 </span>
               </div>
               <p className="text-xs font-mono text-neutral-400 mt-0.5">
-                {skill.yearsOfExp} Years Production Experience • Domain: {skill.category.replace('_', ' ').toUpperCase()}
+                {skill.yearsOfExp} Years Production Experience • Domain:{" "}
+                {skill.category.replace("_", " ").toUpperCase()}
               </p>
             </div>
           </div>
@@ -148,15 +197,17 @@ export const TechSkillModal: React.FC<TechSkillModalProps> = ({ skill, onClose, 
           {skill.codeSample && (
             <div className="space-y-1.5">
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400">
-                <span className="text-amber-400 font-semibold">
-                  {skill.codeSample.title}
-                </span>
+                <span className="text-amber-400 font-semibold">{skill.codeSample.title}</span>
                 <button
                   onClick={handleCopyCode}
                   className="inline-flex items-center gap-1 hover:text-neutral-200 transition-colors cursor-pointer"
                 >
-                  {copiedCode ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copiedCode ? 'Copied' : 'Copy Snippet'}</span>
+                  {copiedCode ? (
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5" />
+                  )}
+                  <span>{copiedCode ? "Copied" : "Copy Snippet"}</span>
                 </button>
               </div>
               <div className="p-3.5 rounded-xl bg-black/90 border border-neutral-800 overflow-x-auto text-[11px] font-mono text-neutral-300 leading-relaxed">
@@ -195,7 +246,6 @@ export const TechSkillModal: React.FC<TechSkillModalProps> = ({ skill, onClose, 
               </div>
             </div>
           )}
-
         </div>
 
         {/* Footer */}

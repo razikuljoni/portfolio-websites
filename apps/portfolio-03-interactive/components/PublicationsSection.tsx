@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { PORTFOLIO_DATA, Publication } from '@/lib/portfolio-data';
-import { BookOpen, Calendar, Clock, ArrowUpRight, FileText, CheckCircle2 } from 'lucide-react';
+import React, { useState } from "react";
+import { PORTFOLIO_DATA, Publication } from "@/lib/portfolio-data";
+import { BookOpen, Calendar, Clock, ArrowUpRight, FileText, CheckCircle2 } from "lucide-react";
 
 export default function PublicationsSection() {
   const [activePaper, setActivePaper] = useState<Publication | null>(null);
@@ -13,7 +13,6 @@ export default function PublicationsSection() {
       className="relative py-28 px-4 sm:px-6 lg:px-8 bg-[#141416] dark:bg-[#141416] light:bg-[#eee8de] border-t border-[#f5f0e8]/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#242426] border border-[#b87333]/30 text-xs font-mono text-[#b87333] mb-4">
@@ -24,7 +23,8 @@ export default function PublicationsSection() {
             Articles, Case Studies & Guides
           </h2>
           <p className="mt-4 text-[#c8c3bb] text-base max-w-2xl font-light">
-            Technical articles on modern React architecture, full-stack state synchronizations, RESTful API design, and web performance optimizations.
+            Technical articles on modern React architecture, full-stack state synchronizations,
+            RESTful API design, and web performance optimizations.
           </p>
           <div className="w-16 h-1 bg-[#b87333] mt-6 rounded-full" />
         </div>
@@ -87,7 +87,6 @@ export default function PublicationsSection() {
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Paper Reader Modal */}
@@ -104,7 +103,9 @@ export default function PublicationsSection() {
             <div className="flex items-center justify-between border-b border-[#f5f0e8]/10 pb-4">
               <div className="flex items-center gap-2 text-xs font-mono text-[#b87333]">
                 <FileText className="w-4 h-4 text-[#e49b58]" />
-                <span>{activePaper.type} • {activePaper.date}</span>
+                <span>
+                  {activePaper.type} • {activePaper.date}
+                </span>
               </div>
               <button
                 type="button"
@@ -119,16 +120,20 @@ export default function PublicationsSection() {
               <h3 className="text-2xl font-bold text-[#f5f0e8] font-['Space_Grotesk'] mb-2">
                 {activePaper.title}
               </h3>
-              <p className="text-xs font-mono text-[#8e8a82]">Author: {PORTFOLIO_DATA.profile.name} • {activePaper.readTime}</p>
+              <p className="text-xs font-mono text-[#8e8a82]">
+                Author: {PORTFOLIO_DATA.profile.name} • {activePaper.readTime}
+              </p>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#242426] border border-[#f5f0e8]/10 space-y-3">
-              <div className="text-xs font-mono text-[#e49b58] uppercase font-bold">Executive Synopsis:</div>
+              <div className="text-xs font-mono text-[#e49b58] uppercase font-bold">
+                Executive Synopsis:
+              </div>
               <p className="text-sm text-[#c8c3bb] leading-relaxed font-light">
                 {activePaper.abstract}
               </p>
               <div className="pt-2 text-xs text-[#8e8a82]">
-                Key Keywords: {activePaper.tags.join(', ')}
+                Key Keywords: {activePaper.tags.join(", ")}
               </div>
             </div>
 

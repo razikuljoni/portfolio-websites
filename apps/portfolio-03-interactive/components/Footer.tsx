@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  Mail, 
-  ArrowUp, 
-  Terminal, 
-  Globe, 
-  Code2, 
+import React, { useEffect, useState } from "react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  ArrowUp,
+  Terminal,
+  Globe,
+  Code2,
   Sparkles,
   BookOpen,
   Layers,
   Cpu,
-  FileText
-} from 'lucide-react';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
+  FileText,
+} from "lucide-react";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
 
 interface FooterProps {
   onOpenTerminal: () => void;
@@ -24,20 +24,20 @@ interface FooterProps {
 }
 
 export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
-  const [timeStr, setTimeStr] = useState('');
+  const [timeStr, setTimeStr] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
       const options: Intl.DateTimeFormatOptions = {
-        timeZone: 'Asia/Dhaka',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
+        timeZone: "Asia/Dhaka",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
         hour12: true,
       };
-      setTimeStr(new Intl.DateTimeFormat('en-US', options).format(now));
+      setTimeStr(new Intl.DateTimeFormat("en-US", options).format(now));
     };
 
     updateTime();
@@ -50,35 +50,35 @@ export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
       setScrollProgress(progress);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       clearInterval(interval);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navLinks = [
-    { name: 'About & Philosophy', href: '#about' },
-    { name: 'Technical Stack', href: '#skills' },
-    { name: 'Career Experience', href: '#experience' },
-    { name: 'Featured Projects', href: '#projects' },
-    { name: 'Interactive CLI Lab', href: '#lab' },
-    { name: 'Articles & Tutorials', href: '#publications' },
-    { name: 'Peer Endorsements', href: '#testimonials' },
-    { name: 'Contact & Inquiries', href: '#contact' },
+    { name: "About & Philosophy", href: "#about" },
+    { name: "Technical Stack", href: "#skills" },
+    { name: "Career Experience", href: "#experience" },
+    { name: "Featured Projects", href: "#projects" },
+    { name: "Interactive CLI Lab", href: "#lab" },
+    { name: "Articles & Tutorials", href: "#publications" },
+    { name: "Peer Endorsements", href: "#testimonials" },
+    { name: "Contact & Inquiries", href: "#contact" },
   ];
 
   const externalResources = [
-    { name: 'React Documentation', url: 'https://react.dev' },
-    { name: 'Next.js App Router', url: 'https://nextjs.org' },
-    { name: 'Redux Toolkit & RTK Query', url: 'https://redux-toolkit.js.org' },
-    { name: 'Tailwind CSS v4', url: 'https://tailwindcss.com' },
-    { name: 'TypeScript Handbook', url: 'https://www.typescriptlang.org' },
+    { name: "React Documentation", url: "https://react.dev" },
+    { name: "Next.js App Router", url: "https://nextjs.org" },
+    { name: "Redux Toolkit & RTK Query", url: "https://redux-toolkit.js.org" },
+    { name: "Tailwind CSS v4", url: "https://tailwindcss.com" },
+    { name: "TypeScript Handbook", url: "https://www.typescriptlang.org" },
   ];
 
   return (
@@ -90,10 +90,8 @@ export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#b87333]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
         {/* Multi-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-[#f5f0e8]/10">
-          
           {/* Col 1: Brand & Persona (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
@@ -104,14 +102,13 @@ export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
                 <h3 className="text-lg font-bold text-[#f5f0e8] font-['Space_Grotesk']">
                   {PORTFOLIO_DATA.profile.name}
                 </h3>
-                <p className="text-xs font-mono text-[#8e8a82]">
-                  {PORTFOLIO_DATA.profile.title}
-                </p>
+                <p className="text-xs font-mono text-[#8e8a82]">{PORTFOLIO_DATA.profile.title}</p>
               </div>
             </div>
 
             <p className="text-xs sm:text-sm text-[#c8c3bb] leading-relaxed font-light">
-              Full Stack (MERN) Developer specializing in React.js, Next.js, Node.js, enterprise admin dashboards, and scalable web architectures with predictable state flow.
+              Full Stack (MERN) Developer specializing in React.js, Next.js, Node.js, enterprise
+              admin dashboards, and scalable web architectures with predictable state flow.
             </p>
 
             {/* Real-time Timezone Clock */}
@@ -120,9 +117,7 @@ export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
                 <Globe className="w-3.5 h-3.5 text-[#b87333]" />
                 <span>Dhaka, Bangladesh (GMT+6)</span>
               </div>
-              <span className="text-[#e49b58] font-bold">
-                {timeStr || '12:00:00 PM'}
-              </span>
+              <span className="text-[#e49b58] font-bold">{timeStr || "12:00:00 PM"}</span>
             </div>
 
             {/* Quick Action Pills */}
@@ -195,7 +190,8 @@ export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
               Network & Connect
             </h4>
             <p className="text-xs text-[#8e8a82] leading-relaxed">
-              Available for full-time software engineering roles, enterprise React / Next.js dashboards, and technical consultations.
+              Available for full-time software engineering roles, enterprise React / Next.js
+              dashboards, and technical consultations.
             </p>
 
             {/* Social Icons */}
@@ -247,13 +243,13 @@ export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
               Status: <span className="text-[#34d399]">{PORTFOLIO_DATA.profile.status}</span>
             </div>
           </div>
-
         </div>
 
         {/* Footer Bottom Bar with Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#8e8a82]">
           <div>
-            © {new Date().getFullYear()} {PORTFOLIO_DATA.profile.name}. Crafted in Graphite & Copper. All systems operational.
+            © {new Date().getFullYear()} {PORTFOLIO_DATA.profile.name}. Crafted in Graphite &
+            Copper. All systems operational.
           </div>
 
           {/* Back to top circular button */}
@@ -288,7 +284,6 @@ export default function Footer({ onOpenTerminal, onOpenResume }: FooterProps) {
             </div>
           </button>
         </div>
-
       </div>
     </footer>
   );

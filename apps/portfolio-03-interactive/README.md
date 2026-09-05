@@ -3,6 +3,7 @@
 Interactive Next.js 15 portfolio website with Motion, Tailwind CSS v4, and Canvas Confetti.
 
 ## Features
+
 - Next.js 15 App Router + React 19
 - Interactive UI animations with Canvas Confetti & Motion
 - Google GenAI integration support
@@ -10,11 +11,13 @@ Interactive Next.js 15 portfolio website with Motion, Tailwind CSS v4, and Canva
 ## Development
 
 Run locally from repository root:
+
 ```bash
 pnpm dev:03
 ```
 
 Or from `apps/portfolio-03-interactive`:
+
 ```bash
 pnpm dev
 ```

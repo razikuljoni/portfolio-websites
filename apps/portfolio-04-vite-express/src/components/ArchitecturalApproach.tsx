@@ -1,29 +1,46 @@
-import React, { useState } from 'react';
-import { Layers, ArrowRight, Activity, ShieldCheck, Scale, Cpu, Sparkles, ExternalLink, ChevronRight, CheckCircle2, Github, Globe } from 'lucide-react';
-import { CaseStudy, TechSkill } from '../types';
-import { CASE_STUDIES, TECH_SKILLS } from '../data/portfolioData';
-import { ArchitectureDiagram } from './ArchitectureDiagram';
+import React, { useState } from "react";
+import {
+  Layers,
+  ArrowRight,
+  Activity,
+  ShieldCheck,
+  Scale,
+  Cpu,
+  Sparkles,
+  ExternalLink,
+  ChevronRight,
+  CheckCircle2,
+  Github,
+  Globe,
+} from "lucide-react";
+import { CaseStudy, TechSkill } from "../types";
+import { CASE_STUDIES, TECH_SKILLS } from "../data/portfolioData";
+import { ArchitectureDiagram } from "./ArchitectureDiagram";
 
 interface ArchitecturalApproachProps {
   onSelectCaseStudy: (caseStudy: CaseStudy) => void;
   onSelectSkill: (skill: TechSkill) => void;
 }
 
-export const ArchitecturalApproach: React.FC<ArchitecturalApproachProps> = ({ onSelectCaseStudy, onSelectSkill }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+export const ArchitecturalApproach: React.FC<ArchitecturalApproachProps> = ({
+  onSelectCaseStudy,
+  onSelectSkill,
+}) => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'Full-Stack Commerce', label: 'Full-Stack Commerce' },
-    { id: 'Enterprise Systems', label: 'Enterprise Systems' },
-    { id: 'Performance & Web Platform', label: 'Performance & Web' },
-    { id: 'Data Visualization', label: 'Data Visualization' },
-    { id: 'Developer Tooling', label: 'Developer Tooling' },
+    { id: "all", label: "All Projects" },
+    { id: "Full-Stack Commerce", label: "Full-Stack Commerce" },
+    { id: "Enterprise Systems", label: "Enterprise Systems" },
+    { id: "Performance & Web Platform", label: "Performance & Web" },
+    { id: "Data Visualization", label: "Data Visualization" },
+    { id: "Developer Tooling", label: "Developer Tooling" },
   ];
 
-  const filteredCaseStudies = selectedCategory === 'all'
-    ? CASE_STUDIES
-    : CASE_STUDIES.filter((c) => c.category === selectedCategory);
+  const filteredCaseStudies =
+    selectedCategory === "all"
+      ? CASE_STUDIES
+      : CASE_STUDIES.filter((c) => c.category === selectedCategory);
 
   return (
     <section id="architecture" className="py-20 border-t border-neutral-800/80 relative">
@@ -31,7 +48,6 @@ export const ArchitecturalApproach: React.FC<ArchitecturalApproachProps> = ({ on
       <div className="absolute top-10 right-0 w-96 h-96 bg-amber-500/5 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3">
@@ -43,7 +59,9 @@ export const ArchitecturalApproach: React.FC<ArchitecturalApproachProps> = ({ on
               High-Performance Products & Dashboards
             </h2>
             <p className="text-sm sm:text-base text-neutral-400 max-w-2xl">
-              Deep dives into production web applications, enterprise monitoring suites, and developer tools I have engineered. Each case study details system architecture, state management patterns, and verified production benchmarks.
+              Deep dives into production web applications, enterprise monitoring suites, and
+              developer tools I have engineered. Each case study details system architecture, state
+              management patterns, and verified production benchmarks.
             </p>
           </div>
 
@@ -53,11 +71,11 @@ export const ArchitecturalApproach: React.FC<ArchitecturalApproachProps> = ({ on
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                id={`arch-filter-${cat.id.toLowerCase().replace(/\s+/g, '-')}`}
+                id={`arch-filter-${cat.id.toLowerCase().replace(/\s+/g, "-")}`}
                 className={`px-3 py-1.5 text-xs font-mono rounded-lg transition-colors cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-neutral-800 text-neutral-100 font-medium border border-neutral-700 shadow-xs'
-                    : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900'
+                    ? "bg-neutral-800 text-neutral-100 font-medium border border-neutral-700 shadow-xs"
+                    : "text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900"
                 }`}
               >
                 {cat.label}
@@ -109,7 +127,9 @@ export const ArchitecturalApproach: React.FC<ArchitecturalApproachProps> = ({ on
                         className="p-2.5 rounded-lg bg-neutral-900/80 border border-neutral-800/80"
                       >
                         <div className="text-[10px] text-neutral-400 truncate">{m.label}</div>
-                        <div className="text-sm font-bold font-mono text-neutral-100 mt-0.5">{m.value}</div>
+                        <div className="text-sm font-bold font-mono text-neutral-100 mt-0.5">
+                          {m.value}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -180,12 +200,10 @@ export const ArchitecturalApproach: React.FC<ArchitecturalApproachProps> = ({ on
                     </div>
                   </div>
                 </div>
-
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

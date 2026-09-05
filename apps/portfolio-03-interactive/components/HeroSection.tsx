@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import HeroCanvas from './HeroCanvas';
-import { 
-  ArrowDown, 
-  Terminal, 
-  Layers, 
-  FileText, 
-  Cpu, 
-  ShieldCheck, 
-  Sparkles, 
+import React, { useState, useEffect } from "react";
+import HeroCanvas from "./HeroCanvas";
+import {
+  ArrowDown,
+  Terminal,
+  Layers,
+  FileText,
+  Cpu,
+  ShieldCheck,
+  Sparkles,
   ExternalLink,
   ChevronRight,
-  Zap
-} from 'lucide-react';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
+  Zap,
+} from "lucide-react";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
 
 interface HeroSectionProps {
   onOpenTerminal: () => void;
@@ -24,11 +24,11 @@ interface HeroSectionProps {
 export default function HeroSection({ onOpenTerminal, onOpenResume }: HeroSectionProps) {
   const [currentTagIndex, setCurrentTagIndex] = useState(0);
   const tags = [
-    'Production React.js & Next.js Ecosystems',
-    'Enterprise Admin & Workflow Dashboards',
-    'Scalable Node.js & Express REST APIs',
-    'Predictable Redux & RTK Query State',
-    '100% Accessible & Responsive UIs'
+    "Production React.js & Next.js Ecosystems",
+    "Enterprise Admin & Workflow Dashboards",
+    "Scalable Node.js & Express REST APIs",
+    "Predictable Redux & RTK Query State",
+    "100% Accessible & Responsive UIs",
   ];
 
   useEffect(() => {
@@ -51,7 +51,6 @@ export default function HeroSection({ onOpenTerminal, onOpenResume }: HeroSectio
 
       {/* Main Content Container with Parallax feel */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-        
         {/* Availability & Role Badge */}
         <div
           id="hero-status-badge"
@@ -71,10 +70,10 @@ export default function HeroSection({ onOpenTerminal, onOpenResume }: HeroSectio
           id="hero-main-title"
           className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#f5f0e8] leading-[1.1] mb-6 font-['Space_Grotesk']"
         >
-          Crafting High-Performance,{' '}
+          Crafting High-Performance,{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b87333] via-[#e49b58] to-[#d97736]">
             Full-Stack
-          </span>{' '}
+          </span>{" "}
           Web Products & Dashboards.
         </h1>
 
@@ -91,7 +90,10 @@ export default function HeroSection({ onOpenTerminal, onOpenResume }: HeroSectio
           id="hero-subtext"
           className="text-base sm:text-lg md:text-xl text-[#c8c3bb] max-w-3xl mb-10 leading-relaxed font-light"
         >
-          I am <strong className="text-[#f5f0e8] font-semibold">{PORTFOLIO_DATA.profile.name}</strong>, a results-driven Full Stack (MERN) Developer with 2+ years of production experience translating complex operations into fast, accessible, and data-heavy web applications.
+          I am{" "}
+          <strong className="text-[#f5f0e8] font-semibold">{PORTFOLIO_DATA.profile.name}</strong>, a
+          results-driven Full Stack (MERN) Developer with 2+ years of production experience
+          translating complex operations into fast, accessible, and data-heavy web applications.
         </p>
 
         {/* Primary Action Button Cluster */}
@@ -151,7 +153,6 @@ export default function HeroSection({ onOpenTerminal, onOpenResume }: HeroSectio
             <span className="text-[#b87333]">Dhaka, BD (GMT+6)</span>
           </div>
         </div>
-
       </div>
 
       {/* Down Scroll Indicator */}

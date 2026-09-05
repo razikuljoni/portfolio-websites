@@ -6,6 +6,7 @@
 **Plan:** `goals/resume-integration/plan.md`
 
 ## Done Condition
+
 - Visiting `/about/resume` shows the resume with dark mode support
 - The role title reads "Full Stack (MERN) Developer"
 - A Download PDF button is visible opposite the name (hidden during print)

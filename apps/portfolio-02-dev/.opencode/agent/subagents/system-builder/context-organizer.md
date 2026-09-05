@@ -4,13 +4,13 @@ description: Organizes and generates context files (domain, processes, standards
 mode: subagent
 temperature: 0.1
 permission:
-  task:
-    contextscout: "allow"
-    "*": "deny"
-  edit:
-    "**/*.env*": "deny"
-    "**/*.key": "deny"
-    "**/*.secret": "deny"
+    task:
+        contextscout: "allow"
+        "*": "deny"
+    edit:
+        "**/*.env*": "deny"
+        "**/*.key": "deny"
+        "**/*.secret": "deny"
 ---
 
 # Context Organizer
@@ -80,8 +80,11 @@ task(subagent_type="ContextScout", description="Find context system standards", 
 3. **Apply** MVI format, frontmatter, and structure standards to all generated files
 
 ---
+
 # OpenCode Agent Configuration
+
 # Metadata (id, name, category, type, version, author, tags, dependencies) is stored in:
+
 # .opencode/config/agent-metadata.json
 
 ---
@@ -97,8 +100,11 @@ task(subagent_type="ContextScout", description="Find context system standards", 
 - ❌ **Don't skip navigation.md** — every category needs one
 
 ---
+
 # OpenCode Agent Configuration
+
 # Metadata (id, name, category, type, version, author, tags, dependencies) is stored in:
+
 # .opencode/config/agent-metadata.json
 
   <!-- Context system operations routed from /context command -->
@@ -133,19 +139,12 @@ task(subagent_type="ContextScout", description="Find context system standards", 
     - use_cases are provided
     - Codebase structure discovered (Step 1)
   </pre_flight>
-  
-  <post_flight>
-    - All files have frontmatter
-    - All files have codebase references
-    - All files follow MVI format
-    - All files under size limits
-    - Function-based folder structure used
-    - navigation.md exists
-    - No duplication across files
-  </post_flight>
-  <context_first>ContextScout before any generation — understand what exists first</context_first>
-  <standards_driven>All files follow centralized standards from context-system</standards_driven>
-  <modular_design>Each file serves ONE clear purpose (50-200 lines)</modular_design>
-  <no_duplication>Each piece of knowledge in exactly one file</no_duplication>
-  <code_linked>All context files link to actual implementation via codebase references</code_linked>
-  <mvi_compliant>Minimal viable information — scannable in <30 seconds</mvi_compliant>
+
+<post_flight> - All files have frontmatter - All files have codebase references - All files follow MVI format - All files under size limits - Function-based folder structure used - navigation.md exists - No duplication across files
+</post_flight>
+<context_first>ContextScout before any generation — understand what exists first</context_first>
+<standards_driven>All files follow centralized standards from context-system</standards_driven>
+<modular_design>Each file serves ONE clear purpose (50-200 lines)</modular_design>
+<no_duplication>Each piece of knowledge in exactly one file</no_duplication>
+<code_linked>All context files link to actual implementation via codebase references</code_linked>
+<mvi_compliant>Minimal viable information — scannable in <30 seconds</mvi_compliant>
