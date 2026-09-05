@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
-import { Quote, ChevronLeft, ChevronRight, MessageSquareQuote } from 'lucide-react';
+import React, { useState } from "react";
+import Image from "next/image";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
+import { Quote, ChevronLeft, ChevronRight, MessageSquareQuote } from "lucide-react";
 
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +25,6 @@ export default function TestimonialsSection() {
       className="relative py-28 px-4 sm:px-6 lg:px-8 bg-[#1c1c1e] dark:bg-[#1c1c1e] light:bg-[#f8f5ef] overflow-hidden"
     >
       <div className="max-w-5xl mx-auto">
-        
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2c2c2e] border border-[#b87333]/30 text-xs font-mono text-[#b87333] mb-4">
@@ -67,15 +66,11 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-[#f5f0e8]">
-                    {current.author}
-                  </h4>
+                  <h4 className="text-base font-bold text-[#f5f0e8]">{current.author}</h4>
                   <p className="text-xs text-[#b87333] font-mono">
                     {current.title} • {current.company}
                   </p>
-                  <p className="text-[11px] text-[#8e8a82]">
-                    {current.relationship}
-                  </p>
+                  <p className="text-[11px] text-[#8e8a82]">{current.relationship}</p>
                 </div>
               </div>
 
@@ -119,12 +114,11 @@ export default function TestimonialsSection() {
               onClick={() => setCurrentIndex(idx)}
               aria-label={`Go to testimonial ${idx + 1}`}
               className={`h-2 rounded-full transition-all duration-300 ${
-                currentIndex === idx ? 'w-8 bg-[#b87333]' : 'w-2 bg-[#2c2c2e] hover:bg-[#8e8a82]'
+                currentIndex === idx ? "w-8 bg-[#b87333]" : "w-2 bg-[#2c2c2e] hover:bg-[#8e8a82]"
               }`}
             />
           ))}
         </div>
-
       </div>
     </section>
   );

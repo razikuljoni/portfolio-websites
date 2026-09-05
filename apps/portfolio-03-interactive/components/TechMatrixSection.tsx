@@ -1,22 +1,23 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
-import { Cpu, Cloud, Database, Sparkles, Search, Layers, CheckCircle2 } from 'lucide-react';
+import React, { useState } from "react";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
+import { Cpu, Cloud, Database, Sparkles, Search, Layers, CheckCircle2 } from "lucide-react";
 
 export default function TechMatrixSection() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const categories = ['All', ...PORTFOLIO_DATA.skillCategories.map((c) => c.title)];
+  const categories = ["All", ...PORTFOLIO_DATA.skillCategories.map((c) => c.title)];
 
   // Filter skills based on category and search query
   const filteredCategories = PORTFOLIO_DATA.skillCategories
-    .filter((cat) => selectedCategory === 'All' || cat.title === selectedCategory)
+    .filter((cat) => selectedCategory === "All" || cat.title === selectedCategory)
     .map((cat) => {
-      const matchingSkills = cat.skills.filter((skill) =>
-        skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        skill.description.toLowerCase().includes(searchQuery.toLowerCase())
+      const matchingSkills = cat.skills.filter(
+        (skill) =>
+          skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          skill.description.toLowerCase().includes(searchQuery.toLowerCase())
       );
       return {
         ...cat,
@@ -26,10 +27,10 @@ export default function TechMatrixSection() {
     .filter((cat) => cat.skills.length > 0);
 
   const getCategoryIcon = (title: string) => {
-    if (title.includes('Frontend')) return Layers;
-    if (title.includes('Backend')) return Cpu;
-    if (title.includes('Database')) return Database;
-    if (title.includes('DevOps')) return Cloud;
+    if (title.includes("Frontend")) return Layers;
+    if (title.includes("Backend")) return Cpu;
+    if (title.includes("Database")) return Database;
+    if (title.includes("DevOps")) return Cloud;
     return Sparkles;
   };
 
@@ -42,7 +43,6 @@ export default function TechMatrixSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
-        
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#242426] border border-[#b87333]/30 text-xs font-mono text-[#b87333] mb-4">
@@ -53,7 +53,8 @@ export default function TechMatrixSection() {
             Battle-Tested Tooling & Engineering Stack
           </h2>
           <p className="mt-4 text-[#c8c3bb] text-base max-w-2xl font-light">
-            Production-honed proficiencies across modern frontend frameworks, scalable backend APIs, predictable state architectures, and robust database systems.
+            Production-honed proficiencies across modern frontend frameworks, scalable backend APIs,
+            predictable state architectures, and robust database systems.
           </p>
           <div className="w-16 h-1 bg-[#b87333] mt-6 rounded-full" />
         </div>
@@ -66,12 +67,12 @@ export default function TechMatrixSection() {
               <button
                 key={cat}
                 type="button"
-                id={`tech-filter-${cat.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                id={`tech-filter-${cat.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 ${
                   selectedCategory === cat
-                    ? 'bg-[#b87333] text-[#f5f0e8] shadow-[0_0_15px_rgba(184,115,51,0.35)]'
-                    : 'bg-[#1c1c1e] text-[#c8c3bb] hover:text-[#f5f0e8] border border-[#f5f0e8]/10 hover:border-[#b87333]/40'
+                    ? "bg-[#b87333] text-[#f5f0e8] shadow-[0_0_15px_rgba(184,115,51,0.35)]"
+                    : "bg-[#1c1c1e] text-[#c8c3bb] hover:text-[#f5f0e8] border border-[#f5f0e8]/10 hover:border-[#b87333]/40"
                 }`}
               >
                 {cat}
@@ -100,7 +101,7 @@ export default function TechMatrixSection() {
             return (
               <div
                 key={category.title}
-                id={`category-block-${category.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                id={`category-block-${category.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
                 className="p-6 sm:p-8 rounded-3xl bg-[#1c1c1e] border border-[#f5f0e8]/10 shadow-xl"
               >
                 {/* Category Header */}
@@ -112,9 +113,7 @@ export default function TechMatrixSection() {
                     <h3 className="text-lg font-bold text-[#f5f0e8] font-['Space_Grotesk']">
                       {category.title}
                     </h3>
-                    <p className="text-xs text-[#8e8a82]">
-                      {category.description}
-                    </p>
+                    <p className="text-xs text-[#8e8a82]">{category.description}</p>
                   </div>
                 </div>
 
@@ -123,7 +122,7 @@ export default function TechMatrixSection() {
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      id={`skill-card-${skill.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                      id={`skill-card-${skill.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
                       className="p-4 rounded-xl bg-[#242426] border border-[#f5f0e8]/5 hover:border-[#b87333]/40 transition-all group"
                     >
                       <div className="flex items-center justify-between mb-2">
@@ -154,9 +153,7 @@ export default function TechMatrixSection() {
                             style={{ width: `${skill.level}%` }}
                           />
                         </div>
-                        <span className="text-[11px] font-mono text-[#8e8a82]">
-                          {skill.level}%
-                        </span>
+                        <span className="text-[11px] font-mono text-[#8e8a82]">{skill.level}%</span>
                       </div>
                     </div>
                   ))}
@@ -165,7 +162,6 @@ export default function TechMatrixSection() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

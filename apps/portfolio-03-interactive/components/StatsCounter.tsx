@@ -1,22 +1,15 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState, useRef } from 'react';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
-import { Activity, ShieldCheck, Users, TrendingUp, Award, GitPullRequest } from 'lucide-react';
+import React, { useEffect, useState, useRef } from "react";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
+import { Activity, ShieldCheck, Users, TrendingUp, Award, GitPullRequest } from "lucide-react";
 
 export default function StatsCounter() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [counts, setCounts] = useState<number[]>(PORTFOLIO_DATA.stats.map(() => 0));
 
-  const statIcons = [
-    Award,
-    Activity,
-    ShieldCheck,
-    Users,
-    TrendingUp,
-    GitPullRequest,
-  ];
+  const statIcons = [Award, Activity, ShieldCheck, Users, TrendingUp, GitPullRequest];
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -79,7 +72,8 @@ export default function StatsCounter() {
             Proven Impact in Modern Web Applications
           </h2>
           <p className="mt-3 text-[#c8c3bb] text-sm sm:text-base font-light">
-            Measurable impact across production web applications, enterprise dashboards, e-commerce scale, and clean code delivery.
+            Measurable impact across production web applications, enterprise dashboards, e-commerce
+            scale, and clean code delivery.
           </p>
         </div>
 
@@ -119,9 +113,9 @@ export default function StatsCounter() {
 
                 {/* Bottom subtle progress line */}
                 <div className="mt-5 w-full bg-[#2c2c2e] h-1 rounded-full overflow-hidden">
-                  <div 
+                  <div
                     className="bg-gradient-to-r from-[#b87333] to-[#e49b58] h-full rounded-full transition-all duration-1000"
-                    style={{ width: hasAnimated ? '100%' : '0%' }}
+                    style={{ width: hasAnimated ? "100%" : "0%" }}
                   />
                 </div>
               </div>

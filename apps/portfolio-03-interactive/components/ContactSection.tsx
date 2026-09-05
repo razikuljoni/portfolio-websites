@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import confetti from 'canvas-confetti';
-import { 
-  Mail, 
-  Send, 
-  Copy, 
-  Check, 
-  Key, 
-  Calendar, 
-  ShieldCheck, 
+import React, { useState } from "react";
+import confetti from "canvas-confetti";
+import {
+  Mail,
+  Send,
+  Copy,
+  Check,
+  Key,
+  Calendar,
+  ShieldCheck,
   Sparkles,
   MessageSquare,
-  AlertCircle
-} from 'lucide-react';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
+  AlertCircle,
+} from "lucide-react";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    inquiryType: 'Full-Time Full Stack Role',
-    scope: 'Full-Time Employment',
-    message: '',
+    name: "",
+    email: "",
+    inquiryType: "Full-Time Full Stack Role",
+    scope: "Full-Time Employment",
+    message: "",
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -48,15 +48,16 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
   const validateForm = () => {
     const errs: { [key: string]: string } = {};
     if (!formData.name.trim()) {
-      errs.name = 'Please provide your full name or company.';
+      errs.name = "Please provide your full name or company.";
     }
     if (!formData.email.trim()) {
-      errs.email = 'Please provide a work email address.';
+      errs.email = "Please provide a work email address.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errs.email = 'Please provide a valid email format.';
+      errs.email = "Please provide a valid email format.";
     }
     if (!formData.message.trim() || formData.message.trim().length < 15) {
-      errs.message = 'Please provide at least 15 characters describing your project or opportunity.';
+      errs.message =
+        "Please provide at least 15 characters describing your project or opportunity.";
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -78,18 +79,18 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#b87333', '#e49b58', '#d97736', '#f5f0e8'],
+        colors: ["#b87333", "#e49b58", "#d97736", "#f5f0e8"],
       });
     }, 1200);
   };
 
   const handleReset = () => {
     setFormData({
-      name: '',
-      email: '',
-      inquiryType: 'Full-Time Full Stack Role',
-      scope: 'Full-Time Employment',
-      message: '',
+      name: "",
+      email: "",
+      inquiryType: "Full-Time Full Stack Role",
+      scope: "Full-Time Employment",
+      message: "",
     });
     setErrors({});
     setIsSuccess(false);
@@ -101,7 +102,6 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
       className="relative py-28 px-4 sm:px-6 lg:px-8 bg-[#141416] dark:bg-[#141416] light:bg-[#eee8de] border-t border-[#f5f0e8]/10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#242426] border border-[#b87333]/30 text-xs font-mono text-[#b87333] mb-4">
@@ -112,16 +112,15 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
             Let&apos;s Build Impactful Web Products Together
           </h2>
           <p className="mt-4 text-[#c8c3bb] text-base max-w-2xl font-light">
-            Open to Full-time Full Stack / MERN Developer roles, contract engineering, and enterprise dashboard consulting.
+            Open to Full-time Full Stack / MERN Developer roles, contract engineering, and
+            enterprise dashboard consulting.
           </p>
           <div className="w-16 h-1 bg-[#b87333] mt-6 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
           {/* Left Column: Direct Info & Quick Actions */}
           <div className="lg:col-span-5 space-y-6">
-            
             {/* Quick Contact Card */}
             <div className="p-6 sm:p-8 rounded-3xl bg-[#1c1c1e] border border-[#b87333]/30 shadow-xl space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-[#f5f0e8]/10">
@@ -147,7 +146,11 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                     className="p-2 rounded-lg bg-[#1c1c1e] hover:bg-[#b87333] text-[#c8c3bb] hover:text-[#f5f0e8] transition-colors shrink-0"
                     title="Copy Email Address"
                   >
-                    {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                    {copiedEmail ? (
+                      <Check className="w-4 h-4 text-emerald-400" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
                   </button>
                 </div>
                 {copiedEmail && (
@@ -175,7 +178,9 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
 
               {/* Focus Areas for Advisory */}
               <div className="space-y-2 text-xs font-mono text-[#c8c3bb]">
-                <div className="text-[#8e8a82] uppercase text-[10px]">Technical Specializations:</div>
+                <div className="text-[#8e8a82] uppercase text-[10px]">
+                  Technical Specializations:
+                </div>
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#b87333]" />
                   <span>Enterprise Admin & Workflow Dashboards (React / Next.js)</span>
@@ -189,17 +194,17 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                   <span>Real-Time Tracking, Maps & E-commerce Applications</span>
                 </div>
               </div>
-
             </div>
-
           </div>
 
           {/* Right Column: Interactive Form */}
           <div className="lg:col-span-7">
             <div className="p-6 sm:p-10 rounded-3xl bg-[#1c1c1e] border border-[#f5f0e8]/10 shadow-2xl">
-              
               {isSuccess ? (
-                <div id="contact-success-box" className="text-center py-10 space-y-6 animate-fade-in">
+                <div
+                  id="contact-success-box"
+                  className="text-center py-10 space-y-6 animate-fade-in"
+                >
                   <div className="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-500 mx-auto flex items-center justify-center text-emerald-400">
                     <Check className="w-8 h-8" />
                   </div>
@@ -208,7 +213,10 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                       Transmission Dispatched
                     </h3>
                     <p className="mt-2 text-sm text-[#c8c3bb] max-w-md mx-auto font-light">
-                      Thank you for reaching out, <strong className="text-[#f5f0e8]">{formData.name}</strong>. Your inquiry has been routed directly to {PORTFOLIO_DATA.profile.name}&apos;s priority queue. Expect a prompt response.
+                      Thank you for reaching out,{" "}
+                      <strong className="text-[#f5f0e8]">{formData.name}</strong>. Your inquiry has
+                      been routed directly to {PORTFOLIO_DATA.profile.name}&apos;s priority queue.
+                      Expect a prompt response.
                     </p>
                   </div>
                   <button
@@ -220,12 +228,19 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                   </button>
                 </div>
               ) : (
-                <form id="contact-advisory-form" onSubmit={handleSubmit} className="space-y-6" noValidate>
-                  
+                <form
+                  id="contact-advisory-form"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                  noValidate
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Name */}
                     <div>
-                      <label htmlFor="contact-name" className="block text-xs font-mono text-[#c8c3bb] mb-2">
+                      <label
+                        htmlFor="contact-name"
+                        className="block text-xs font-mono text-[#c8c3bb] mb-2"
+                      >
                         Full Name / Company <span className="text-[#e49b58]">*</span>
                       </label>
                       <input
@@ -235,7 +250,7 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Hiring Manager / Technical Lead"
                         className={`w-full bg-[#242426] border ${
-                          errors.name ? 'border-rose-500' : 'border-[#f5f0e8]/10'
+                          errors.name ? "border-rose-500" : "border-[#f5f0e8]/10"
                         } rounded-xl px-4 py-3 text-xs sm:text-sm text-[#f5f0e8] placeholder-[#8e8a82] focus:outline-none focus:border-[#b87333] transition-colors`}
                       />
                       {errors.name && (
@@ -248,7 +263,10 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
 
                     {/* Work Email */}
                     <div>
-                      <label htmlFor="contact-email" className="block text-xs font-mono text-[#c8c3bb] mb-2">
+                      <label
+                        htmlFor="contact-email"
+                        className="block text-xs font-mono text-[#c8c3bb] mb-2"
+                      >
                         Work Email Address <span className="text-[#e49b58]">*</span>
                       </label>
                       <input
@@ -258,7 +276,7 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="contact@company.com"
                         className={`w-full bg-[#242426] border ${
-                          errors.email ? 'border-rose-500' : 'border-[#f5f0e8]/10'
+                          errors.email ? "border-rose-500" : "border-[#f5f0e8]/10"
                         } rounded-xl px-4 py-3 text-xs sm:text-sm text-[#f5f0e8] placeholder-[#8e8a82] focus:outline-none focus:border-[#b87333] transition-colors`}
                       />
                       {errors.email && (
@@ -273,7 +291,10 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                   {/* Inquiry Type & Scope Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="contact-inquiry-type" className="block text-xs font-mono text-[#c8c3bb] mb-2">
+                      <label
+                        htmlFor="contact-inquiry-type"
+                        className="block text-xs font-mono text-[#c8c3bb] mb-2"
+                      >
                         Inquiry Nature
                       </label>
                       <select
@@ -282,15 +303,26 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                         onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                         className="w-full bg-[#242426] border border-[#f5f0e8]/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-[#f5f0e8] focus:outline-none focus:border-[#b87333]"
                       >
-                        <option value="Full-Time Full Stack Role">Full-Time Full Stack / MERN Role</option>
-                        <option value="Frontend / React Development">Frontend / React & Next.js Development</option>
-                        <option value="Enterprise Dashboard Project">Enterprise Dashboard / Workflow System</option>
-                        <option value="Contract / Freelance">Contract / Project-Based Sprint</option>
+                        <option value="Full-Time Full Stack Role">
+                          Full-Time Full Stack / MERN Role
+                        </option>
+                        <option value="Frontend / React Development">
+                          Frontend / React & Next.js Development
+                        </option>
+                        <option value="Enterprise Dashboard Project">
+                          Enterprise Dashboard / Workflow System
+                        </option>
+                        <option value="Contract / Freelance">
+                          Contract / Project-Based Sprint
+                        </option>
                       </select>
                     </div>
 
                     <div>
-                      <label htmlFor="contact-scope" className="block text-xs font-mono text-[#c8c3bb] mb-2">
+                      <label
+                        htmlFor="contact-scope"
+                        className="block text-xs font-mono text-[#c8c3bb] mb-2"
+                      >
                         Engagement Scope / Timeline
                       </label>
                       <select
@@ -299,7 +331,9 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                         onChange={(e) => setFormData({ ...formData, scope: e.target.value })}
                         className="w-full bg-[#242426] border border-[#f5f0e8]/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-[#f5f0e8] focus:outline-none focus:border-[#b87333]"
                       >
-                        <option value="Full-Time Employment">Full-Time Employment (Immediate/Notice)</option>
+                        <option value="Full-Time Employment">
+                          Full-Time Employment (Immediate/Notice)
+                        </option>
                         <option value="Contract / Project-Based">Contract / Project-Based</option>
                         <option value="Part-Time / Hourly">Part-Time / Hourly Advisory</option>
                         <option value="Open Source Collaboration">Open Source Collaboration</option>
@@ -309,7 +343,10 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="contact-message" className="block text-xs font-mono text-[#c8c3bb] mb-2">
+                    <label
+                      htmlFor="contact-message"
+                      className="block text-xs font-mono text-[#c8c3bb] mb-2"
+                    >
                       Project or Role Description <span className="text-[#e49b58]">*</span>
                     </label>
                     <textarea
@@ -319,7 +356,7 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Outline the role requirements, project goals, tech stack, or roadmap..."
                       className={`w-full bg-[#242426] border ${
-                        errors.message ? 'border-rose-500' : 'border-[#f5f0e8]/10'
+                        errors.message ? "border-rose-500" : "border-[#f5f0e8]/10"
                       } rounded-xl px-4 py-3 text-xs sm:text-sm text-[#f5f0e8] placeholder-[#8e8a82] focus:outline-none focus:border-[#b87333] transition-colors leading-relaxed`}
                     />
                     {errors.message && (
@@ -349,15 +386,11 @@ mQGNBF+vX/kBDAC6eG9hK4L7J5X2zZ6k3x1v9q... (MD Razikul Islam Joni)
                       </>
                     )}
                   </button>
-
                 </form>
               )}
-
             </div>
           </div>
-
         </div>
-
       </div>
 
       {/* PGP Public Key Modal */}

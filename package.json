@@ -19,6 +19,7 @@
     "lint": "pnpm --recursive run lint",
     "lint:all": "pnpm --recursive run lint",
     "format": "prettier --write \"apps/**/*.{ts,tsx,js,jsx,css,json,md}\"",
+    "format:check": "prettier --check \"apps/**/*.{ts,tsx,js,jsx,css,json,md}\" \"packages/**/*.{ts,tsx,js,jsx,css,json,md}\"",
     "check": "pnpm --recursive run check"
   },
   "devDependencies": {

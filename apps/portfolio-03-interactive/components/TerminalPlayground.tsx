@@ -1,8 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState, useRef, useEffect } from 'react';
-import { Terminal as TerminalIcon, Sparkles, Send, CornerDownLeft, RotateCcw, X } from 'lucide-react';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
+import React, { useState, useRef, useEffect } from "react";
+import {
+  Terminal as TerminalIcon,
+  Sparkles,
+  Send,
+  CornerDownLeft,
+  RotateCcw,
+  X,
+} from "lucide-react";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
 
 interface CommandOutput {
   command: string;
@@ -11,21 +18,22 @@ interface CommandOutput {
 }
 
 export default function TerminalPlayground() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [history, setHistory] = useState<CommandOutput[]>([
     {
-      command: 'sys.init --profile=razikul_joni',
+      command: "sys.init --profile=razikul_joni",
       output: (
         <div className="space-y-1 text-xs font-mono">
           <p className="text-[#34d399]">
             ✓ Initialized MD Razikul Islam Joni Developer Environment v2.4
           </p>
           <p className="text-[#8e8a82]">
-            Type <span className="text-[#e49b58] font-bold">help</span> to view available system commands or click quick action chips below.
+            Type <span className="text-[#e49b58] font-bold">help</span> to view available system
+            commands or click quick action chips below.
           </p>
         </div>
       ),
-      timestamp: '12:00:00',
+      timestamp: "12:00:00",
     },
   ]);
 
@@ -35,19 +43,19 @@ export default function TerminalPlayground() {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [history]);
 
   const quickCommands = [
-    'help',
-    'skills',
-    'projects',
-    'experience',
-    'stats',
-    'philosophy',
-    'ping joni',
-    'contact',
-    'clear',
+    "help",
+    "skills",
+    "projects",
+    "experience",
+    "stats",
+    "philosophy",
+    "ping joni",
+    "contact",
+    "clear",
   ];
 
   const handleCommand = (rawCmd: string) => {
@@ -62,151 +70,221 @@ export default function TerminalPlayground() {
 
     let resultNode: React.ReactNode;
 
-    if (lowerCmd === 'clear') {
+    if (lowerCmd === "clear") {
       setHistory([]);
-      setInput('');
+      setInput("");
       return;
-    } else if (lowerCmd === 'help') {
+    } else if (lowerCmd === "help") {
       resultNode = (
         <div className="space-y-1.5 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#e49b58] font-bold">AVAILABLE DEVELOPER CLI COMMANDS:</p>
-          <p>• <span className="text-[#b87333]">about</span>: Overview of engineering background & experience</p>
-          <p>• <span className="text-[#b87333]">skills</span>: Display technical proficiency stack</p>
-          <p>• <span className="text-[#b87333]">projects</span>: View production projects & web applications</p>
-          <p>• <span className="text-[#b87333]">experience</span>: Display career history & roles</p>
-          <p>• <span className="text-[#b87333]">stats</span>: Output telemetry benchmarks & verified metrics</p>
-          <p>• <span className="text-[#b87333]">philosophy</span>: Print core web engineering principles</p>
-          <p>• <span className="text-[#b87333]">ping joni</span>: Test response latency & developer status</p>
-          <p>• <span className="text-[#b87333]">cat resume.md</span>: View formatted resume summary</p>
-          <p>• <span className="text-[#b87333]">contact</span>: Display direct communication channels</p>
-          <p>• <span className="text-[#b87333]">theme light|dark</span>: Switch portfolio theme mode</p>
-          <p>• <span className="text-[#b87333]">clear</span>: Clear terminal viewport</p>
+          <p>
+            • <span className="text-[#b87333]">about</span>: Overview of engineering background &
+            experience
+          </p>
+          <p>
+            • <span className="text-[#b87333]">skills</span>: Display technical proficiency stack
+          </p>
+          <p>
+            • <span className="text-[#b87333]">projects</span>: View production projects & web
+            applications
+          </p>
+          <p>
+            • <span className="text-[#b87333]">experience</span>: Display career history & roles
+          </p>
+          <p>
+            • <span className="text-[#b87333]">stats</span>: Output telemetry benchmarks & verified
+            metrics
+          </p>
+          <p>
+            • <span className="text-[#b87333]">philosophy</span>: Print core web engineering
+            principles
+          </p>
+          <p>
+            • <span className="text-[#b87333]">ping joni</span>: Test response latency & developer
+            status
+          </p>
+          <p>
+            • <span className="text-[#b87333]">cat resume.md</span>: View formatted resume summary
+          </p>
+          <p>
+            • <span className="text-[#b87333]">contact</span>: Display direct communication channels
+          </p>
+          <p>
+            • <span className="text-[#b87333]">theme light|dark</span>: Switch portfolio theme mode
+          </p>
+          <p>
+            • <span className="text-[#b87333]">clear</span>: Clear terminal viewport
+          </p>
         </div>
       );
-    } else if (lowerCmd === 'about') {
+    } else if (lowerCmd === "about") {
       resultNode = (
         <div className="space-y-2 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#f5f0e8] font-bold">
-            {PORTFOLIO_DATA.profile.name.toUpperCase()} {'//'} {PORTFOLIO_DATA.profile.title.toUpperCase()}
+            {PORTFOLIO_DATA.profile.name.toUpperCase()} {"//"}{" "}
+            {PORTFOLIO_DATA.profile.title.toUpperCase()}
           </p>
-          <p>Location: {PORTFOLIO_DATA.profile.location} | Experience: 2+ Years Production Experience</p>
-          <p className="text-[#8e8a82]">
-            {PORTFOLIO_DATA.profile.tagline}
+          <p>
+            Location: {PORTFOLIO_DATA.profile.location} | Experience: 2+ Years Production Experience
           </p>
+          <p className="text-[#8e8a82]">{PORTFOLIO_DATA.profile.tagline}</p>
         </div>
       );
-    } else if (lowerCmd === 'skills') {
+    } else if (lowerCmd === "skills") {
       resultNode = (
         <div className="space-y-2 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#e49b58] font-bold">CORE TECHNICAL ARSENAL:</p>
           {PORTFOLIO_DATA.skillCategories.map((c) => (
             <div key={c.title} className="pl-2 border-l border-[#b87333]/40">
-              <span className="text-[#f5f0e8] font-bold">{c.title}:</span>{' '}
-              <span className="text-[#8e8a82]">
-                {c.skills.map((s) => s.name).join(', ')}
-              </span>
+              <span className="text-[#f5f0e8] font-bold">{c.title}:</span>{" "}
+              <span className="text-[#8e8a82]">{c.skills.map((s) => s.name).join(", ")}</span>
             </div>
           ))}
         </div>
       );
-    } else if (lowerCmd === 'projects') {
+    } else if (lowerCmd === "projects") {
       resultNode = (
         <div className="space-y-2 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#e49b58] font-bold">PRODUCTION PROJECTS & CODEBASES:</p>
           {PORTFOLIO_DATA.projects.map((p, idx) => (
             <div key={p.id} className="pl-2 border-l border-[#b87333]/40">
-              <span className="text-[#b87333]">[{idx + 1}]</span> <span className="text-[#f5f0e8] font-bold">{p.title}</span> — {p.subtitle}
-              <div className="text-[11px] text-[#8e8a82]">Stack: {p.technologies.join(', ')}</div>
+              <span className="text-[#b87333]">[{idx + 1}]</span>{" "}
+              <span className="text-[#f5f0e8] font-bold">{p.title}</span> — {p.subtitle}
+              <div className="text-[11px] text-[#8e8a82]">Stack: {p.technologies.join(", ")}</div>
             </div>
           ))}
         </div>
       );
-    } else if (lowerCmd === 'experience') {
+    } else if (lowerCmd === "experience") {
       resultNode = (
         <div className="space-y-3 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#e49b58] font-bold">CAREER HISTORY:</p>
           {PORTFOLIO_DATA.experience.map((exp) => (
             <div key={exp.id} className="pl-2 border-l border-[#b87333]/40 space-y-1">
-              <div className="text-[#f5f0e8] font-bold">{exp.role} — <span className="text-[#b87333]">{exp.company}</span></div>
-              <div className="text-[#8e8a82]">{exp.period} | {exp.location}</div>
+              <div className="text-[#f5f0e8] font-bold">
+                {exp.role} — <span className="text-[#b87333]">{exp.company}</span>
+              </div>
+              <div className="text-[#8e8a82]">
+                {exp.period} | {exp.location}
+              </div>
               <p className="text-[#c8c3bb]">{exp.summary}</p>
             </div>
           ))}
         </div>
       );
-    } else if (lowerCmd === 'stats') {
+    } else if (lowerCmd === "stats") {
       resultNode = (
         <div className="space-y-1 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#34d399] font-bold">LIVE TELEMETRY BENCHMARKS:</p>
           {PORTFOLIO_DATA.stats.map((s) => (
             <p key={s.label}>
-              • <span className="text-[#e49b58] font-bold">{s.value}{s.suffix}</span>: {s.label} ({s.change})
+              •{" "}
+              <span className="text-[#e49b58] font-bold">
+                {s.value}
+                {s.suffix}
+              </span>
+              : {s.label} ({s.change})
             </p>
           ))}
         </div>
       );
-    } else if (lowerCmd === 'philosophy') {
+    } else if (lowerCmd === "philosophy") {
       resultNode = (
         <div className="space-y-2 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#e49b58] font-bold">ENGINEERING FIRST PRINCIPLES:</p>
           {PORTFOLIO_DATA.profile.corePrinciples.map((cp, i) => (
             <div key={cp.title}>
-              <span className="text-[#b87333]">0{i + 1}. {cp.title}</span>: {cp.desc}
+              <span className="text-[#b87333]">
+                0{i + 1}. {cp.title}
+              </span>
+              : {cp.desc}
             </div>
           ))}
         </div>
       );
-    } else if (lowerCmd.startsWith('ping')) {
+    } else if (lowerCmd.startsWith("ping")) {
       resultNode = (
         <div className="space-y-1 text-xs font-mono text-[#34d399]">
           <p>PING razikul.joni.dev (103.145.118.2) 56(84) bytes of data.</p>
           <p>64 bytes from razikul.joni: icmp_seq=1 ttl=64 time=18.4 ms</p>
           <p>64 bytes from razikul.joni: icmp_seq=2 ttl=64 time=16.8 ms</p>
           <p className="text-[#f5f0e8]">--- razikul joni ping statistics ---</p>
-          <p className="text-[#c8c3bb]">2 packets transmitted, 2 received, 0% packet loss, time 1001ms, rtt avg = 17.6 ms</p>
+          <p className="text-[#c8c3bb]">
+            2 packets transmitted, 2 received, 0% packet loss, time 1001ms, rtt avg = 17.6 ms
+          </p>
           <p className="text-[#e49b58]">Status: OPEN_FOR_OPPORTUNITIES (Dhaka, GMT+6)</p>
         </div>
       );
-    } else if (lowerCmd === 'contact') {
+    } else if (lowerCmd === "contact") {
       resultNode = (
         <div className="space-y-1 text-xs font-mono text-[#c8c3bb]">
           <p className="text-[#e49b58] font-bold">DIRECT CHANNELS:</p>
-          <p>• Email: <span className="text-[#f5f0e8]">{PORTFOLIO_DATA.profile.email}</span></p>
-          <p>• Phone: <span className="text-[#f5f0e8]">{PORTFOLIO_DATA.profile.phone}</span></p>
-          <p>• Location: <span className="text-[#8e8a82]">{PORTFOLIO_DATA.profile.location}</span></p>
-          <p>• GitHub: <span className="text-[#b87333]">{PORTFOLIO_DATA.profile.github}</span></p>
-          <p>• LinkedIn: <span className="text-[#b87333]">{PORTFOLIO_DATA.profile.linkedin}</span></p>
+          <p>
+            • Email: <span className="text-[#f5f0e8]">{PORTFOLIO_DATA.profile.email}</span>
+          </p>
+          <p>
+            • Phone: <span className="text-[#f5f0e8]">{PORTFOLIO_DATA.profile.phone}</span>
+          </p>
+          <p>
+            • Location: <span className="text-[#8e8a82]">{PORTFOLIO_DATA.profile.location}</span>
+          </p>
+          <p>
+            • GitHub: <span className="text-[#b87333]">{PORTFOLIO_DATA.profile.github}</span>
+          </p>
+          <p>
+            • LinkedIn: <span className="text-[#b87333]">{PORTFOLIO_DATA.profile.linkedin}</span>
+          </p>
         </div>
       );
-    } else if (lowerCmd === 'cat resume.md') {
+    } else if (lowerCmd === "cat resume.md") {
       resultNode = (
         <div className="space-y-2 text-xs font-mono text-[#c8c3bb]">
-          <p className="text-[#f5f0e8] font-bold"># CURRICULUM VITAE: {PORTFOLIO_DATA.profile.name.toUpperCase()}</p>
+          <p className="text-[#f5f0e8] font-bold">
+            # CURRICULUM VITAE: {PORTFOLIO_DATA.profile.name.toUpperCase()}
+          </p>
           <p>Role: {PORTFOLIO_DATA.profile.title} | 2+ Years Production Experience</p>
-          <p>Current: HawkEyes Digital Monitoring Ltd. (Jun 2024 - Present) — Full Stack (MERN) Developer</p>
+          <p>
+            Current: HawkEyes Digital Monitoring Ltd. (Jun 2024 - Present) — Full Stack (MERN)
+            Developer
+          </p>
           <p>Prior: Intern Full Stack Web Developer (Dec 2023 - May 2024)</p>
           <p>Education: BSc in CSE coursework (Green University of Bangladesh)</p>
-          <p className="text-[#8e8a82]">Type &apos;contact&apos; to get in touch or click Curriculum Vitae for PDF view.</p>
+          <p className="text-[#8e8a82]">
+            Type &apos;contact&apos; to get in touch or click Curriculum Vitae for PDF view.
+          </p>
         </div>
       );
-    } else if (lowerCmd === 'theme light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('portfolio_theme', 'light');
-      resultNode = <span className="text-xs font-mono text-[#34d399]">Theme switched to LIGHT mode.</span>;
-    } else if (lowerCmd === 'theme dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('portfolio_theme', 'dark');
-      resultNode = <span className="text-xs font-mono text-[#34d399]">Theme switched to DARK mode.</span>;
-    } else if (lowerCmd.includes('sudo rm -rf') || lowerCmd.includes('rm -rf /')) {
+    } else if (lowerCmd === "theme light") {
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("portfolio_theme", "light");
+      resultNode = (
+        <span className="text-xs font-mono text-[#34d399]">Theme switched to LIGHT mode.</span>
+      );
+    } else if (lowerCmd === "theme dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("portfolio_theme", "dark");
+      resultNode = (
+        <span className="text-xs font-mono text-[#34d399]">Theme switched to DARK mode.</span>
+      );
+    } else if (lowerCmd.includes("sudo rm -rf") || lowerCmd.includes("rm -rf /")) {
       resultNode = (
         <div className="text-xs font-mono text-rose-400">
-          [SECURITY PERMISSION DENIED]: Nice try! Root filesystem protected by kernel-level immutable sandbox.
+          [SECURITY PERMISSION DENIED]: Nice try! Root filesystem protected by kernel-level
+          immutable sandbox.
         </div>
       );
     } else {
       resultNode = (
         <div className="text-xs font-mono text-rose-400">
-          Command not recognized: &quot;{cmd}&quot;. Type <span className="text-[#e49b58] underline cursor-pointer" onClick={() => handleCommand('help')}>help</span> for available commands.
+          Command not recognized: &quot;{cmd}&quot;. Type{" "}
+          <span
+            className="text-[#e49b58] underline cursor-pointer"
+            onClick={() => handleCommand("help")}
+          >
+            help
+          </span>{" "}
+          for available commands.
         </div>
       );
     }
@@ -220,20 +298,20 @@ export default function TerminalPlayground() {
       },
     ]);
 
-    setInput('');
+    setInput("");
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleCommand(input);
-    } else if (e.key === 'ArrowUp') {
+    } else if (e.key === "ArrowUp") {
       e.preventDefault();
       if (commandHistory.length > 0) {
         const nextIdx = historyIndex + 1 < commandHistory.length ? historyIndex + 1 : historyIndex;
         setHistoryIndex(nextIdx);
         setInput(commandHistory[commandHistory.length - 1 - nextIdx]);
       }
-    } else if (e.key === 'ArrowDown') {
+    } else if (e.key === "ArrowDown") {
       e.preventDefault();
       if (historyIndex > 0) {
         const nextIdx = historyIndex - 1;
@@ -241,7 +319,7 @@ export default function TerminalPlayground() {
         setInput(commandHistory[commandHistory.length - 1 - nextIdx]);
       } else if (historyIndex === 0) {
         setHistoryIndex(-1);
-        setInput('');
+        setInput("");
       }
     }
   };
@@ -252,7 +330,6 @@ export default function TerminalPlayground() {
       className="relative py-28 px-4 sm:px-6 lg:px-8 bg-[#1c1c1e] dark:bg-[#1c1c1e] light:bg-[#f8f5ef] overflow-hidden"
     >
       <div className="max-w-5xl mx-auto">
-        
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2c2c2e] border border-[#b87333]/30 text-xs font-mono text-[#b87333] mb-4">
@@ -263,7 +340,8 @@ export default function TerminalPlayground() {
             Live Systems Console & Diagnostics
           </h2>
           <p className="mt-4 text-[#c8c3bb] text-base max-w-2xl font-light">
-            Query the architect&apos;s background, inspect distributed systems principles, verify telemetry metrics, and test network latency directly.
+            Query the architect&apos;s background, inspect distributed systems principles, verify
+            telemetry metrics, and test network latency directly.
           </p>
           <div className="w-16 h-1 bg-[#b87333] mt-6 rounded-full" />
         </div>
@@ -284,7 +362,7 @@ export default function TerminalPlayground() {
                 alexander@distributed-node-01: ~
               </span>
             </div>
-            
+
             <div className="flex items-center gap-3">
               <button
                 type="button"
@@ -308,7 +386,7 @@ export default function TerminalPlayground() {
               <button
                 key={cmd}
                 type="button"
-                id={`terminal-quick-chip-${cmd.replace(/[^a-z0-9]/g, '-')}`}
+                id={`terminal-quick-chip-${cmd.replace(/[^a-z0-9]/g, "-")}`}
                 onClick={(e) => {
                   e.stopPropagation();
                   handleCommand(cmd);
@@ -329,9 +407,7 @@ export default function TerminalPlayground() {
                   <span className="text-[#34d399]">alexander@infra:~$</span>
                   <span className="text-[#f5f0e8] font-bold">{item.command}</span>
                 </div>
-                <div className="pl-4 sm:pl-6 text-[#c8c3bb] leading-relaxed">
-                  {item.output}
-                </div>
+                <div className="pl-4 sm:pl-6 text-[#c8c3bb] leading-relaxed">{item.output}</div>
               </div>
             ))}
             <div ref={bottomRef} />
@@ -364,9 +440,7 @@ export default function TerminalPlayground() {
               <Send className="w-3.5 h-3.5" />
             </button>
           </div>
-
         </div>
-
       </div>
     </section>
   );

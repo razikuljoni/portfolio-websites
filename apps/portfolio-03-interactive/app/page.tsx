@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import StatsCounter from '@/components/StatsCounter';
-import AboutSection from '@/components/AboutSection';
-import TechMatrixSection from '@/components/TechMatrixSection';
-import ExperienceSection from '@/components/ExperienceSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import TerminalPlayground from '@/components/TerminalPlayground';
-import PublicationsSection from '@/components/PublicationsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
-import CustomCursor from '@/components/CustomCursor';
-import ResumeModal from '@/components/ResumeModal';
+import React, { useState } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatsCounter from "@/components/StatsCounter";
+import AboutSection from "@/components/AboutSection";
+import TechMatrixSection from "@/components/TechMatrixSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import TerminalPlayground from "@/components/TerminalPlayground";
+import PublicationsSection from "@/components/PublicationsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import ResumeModal from "@/components/ResumeModal";
 
 /**
  * Main Page Component for Single-Page Portfolio
- * 
+ *
  * Features:
  * - Graphite & Copper aesthetic (#1c1c1e warm charcoal, #b87333 muted copper, #f5f0e8 cream, #2c2c2e dark cards)
  * - Interactive 2D Canvas Constellation Hero with mouse velocity & gravity
@@ -36,9 +36,9 @@ export default function PortfolioPage() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   const scrollToTerminal = () => {
-    const el = document.getElementById('lab');
+    const el = document.getElementById("lab");
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -48,18 +48,12 @@ export default function PortfolioPage() {
       <CustomCursor />
 
       {/* Fixed Top Navigation Bar */}
-      <Navbar
-        onOpenTerminal={scrollToTerminal}
-        onOpenResume={() => setIsResumeOpen(true)}
-      />
+      <Navbar onOpenTerminal={scrollToTerminal} onOpenResume={() => setIsResumeOpen(true)} />
 
       {/* Main Single-Page Scrolling Content */}
       <main id="main-content" className="relative flex flex-col">
         {/* 1. Hero Section with Interactive Canvas */}
-        <HeroSection
-          onOpenTerminal={scrollToTerminal}
-          onOpenResume={() => setIsResumeOpen(true)}
-        />
+        <HeroSection onOpenTerminal={scrollToTerminal} onOpenResume={() => setIsResumeOpen(true)} />
 
         {/* 2. Animated Stats Counter Benchmarks */}
         <StatsCounter />
@@ -93,16 +87,10 @@ export default function PortfolioPage() {
       </main>
 
       {/* Multi-Column Footer with Live Clock & Back to Top */}
-      <Footer
-        onOpenTerminal={scrollToTerminal}
-        onOpenResume={() => setIsResumeOpen(true)}
-      />
+      <Footer onOpenTerminal={scrollToTerminal} onOpenResume={() => setIsResumeOpen(true)} />
 
       {/* Curriculum Vitae Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </div>
   );
 }

@@ -16,9 +16,7 @@ export function HeaderBrand({ subtitle, showTagline = false }: HeaderBrandProps)
         {subtitle || PERSONAL_INFO.title}
       </p>
       {showTagline && (
-        <p className="mt-1 text-xs text-muted-foreground/80 max-w-xl">
-          {PERSONAL_INFO.tagline}
-        </p>
+        <p className="mt-1 text-xs text-muted-foreground/80 max-w-xl">{PERSONAL_INFO.tagline}</p>
       )}
     </div>
   );

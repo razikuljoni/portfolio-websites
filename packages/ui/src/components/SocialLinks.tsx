@@ -22,10 +22,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
         LinkedIn
       </a>
       <span>•</span>
-      <a
-        href={`mailto:${PERSONAL_INFO.email}`}
-        className="hover:text-foreground transition-colors"
-      >
+      <a href={`mailto:${PERSONAL_INFO.email}`} className="hover:text-foreground transition-colors">
         {PERSONAL_INFO.email}
       </a>
     </div>

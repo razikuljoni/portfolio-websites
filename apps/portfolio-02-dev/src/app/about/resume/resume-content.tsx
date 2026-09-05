@@ -42,13 +42,7 @@ const skillCategories = [
     },
     {
         label: "Tools & DevOps",
-        tags: [
-            "Git & GitHub Actions",
-            "Docker",
-            "Vercel",
-            "Cloudflare",
-            "Pnpm",
-        ],
+        tags: ["Git & GitHub Actions", "Docker", "Vercel", "Cloudflare", "Pnpm"],
     },
 ];
 
@@ -131,7 +125,8 @@ const training = [
         program: "Complete Web Development",
         issuer: "Programming Hero",
         year: "2022",
-        certificate: "https://drive.google.com/file/d/1oCowXYxD7oSqcXDWX1AyHtJ2OlRNHauT/view?usp=drive_link"
+        certificate:
+            "https://drive.google.com/file/d/1oCowXYxD7oSqcXDWX1AyHtJ2OlRNHauT/view?usp=drive_link",
     },
     {
         program: "Next Level Web Development",
@@ -232,8 +227,8 @@ export default function ResumeContent() {
                     <SectionTitle>Professional Summary</SectionTitle>
                     <p className="text-[12px] leading-[1.5] text-muted-foreground">
                         Results-driven Full Stack Developer with{" "}
-                        <strong className="text-foreground">2+ years</strong> of experience
-                        building scalable, high-performance web applications with{" "}
+                        <strong className="text-foreground">2+ years</strong> of experience building
+                        scalable, high-performance web applications with{" "}
                         <strong className="text-foreground">React, Next.js, and Node.js</strong>.
                         Proven expertise in enterprise dashboards, inventory management systems,
                         real-time data visualization, REST API integration, and state architecture.
@@ -297,9 +292,7 @@ export default function ResumeContent() {
                     {projects.map((proj) => (
                         <div key={proj.name} className="mb-3">
                             <div className="flex items-start justify-between gap-2">
-                                <p className="text-[12px] font-bold text-foreground">
-                                    {proj.name}
-                                </p>
+                                <p className="text-[12px] font-bold text-foreground">{proj.name}</p>
                                 <div className="flex gap-2 text-[11px]">
                                     <a
                                         href={proj.links.live}
@@ -341,9 +334,7 @@ export default function ResumeContent() {
                                 <p className="text-[12px] font-bold text-foreground">
                                     {edu.degree}
                                 </p>
-                                <p className="text-[12px] text-muted-foreground">
-                                    {edu.school}
-                                </p>
+                                <p className="text-[12px] text-muted-foreground">{edu.school}</p>
                             </div>
                             <div className="text-right">
                                 <p className="whitespace-nowrap text-[12px] text-muted-foreground">
@@ -363,7 +354,7 @@ export default function ResumeContent() {
                 <section className="mt-3">
                     <SectionTitle>Courses</SectionTitle>
                     {training.map((tr) => (
-                         <div
+                        <div
                             key={tr.program}
                             className="mb-2 flex items-start justify-between gap-2"
                         >
@@ -373,9 +364,18 @@ export default function ResumeContent() {
                                 </p>
                                 <p className="text-[12px] text-muted-foreground">
                                     {tr.issuer}
-                                    {
-                                        tr.certificate && <span> -  <a href={tr.certificate} className="text-blue-600 dark:text-blue-400 no-underline hover:underline">Certificate</a></span>
-                                    }
+                                    {tr.certificate && (
+                                        <span>
+                                            {" "}
+                                            -{" "}
+                                            <a
+                                                href={tr.certificate}
+                                                className="text-blue-600 dark:text-blue-400 no-underline hover:underline"
+                                            >
+                                                Certificate
+                                            </a>
+                                        </span>
+                                    )}
                                 </p>
                             </div>
                             <div className="text-right">

@@ -1,5 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Layers, Terminal, Cpu, FileText, Mail, Menu, X, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Layers,
+  Terminal,
+  Cpu,
+  FileText,
+  Mail,
+  Menu,
+  X,
+  ArrowUpRight,
+  CheckCircle2,
+} from "lucide-react";
 
 interface HeaderProps {
   onOpenContact: () => void;
@@ -14,16 +24,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenResume }) =
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Architecture', href: '#architecture' },
-    { label: 'Tech Stack', href: '#tech-stack' },
-    { label: 'Philosophy', href: '#philosophy' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Contact', href: '#contact' },
+    { label: "Architecture", href: "#architecture" },
+    { label: "Tech Stack", href: "#tech-stack" },
+    { label: "Philosophy", href: "#philosophy" },
+    { label: "Experience", href: "#experience" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -31,8 +41,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenResume }) =
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
         scrolled
-          ? 'bg-[#090A0F]/90 backdrop-blur-md border-b border-neutral-800/80 shadow-lg shadow-black/40 py-3'
-          : 'bg-transparent border-b border-neutral-800/40 py-4'
+          ? "bg-[#090A0F]/90 backdrop-blur-md border-b border-neutral-800/80 shadow-lg shadow-black/40 py-3"
+          : "bg-transparent border-b border-neutral-800/40 py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -110,7 +120,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenResume }) =
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div id="mobile-nav-drawer" className="md:hidden border-b border-neutral-800 bg-[#090A0F]/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3">
+        <div
+          id="mobile-nav-drawer"
+          className="md:hidden border-b border-neutral-800 bg-[#090A0F]/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3"
+        >
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <a

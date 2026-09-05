@@ -1,13 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { Play, Pause, RotateCcw, ChevronRight, ChevronLeft, CheckCircle2, ArrowRight, ShieldCheck, Activity, Database, Server, Radio, Workflow, Zap } from 'lucide-react';
-import { CaseStudy } from '../types';
+import React, { useState, useEffect } from "react";
+import {
+  Play,
+  Pause,
+  RotateCcw,
+  ChevronRight,
+  ChevronLeft,
+  CheckCircle2,
+  ArrowRight,
+  ShieldCheck,
+  Activity,
+  Database,
+  Server,
+  Radio,
+  Workflow,
+  Zap,
+} from "lucide-react";
+import { CaseStudy } from "../types";
 
 interface ArchitectureDiagramProps {
   caseStudy: CaseStudy;
   interactive?: boolean;
 }
 
-export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ caseStudy, interactive = true }) => {
+export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({
+  caseStudy,
+  interactive = true,
+}) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -62,7 +80,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ caseSt
               className="px-2.5 py-1 rounded bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/80 text-neutral-300 hover:text-white flex items-center gap-1 transition-colors cursor-pointer"
             >
               {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-              <span>{isPlaying ? 'Pause Flow' : 'Auto Play'}</span>
+              <span>{isPlaying ? "Pause Flow" : "Auto Play"}</span>
             </button>
             <button
               onClick={() => {
@@ -88,7 +106,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ caseSt
         <div
           className="absolute top-1/2 left-4 -translate-y-1/2 h-0.5 bg-gradient-to-r from-amber-400 via-emerald-400 to-sky-400 transition-all duration-500 pointer-events-none"
           style={{
-            width: `calc(${(currentStep / (steps.length - 1)) * 100}% - 2rem)`
+            width: `calc(${(currentStep / (steps.length - 1)) * 100}% - 2rem)`,
           }}
         />
 
@@ -111,17 +129,19 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ caseSt
                 <div
                   className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transition-all duration-300 shadow-md ${
                     isActive
-                      ? 'bg-neutral-800 border-2 border-amber-400 text-amber-300 scale-110 shadow-amber-400/20'
+                      ? "bg-neutral-800 border-2 border-amber-400 text-amber-300 scale-110 shadow-amber-400/20"
                       : isCompleted
-                      ? 'bg-neutral-900 border border-emerald-500/80 text-emerald-400'
-                      : 'bg-neutral-950 border border-neutral-800 text-neutral-500 hover:border-neutral-700'
+                        ? "bg-neutral-900 border border-emerald-500/80 text-emerald-400"
+                        : "bg-neutral-950 border border-neutral-800 text-neutral-500 hover:border-neutral-700"
                   }`}
                 >
                   {getStepIcon(idx)}
                 </div>
                 <span
                   className={`text-[10px] font-mono text-center max-w-[65px] sm:max-w-[90px] truncate transition-colors ${
-                    isActive ? 'text-amber-300 font-semibold' : 'text-neutral-500 group-hover:text-neutral-300'
+                    isActive
+                      ? "text-amber-300 font-semibold"
+                      : "text-neutral-500 group-hover:text-neutral-300"
                   }`}
                 >
                   Step {s.step}
@@ -168,13 +188,9 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ caseSt
           </div>
         </div>
 
-        <h4 className="text-sm font-semibold text-neutral-100">
-          {activeStepData.name}
-        </h4>
+        <h4 className="text-sm font-semibold text-neutral-100">{activeStepData.name}</h4>
 
-        <p className="text-xs text-neutral-400 leading-relaxed">
-          {activeStepData.desc}
-        </p>
+        <p className="text-xs text-neutral-400 leading-relaxed">{activeStepData.desc}</p>
       </div>
     </div>
   );

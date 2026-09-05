@@ -1,12 +1,11 @@
-import React from 'react';
-import { Compass, Sparkles, CheckCircle2, Shield, Scale, Zap, Activity } from 'lucide-react';
-import { ARCHITECTURE_TENETS } from '../data/portfolioData';
+import React from "react";
+import { Compass, Sparkles, CheckCircle2, Shield, Scale, Zap, Activity } from "lucide-react";
+import { ARCHITECTURE_TENETS } from "../data/portfolioData";
 
 export const ArchitecturePhilosophy: React.FC = () => {
   return (
     <section id="philosophy" className="py-20 border-t border-neutral-800/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="max-w-3xl mb-12 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-neutral-900 border border-neutral-800 text-xs font-mono text-amber-400">
@@ -17,7 +16,8 @@ export const ArchitecturePhilosophy: React.FC = () => {
             Guiding Principles for Resilient Systems
           </h2>
           <p className="text-sm sm:text-base text-neutral-400">
-            Technology stacks change rapidly, but fundamental distributed systems principles remain constant. These core engineering tenets guide every architectural decision I make.
+            Technology stacks change rapidly, but fundamental distributed systems principles remain
+            constant. These core engineering tenets guide every architectural decision I make.
           </p>
         </div>
 
@@ -40,12 +40,8 @@ export const ArchitecturePhilosophy: React.FC = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-bold text-neutral-100">
-                    {tenet.title}
-                  </h3>
-                  <div className="text-xs font-mono text-amber-300 mt-0.5">
-                    "{tenet.subtitle}"
-                  </div>
+                  <h3 className="text-lg font-bold text-neutral-100">{tenet.title}</h3>
+                  <div className="text-xs font-mono text-amber-300 mt-0.5">"{tenet.subtitle}"</div>
                 </div>
 
                 <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
@@ -61,7 +57,6 @@ export const ArchitecturePhilosophy: React.FC = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

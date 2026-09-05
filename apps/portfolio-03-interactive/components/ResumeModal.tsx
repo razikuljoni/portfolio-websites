@@ -1,8 +1,18 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { X, Download, Printer, ExternalLink, Briefcase, Award, BookOpen, Cpu, CheckCircle2 } from 'lucide-react';
-import { PORTFOLIO_DATA } from '@/lib/portfolio-data';
+import React from "react";
+import {
+  X,
+  Download,
+  Printer,
+  ExternalLink,
+  Briefcase,
+  Award,
+  BookOpen,
+  Cpu,
+  CheckCircle2,
+} from "lucide-react";
+import { PORTFOLIO_DATA } from "@/lib/portfolio-data";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -59,15 +69,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
         {/* Modal Scrollable Resume Content */}
         <div className="overflow-y-auto p-6 sm:p-10 space-y-8 flex-1 text-[#c8c3bb] text-sm">
-          
           {/* Header Identity */}
           <div className="border-b border-[#f5f0e8]/10 pb-6">
             <h1 className="text-3xl font-bold text-[#f5f0e8] font-['Space_Grotesk']">
               {PORTFOLIO_DATA.profile.name}
             </h1>
-            <p className="text-[#b87333] font-mono text-sm mt-1">
-              {PORTFOLIO_DATA.profile.title}
-            </p>
+            <p className="text-[#b87333] font-mono text-sm mt-1">{PORTFOLIO_DATA.profile.title}</p>
             <div className="flex flex-wrap gap-3 text-xs font-mono text-[#8e8a82] mt-3">
               <span>{PORTFOLIO_DATA.profile.location}</span>
               <span>•</span>
@@ -85,7 +92,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               Executive Profile
             </h2>
             <p className="text-xs sm:text-sm text-[#c8c3bb] leading-relaxed font-light">
-              Results-driven Full Stack (MERN) Developer with 2+ years of professional production experience delivering scalable, high-performance web applications using React.js, Next.js, and modern JavaScript/TypeScript ecosystems. Proven track record building enterprise admin dashboards, business workflow systems, operational tracking platforms, and inventory platforms with seamless REST API integration and predictable state management (Redux Toolkit, RTK Query, TanStack Query).
+              Results-driven Full Stack (MERN) Developer with 2+ years of professional production
+              experience delivering scalable, high-performance web applications using React.js,
+              Next.js, and modern JavaScript/TypeScript ecosystems. Proven track record building
+              enterprise admin dashboards, business workflow systems, operational tracking
+              platforms, and inventory platforms with seamless REST API integration and predictable
+              state management (Redux Toolkit, RTK Query, TanStack Query).
             </p>
           </div>
 
@@ -97,19 +109,30 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
               <div className="p-3.5 rounded-xl bg-[#242426] border border-[#f5f0e8]/5">
                 <div className="text-[#f5f0e8] font-bold mb-1">Frontend Engineering:</div>
-                <div className="text-[#8e8a82]">React.js, Next.js (App Router), TypeScript, JavaScript (ES6+), Redux Toolkit, RTK Query, TanStack Query</div>
+                <div className="text-[#8e8a82]">
+                  React.js, Next.js (App Router), TypeScript, JavaScript (ES6+), Redux Toolkit, RTK
+                  Query, TanStack Query
+                </div>
               </div>
               <div className="p-3.5 rounded-xl bg-[#242426] border border-[#f5f0e8]/5">
                 <div className="text-[#f5f0e8] font-bold mb-1">Interface & UI Styling:</div>
-                <div className="text-[#8e8a82]">Tailwind CSS, Material UI, Ant Design, HTML5, CSS3/SCSS, ECharts, Framer Motion, Google Maps API</div>
+                <div className="text-[#8e8a82]">
+                  Tailwind CSS, Material UI, Ant Design, HTML5, CSS3/SCSS, ECharts, Framer Motion,
+                  Google Maps API
+                </div>
               </div>
               <div className="p-3.5 rounded-xl bg-[#242426] border border-[#f5f0e8]/5">
                 <div className="text-[#f5f0e8] font-bold mb-1">Backend & Database:</div>
-                <div className="text-[#8e8a82]">Node.js, Express.js, NestJS, MongoDB, Mongoose, PostgreSQL, MySQL, REST APIs, JWT, RBAC, Zod</div>
+                <div className="text-[#8e8a82]">
+                  Node.js, Express.js, NestJS, MongoDB, Mongoose, PostgreSQL, MySQL, REST APIs, JWT,
+                  RBAC, Zod
+                </div>
               </div>
               <div className="p-3.5 rounded-xl bg-[#242426] border border-[#f5f0e8]/5">
                 <div className="text-[#f5f0e8] font-bold mb-1">Tools & Deployment:</div>
-                <div className="text-[#8e8a82]">Git, GitHub, GitHub Actions, Vercel, Netlify, Firebase, Supabase, Postman, Docker</div>
+                <div className="text-[#8e8a82]">
+                  Git, GitHub, GitHub Actions, Vercel, Netlify, Firebase, Supabase, Postman, Docker
+                </div>
               </div>
             </div>
           </div>
@@ -149,18 +172,21 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </h2>
             <div className="space-y-3">
               {PORTFOLIO_DATA.profile.education.map((edu) => (
-                <div key={edu.id} className="p-4 rounded-2xl bg-[#242426] border border-[#f5f0e8]/5 space-y-1.5">
+                <div
+                  key={edu.id}
+                  className="p-4 rounded-2xl bg-[#242426] border border-[#f5f0e8]/5 space-y-1.5"
+                >
                   <div className="flex justify-between items-start">
                     <div>
                       <div className="text-sm font-bold text-[#f5f0e8]">{edu.degree}</div>
-                      <div className="text-xs text-[#8e8a82]">{edu.institution} • {edu.location}</div>
+                      <div className="text-xs text-[#8e8a82]">
+                        {edu.institution} • {edu.location}
+                      </div>
                     </div>
                     <span className="text-xs font-mono text-[#b87333]">{edu.period}</span>
                   </div>
                   {edu.details && (
-                    <div className="text-xs text-[#c8c3bb] leading-relaxed">
-                      {edu.details}
-                    </div>
+                    <div className="text-xs text-[#c8c3bb] leading-relaxed">{edu.details}</div>
                   )}
                 </div>
               ))}
@@ -174,13 +200,16 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </h2>
             <div className="flex flex-wrap gap-4 text-xs font-mono">
               {PORTFOLIO_DATA.profile.spokenLanguages.map((lang) => (
-                <div key={lang.language} className="px-3 py-1.5 rounded-xl bg-[#242426] border border-[#f5f0e8]/10">
-                  <span className="text-[#f5f0e8] font-bold">{lang.language}:</span> <span className="text-[#b87333]">{lang.proficiency}</span>
+                <div
+                  key={lang.language}
+                  className="px-3 py-1.5 rounded-xl bg-[#242426] border border-[#f5f0e8]/10"
+                >
+                  <span className="text-[#f5f0e8] font-bold">{lang.language}:</span>{" "}
+                  <span className="text-[#b87333]">{lang.proficiency}</span>
                 </div>
               ))}
             </div>
           </div>
-
         </div>
 
         {/* Modal Footer */}

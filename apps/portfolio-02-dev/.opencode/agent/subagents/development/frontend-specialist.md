@@ -4,23 +4,23 @@ description: Frontend UI design specialist - subagent for design systems, themes
 mode: subagent
 temperature: 0.2
 permission:
-  task:
-    "*": "deny"
-    contextscout: "allow"
-    externalscout: "allow"
-  write:
-    "**/*.env*": "deny"
-    "**/*.key": "deny"
-    "**/*.secret": "deny"
-    "**/*.ts": "deny"
-    "**/*.js": "deny"
-    "**/*.py": "deny"
-  edit:
-    "design_iterations/**/*.html": "allow"
-    "design_iterations/**/*.css": "allow"
-    "**/*.env*": "deny"
-    "**/*.key": "deny"
-    "**/*.secret": "deny"
+    task:
+        "*": "deny"
+        contextscout: "allow"
+        externalscout: "allow"
+    write:
+        "**/*.env*": "deny"
+        "**/*.key": "deny"
+        "**/*.secret": "deny"
+        "**/*.ts": "deny"
+        "**/*.js": "deny"
+        "**/*.py": "deny"
+    edit:
+        "design_iterations/**/*.html": "allow"
+        "design_iterations/**/*.css": "allow"
+        "**/*.env*": "deny"
+        "**/*.key": "deny"
+        "**/*.secret": "deny"
 ---
 
 # Frontend Design Subagent
@@ -86,8 +86,11 @@ task(subagent_type="ContextScout", description="Find frontend design standards",
 3. If ContextScout flags a UI library (Tailwind, Shadcn, etc.) → call **ExternalScout** (see below)
 
 ---
+
 # OpenCode Agent Configuration
+
 # Metadata (id, name, category, type, version, author, tags, dependencies) is stored in:
+
 # .opencode/config/agent-metadata.json
 
 ---
@@ -142,8 +145,11 @@ task(subagent_type="ContextScout", description="Find frontend design standards",
 4. Present: "Updated design saved. Previous version preserved."
 
 ---
+
 # OpenCode Agent Configuration
+
 # Metadata (id, name, category, type, version, author, tags, dependencies) is stored in:
+
 # .opencode/config/agent-metadata.json
 
 ---
@@ -166,15 +172,9 @@ Theme files: theme_1.css, theme_2.css | Location: design_iterations/
     - Parent agent requirements clear
     - Output folder (design_iterations/) exists or can be created
   </pre_flight>
-  
-  <post_flight>
-    - HTML file created w/ proper structure
-    - Theme CSS referenced correctly
-    - Responsive design tested (mobile, tablet, desktop)
-    - Images use valid placeholder URLs
-    - Icons initialized properly
-    - Accessibility attributes present
-  </post_flight>
+
+<post_flight> - HTML file created w/ proper structure - Theme CSS referenced correctly - Responsive design tested (mobile, tablet, desktop) - Images use valid placeholder URLs - Icons initialized properly - Accessibility attributes present
+</post_flight>
 </validation>
 
 <principles>
