@@ -26,11 +26,12 @@ portfolio-websites/
 ## Commands
 ```bash
 pnpm install       # Install dependencies across monorepo
-pnpm dev           # Parallel dev server for all apps
-pnpm dev:01        # Dev server for portfolio-01-minimal
-pnpm dev:02        # Dev server for portfolio-02-dev
-pnpm dev:03        # Dev server for portfolio-03-interactive
-pnpm dev:04        # Dev server for portfolio-04-vite-express
+pnpm dev           # Parallel dev server with colorful concurrently output
+pnpm dev:ui        # Interactive TUI dashboard with sidebar app switcher (pnpm dev:dash)
+pnpm dev:01        # Dev server for portfolio-01-minimal (port 3001)
+pnpm dev:02        # Dev server for portfolio-02-dev (port 3002)
+pnpm dev:03        # Dev server for portfolio-03-interactive (port 3003)
+pnpm dev:04        # Dev server for portfolio-04-vite-express (port 3004)
 pnpm build         # Build all apps & packages
 pnpm lint          # Lint all apps
 pnpm format        # Format codebase with Prettier
@@ -40,4 +41,6 @@ pnpm check         # Run lint + typecheck across workspace
 ## Conventions
 - Shared profile data belongs in `packages/profile-data/src/index.ts`.
 - Reusable UI elements belong in `packages/ui/src/components/`.
+- Featured projects (`z-shop` #1, `SensorGrid` #2) take priority across all apps.
+- Non-conflicting dev ports enforced: `3001` (01), `3002` (02), `3003` (03), `3004` (04).
 - Strict TypeScript configuration enabled across all packages and apps.
